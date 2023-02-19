@@ -1,18 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+//using System.Collections;
+//using System.Collections.Generic;
+//using UnityEngine;
 
-public class TestTouch : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+//public class TestTouch : MonoBehaviour
+//{
+//    private InputManager inputManager;
+//    private Camera cameraMain;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}
+//    private void Awake()
+//    {
+//        inputManager = InputManager.Instance();
+//        cameraMain = Camera.main;
+//    }
+
+//    private void OnEnable()
+//    {
+//        inputManager.OnStartTouch += Move;
+//    }
+
+//    private void OnDisable()
+//    {
+//        inputManager.OnEndTouch -= Move;
+//    }
+
+//    public void Move(Vector2 screenposition, float time)
+//    {
+//        Vector3 screenCoordinates = new Vector3(screenposition.x, screenposition.y, cameraMain.nearClipPlane);
+//        Vector3 worldcoordinates = cameraMain.ScreenToWorldPoint(screenCoordinates);
+//        worldcoordinates.z = 0;
+//        transform.position = worldcoordinates;
+//    }
+    
+//}
