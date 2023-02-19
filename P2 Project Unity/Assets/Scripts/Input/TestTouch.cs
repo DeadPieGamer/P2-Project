@@ -4,6 +4,7 @@
 
 //public class TestTouch : MonoBehaviour
 //{
+//    //Credit to Samyam Youtube
 //    private InputManager inputManager;
 //    private Camera cameraMain;
 
@@ -30,5 +31,5 @@
 //        worldcoordinates.z = 0;
 //        transform.position = worldcoordinates;
 //    }
-    
+
 //}

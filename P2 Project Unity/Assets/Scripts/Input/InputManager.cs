@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
+    //Credit to Samyam Youtube
     private TouchControls touchControls;
 
     public delegate void StartTouchEvent(Vector2 position, float time);
