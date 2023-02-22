@@ -17,7 +17,6 @@ using UnityEngine.InputSystem.Utilities;
 
 public partial class @TouchControls : IInputActionCollection2, IDisposable
 {
-    //Credit to Samyam Youtube
     public InputActionAsset asset { get; }
     public @TouchControls()
     {

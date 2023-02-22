@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-    public AudioSource audio;
+    public AudioSource myAudioSource;
 
     public void playButton()
     { 
-        audio.Play(); 
+        myAudioSource.Play(); 
     }
 
 }
