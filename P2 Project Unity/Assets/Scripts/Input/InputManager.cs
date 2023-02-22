@@ -10,13 +10,23 @@ public class InputManager : MonoBehaviour
 
     // StartTouchEvent is a decleration of a void function which takes a Vector2 and a float as input variables (arguments)
     public delegate void StartTouchEvent(Vector2 position, float time);
-    // 
+    // Event Delegates is a way to call multiple functions, with the delegate itself only being callable from this script, but still subscribable from others
     public event StartTouchEvent OnStartTouch;
 
     // EndTouchEvent is a reference to a void function which takes a Vector2 and a float as input variables (arguments)
     // This EndTouchEvent is repetitive and unneeded at the moment, as it does the exact same as the StartTouchEvent
     public delegate void EndTouchEvent(Vector2 position, float time);
     public event StartTouchEvent OnEndTouch;
+
+    // The above should be able to be replaced with the following
+    public event System.Action<Vector2, float> OnTouchStart;
+    public event System.Action<Vector2, float> OnTouchEnd;
+    // System. can be replaced with 'using System' at the start. Actions are basically ready-made delegate voids
+
+    // If we wish to be able to drag and drop events using the inspector, UnityEvents should be used in place of event.
+    // The UnityEvent system is also the one used by Unity UI Buttons
+
+    // Further reading: https://gamedevbeginner.com/events-and-delegates-in-unity/
 
     // Very first function called as the object is instantiated
     private void Awake()
