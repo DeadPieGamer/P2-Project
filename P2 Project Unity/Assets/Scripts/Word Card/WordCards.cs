@@ -10,6 +10,4 @@ public class WordCards : ScriptableObject //using ScriptableObject instead of mo
     [SerializeField, Tooltip("Word of the image in Danish")] public string danish_Word; 
     [SerializeField, Tooltip("Image of the word")] public Sprite word_Picture; 
     [SerializeField, Tooltip("Pronouciation of the word")] public AudioClip word_Audio;
-
-    
 }
