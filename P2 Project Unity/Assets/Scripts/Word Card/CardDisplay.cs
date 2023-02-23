@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 public class CardDisplay : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class CardDisplay : MonoBehaviour
     void Start()
     {
         Input_newCard(card);
+        cards = (WordCards[])Resources.LoadAll("WordCards", typeof(WordCards));//Call Word card folder using Resouces.LoadALL("Name of the folder", typeof(scriptableobjectname))
     }
 
     // Update is called once per frame
@@ -47,7 +49,8 @@ public class CardDisplay : MonoBehaviour
 
     public void Select_RandomCards()
     {
-
+        int randomCard = Random.Range(0, cards.Length);
+        Input_newCard(cards[randomCard]);
     }
 }
 
