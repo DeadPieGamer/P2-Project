@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5722ad76733d1144894a2ccb177f4e70, type: 3}
   m_Name: Red
   m_EditorClassIdentifier: 
-  danish_Word: 
-  word_Picture: {fileID: 0}
-  Word_Audio: {fileID: 0}
+  danish_Word: "R\xF8d"
+  word_Picture: {fileID: 21300000, guid: 8826d53149b1c4e438c268db23658579, type: 3}
+  word_Audio: {fileID: 8300000, guid: b6abd4928102a0140aa6069bd712c4ce, type: 3}
