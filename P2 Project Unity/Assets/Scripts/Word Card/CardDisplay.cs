@@ -15,9 +15,7 @@ public class CardDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        wordText.text = card.danish_Word;
-        wordPicture.sprite = card.word_Picture;
-        word_audiosource.clip = card.word_Audio;
+        Input_newCard(card);
     }
 
     // Update is called once per frame
@@ -29,6 +27,13 @@ public class CardDisplay : MonoBehaviour
     public void Audio_play()
     {
         word_audiosource.Play();
+    }
+
+    public void Input_newCard(WordCards newcard)
+    {
+        wordText.text = newcard.danish_Word;
+        wordPicture.sprite = newcard.word_Picture;
+        word_audiosource.clip = newcard.word_Audio;
     }
 }
 
