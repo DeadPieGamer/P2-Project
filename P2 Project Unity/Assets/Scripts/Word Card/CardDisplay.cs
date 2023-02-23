@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
+using System.Linq;
 
 public class CardDisplay : MonoBehaviour
 {
@@ -19,7 +20,8 @@ public class CardDisplay : MonoBehaviour
     void Start()
     {
         Input_newCard(card);
-        cards = (WordCards[])Resources.LoadAll("WordCards", typeof(WordCards));//Call Word card folder using Resouces.LoadALL("Name of the folder", typeof(scriptableobjectname))
+        cards = Resources.LoadAll("WordCards", typeof(WordCards)).Cast<WordCards>().ToArray();//Call Word card folder using Resouces.LoadALL("Name of the folder", typeof(scriptableobjectname))
+        Debug.Log(cards.Length);
     }
 
     // Update is called once per frame
