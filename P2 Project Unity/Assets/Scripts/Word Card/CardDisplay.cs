@@ -20,7 +20,7 @@ public class CardDisplay : MonoBehaviour
     void Start()
     {
         Input_newCard(card);
-        cards = Resources.LoadAll("WordCards", typeof(WordCards)).Cast<WordCards>().ToArray();//Call Word card folder using Resouces.LoadALL("Name of the folder", typeof(scriptableobjectname))
+        cards = Resources.LoadAll("WordCards_Folder", typeof(WordCards)).Cast<WordCards>().ToArray();//Call Word card folder using Resouces.LoadALL("Name of the folder", typeof(scriptableobjectname))
         Debug.Log(cards.Length);
     }
 

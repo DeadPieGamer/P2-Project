@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
 
 public class InputManager : MonoBehaviour
 {
@@ -15,13 +16,12 @@ public class InputManager : MonoBehaviour
 
     // EndTouchEvent is a reference to a void function which takes a Vector2 and a float as input variables (arguments)
     // This EndTouchEvent is repetitive and unneeded at the moment, as it does the exact same as the StartTouchEvent
-    public delegate void EndTouchEvent(Vector2 position, float time);
     public event StartTouchEvent OnEndTouch;
 
     // The above should be able to be replaced with the following
-    public event System.Action<Vector2, float> OnTouchStart;
-    public event System.Action<Vector2, float> OnTouchEnd;
-    // System. can be replaced with 'using System' at the start. Actions are basically ready-made delegate voids
+    public event Action<Vector2, float> OnTouchStart;
+    public event Action<Vector2, float> OnTouchEnd;
+    // 'using System' at the start can be replaced with (System.). Actions are basically ready-made delegate voids (Line 22,23 can replace 13,15,19).
 
     // If we wish to be able to drag and drop events using the inspector, UnityEvents should be used in place of event.
     // The UnityEvent system is also the one used by Unity UI Buttons
@@ -52,7 +52,7 @@ public class InputManager : MonoBehaviour
     {
         // The following are setups of events, meaning that whenever the thing to the left of => happens, the function to the right of => will be run
         // When an input is registered to be started, get the context of the input, then call the StartTouch function and tell it that context
-        touchControls.Touch.TouchPress.started += ctx => StartTouch(ctx);
+        touchControls.Touch.TouchPress.started += ctx => StartTouch(ctx); 
 
         // When an input is registered to be stopped, get the context of the input, then call the EndTouch function and tell it that context
         touchControls.Touch.TouchPress.canceled += ctx => EndTouch(ctx);
@@ -65,7 +65,7 @@ public class InputManager : MonoBehaviour
     private void StartTouch(InputAction.CallbackContext context)
     {
         Debug.Log("Touch Started" + touchControls.Touch.TouchPosition.ReadValue<Vector2>());
-        if (OnStartTouch != null)
+        if (OnStartTouch != null) //! means not
         {
             OnStartTouch(touchControls.Touch.TouchPosition.ReadValue<Vector2>(), (float)context.startTime);
         }
