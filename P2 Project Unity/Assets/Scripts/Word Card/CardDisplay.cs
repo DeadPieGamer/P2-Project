@@ -8,17 +8,23 @@ using System.Linq;
 
 public class CardDisplay : MonoBehaviour
 {
-    public WordCards card;
-    public WordCards[] cards;
     public TextMeshProUGUI wordText;
     public Image wordPicture;
     public AudioSource word_audiosource;
 
+    //public CardSetLoader loader;
+    public WordCards card;
+
     // Start is called before the first frame update
+    private void Awake()
+    {
+        
+        
+    }
     void Start()
     {
+        //card = loader.Select_RandomCards();
         Input_newCard(card);
-        Debug.Log(cards.Length);
     }
 
     // Update is called once per frame
