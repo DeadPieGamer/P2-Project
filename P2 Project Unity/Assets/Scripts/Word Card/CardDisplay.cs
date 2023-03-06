@@ -11,6 +11,7 @@ public class CardDisplay : MonoBehaviour
     public TextMeshProUGUI wordText;
     public Image wordPicture;
     public AudioSource word_audiosource;
+    public CardSetLoader loader;
 
     //public CardSetLoader loader;
     public WordCards card;
@@ -23,8 +24,9 @@ public class CardDisplay : MonoBehaviour
     }
     void Start()
     {
-        //card = loader.Select_RandomCards();
+        card = loader.Select_RandomCards();
         Input_newCard(card);
+
     }
 
     // Update is called once per frame

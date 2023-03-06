@@ -99,7 +99,7 @@ public class CardSetLoader : MonoBehaviour
             case "Vegetable":
                 cards = VegetableSet;
                 break;
-                default:
+            default:
                 cards = TestSet;
                 break;
         }
