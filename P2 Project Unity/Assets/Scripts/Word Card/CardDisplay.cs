@@ -24,9 +24,7 @@ public class CardDisplay : MonoBehaviour
     }
     void Start()
     {
-        card = loader.Select_RandomCards();
-        Input_newCard(card);
-
+        Get_NewCard();
     }
 
     // Update is called once per frame
@@ -53,5 +51,11 @@ public class CardDisplay : MonoBehaviour
         wordPicture.sprite = newcard.word_Picture;
         word_audiosource.clip = newcard.word_Audio;
     }
+    public void Get_NewCard()
+    {
+        card = loader.Select_RandomCards();
+        Input_newCard(card);
+    }
+
 }
 
