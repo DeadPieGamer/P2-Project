@@ -52,7 +52,13 @@ public class CardSetLoader : MonoBehaviour
     public void Select_CardSet(SetTypes Deck)
     {
         cards = CardSet_Dict[Deck];
-            
+
+    }
+
+    public void Select_CardSet(Felix.Variables.DummyCardSet Deck)
+    {
+        cards = CardSet_Dict[Deck.SetTypeEnum];
+
     }
 
     public void Select_CardSet(int Deck)
