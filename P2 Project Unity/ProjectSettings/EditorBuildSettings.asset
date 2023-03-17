@@ -4,6 +4,15 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Pairmatcinggame/Menu_MatchGame.unity
+    guid: 9e12300a6a0ff4e34a1873c37751e8f7
+  - enabled: 1
+    path: Assets/Scenes/Pairmatcinggame/SetGame.unity
+    guid: 58f946302f96e43f88ff861ad2f4ceb4
+  - enabled: 1
+    path: Assets/Scenes/Pairmatcinggame/GameScene.unity
+    guid: ad56e94ffab2740fb86d7d9b06da4908
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: d7e3c8c037399ab4bb833e5d2aabf24e, type: 2}

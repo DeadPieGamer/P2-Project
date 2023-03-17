@@ -1,0 +1,32 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEditor;
+
+[CustomEditor(typeof(SetGameButton))]
+[CanEditMultipleObjects]
+[System.Serializable]
+
+public class SetGameButtonEditor : Editor
+{
+    public override void OnInspectorGUI() //overridning the function from the Editor 
+    {
+        DrawDefaultInspector();
+
+        SetGameButton myScript = target as SetGameButton;
+        switch (myScript.ButtonType)
+        {
+            case SetGameButton.EButtonType.PairNumberBtn:
+                myScript.PairNumber = (GameSettings.EPairNumber)EditorGUILayout.EnumPopup("Pair N umbers", myScript.PairNumber);
+                break; 
+            case SetGameButton.EButtonType.PuzzleCategoryBtn:
+                myScript.PiuzzlCategories = (GameSettings.EPuzzleCategories)EditorGUILayout.EnumPopup ("Puzzle Categories", myScript.PiuzzlCategories);
+                break;
+        }
+        if (GUI.changed)
+        {
+            EditorUtility.SetDirty(target);
+        }
+           
+    }
+}
