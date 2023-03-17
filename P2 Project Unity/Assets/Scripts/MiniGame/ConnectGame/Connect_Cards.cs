@@ -1,5 +1,4 @@
 using Microsoft.Unity.VisualStudio.Editor;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -17,8 +16,8 @@ public class Connect_Cards : MonoBehaviour
 
     private void Awake()
     {
-       
-
+       avaiableRightIndex = Shuffle_Array(avaiableRightIndex);
+        avaiableLeftIndex = Shuffle_Array(avaiableLeftIndex);
     }
     private void Start()
     {
@@ -26,7 +25,7 @@ public class Connect_Cards : MonoBehaviour
 
         while (avaiableSet.Count < 4)
         {
-            int randomCard = UnityEngine.Random.Range(0, usingSet.Length);
+            int randomCard = Random.Range(0, usingSet.Length);
 
             if(!avaiableSet.Contains(usingSet[randomCard]))
             {
@@ -37,7 +36,19 @@ public class Connect_Cards : MonoBehaviour
        for (int i = 0; i < avaiableSet.Count; i++)
         {
             avaiableLeftIndex[i].GetComponent<Connect_Game>().setSprite(avaiableSet[i]);
+            avaiableRightIndex[i].GetComponent<Connect_Game>().setWord(avaiableSet[i]);
         }
     }
-    
+    private GameObject[] Shuffle_Array(GameObject[] inputarray)
+    {
+        GameObject Temp_array;
+       for (int i = 0; i < inputarray.Length; i++)
+        {
+            int rnd = Random.Range(0, inputarray.Length);
+            Temp_array = inputarray[rnd];
+            inputarray[rnd] = inputarray[i];
+            inputarray[i] = Temp_array;
+        }
+       return inputarray;
+    }
 }

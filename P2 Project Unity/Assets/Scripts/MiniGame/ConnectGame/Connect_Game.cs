@@ -14,6 +14,7 @@ public class Connect_Game : MonoBehaviour
     private void Awake()
     {
         wordPicture = GetComponent<Image>();
+        wordText = GetComponent<TextMeshProUGUI>();
     }
 
     public void setSprite(WordCards card)
@@ -23,6 +24,6 @@ public class Connect_Game : MonoBehaviour
     public void setWord(WordCards card)
     {
         wordText.text = card.danish_Word;
-        word_audiosource.clip = card.word_Audio;
+        //word_audiosource.clip = card.word_Audio;
     }
 }
