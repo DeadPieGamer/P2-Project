@@ -66,4 +66,9 @@ public class CardSetLoader : MonoBehaviour
         cards = CardSet_Dict[(SetTypes)Deck];
 
     }
+
+    public WordCards[] Get_Set(SetTypes Deck)
+    {
+        return CardSet_Dict[Deck];
+    }
 }

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5722ad76733d1144894a2ccb177f4e70, type: 3}
-  m_Name: Chicken
+  m_Name: Fish
   m_EditorClassIdentifier: 
-  danish_Word: Kylling
-  word_Picture: {fileID: 21300000, guid: 1cea92262365a1442bc7360e0fbe34a0, type: 3}
+  danish_Word: Fisk
+  word_Picture: {fileID: 21300000, guid: 404ea9f3c082e50478762397c4c9df0e, type: 3}
   word_Audio: {fileID: 0}
