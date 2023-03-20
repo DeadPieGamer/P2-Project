@@ -26,7 +26,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     public void OnDrag(PointerEventData eventData) // This is what gets called on every frame whilst we are dragging the item and the mouse has moved
     {
         Debug.Log("OnDrag");
-        rectTransform.anchoredPosition += eventData.delta; // This field contains the movement data, which the amout that the mouse moved since the previous frame, so by adding this we wont be moving our object alongside the mouse
+        rectTransform.anchoredPosition += eventData.delta; // This field contains the movement data, which the amout that the mouse moved since the previous frame,
+                                                           // so by adding this we wont be moving our object alongside the mouse
     }
 
     public void OnEndDrag(PointerEventData eventData) // This one gets called when we stop dragging the item
