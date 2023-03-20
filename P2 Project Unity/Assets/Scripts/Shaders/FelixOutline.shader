@@ -1,3 +1,8 @@
+// To do. Add comments
+
+// Inspired by bgolus' code
+// https://forum.unity.com/threads/help-to-find-an-asset-solution.755273/#post-5246960
+
 Shader "Unlit/Custom/FelixOutline"
 {
     Properties
