@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -13,17 +14,20 @@ public class Connect_Game : MonoBehaviour
 
     private void Awake()
     {
+
         wordPicture = GetComponent<Image>();
         wordText = GetComponent<TextMeshProUGUI>();
+
     }
 
     public void setSprite(WordCards card)
     {
         wordPicture.sprite = card.word_Picture;
+        //word_audiosource.clip = card.word_Audio;
     }
     public void setWord(WordCards card)
     {
         wordText.text = card.danish_Word;
-        //word_audiosource.clip = card.word_Audio;
+        
     }
 }

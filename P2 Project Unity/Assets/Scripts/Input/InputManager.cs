@@ -4,6 +4,7 @@ using System;
 
 public class InputManager : MonoBehaviour
 {
+
     //Credit to Samyam Youtube
 
     // We need an instance of the controls script to be able to register the inputs
@@ -82,5 +83,7 @@ public class InputManager : MonoBehaviour
         {
             OnEndTouch(touchControls.Touch.TouchPosition.ReadValue<Vector2>(), (float)context.time);
         }
-    }  
+    }
+
+    
 }
