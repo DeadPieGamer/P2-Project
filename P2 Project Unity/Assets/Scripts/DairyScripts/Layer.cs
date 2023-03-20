@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class Layer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static readonly int Default = 0;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public static readonly int Dragging = 8;
 }
