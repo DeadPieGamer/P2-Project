@@ -1,23 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class KO_Draggable : MonoBehaviour
 {
-    private InputManager inputManager;
-    
-
-    private void Start()
-    {
-        inputManager = GameObject.FindGameObjectWithTag("Input Manager").GetComponent<InputManager>();
-        inputManager.OnStartTouch += Drag;
-
-
-    }
-    private void Drag(Vector2 postition, float time)
+    public void OnDrag(Vector2 postition)
     {
         Debug.Log("Pressed at" + postition);
-        
     }
 
 }
