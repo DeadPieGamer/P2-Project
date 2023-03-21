@@ -5,9 +5,10 @@ using UnityEngine.UIElements;
 
 public class KO_Draggable : MonoBehaviour
 {
+    
     public void OnDrag(Vector2 postition)
     {
-        Debug.Log("Pressed at" + postition);
+        
     }
 
 }
