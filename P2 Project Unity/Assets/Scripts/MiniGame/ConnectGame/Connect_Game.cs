@@ -8,15 +8,15 @@ using UnityEngine.UI;
 
 public class Connect_Game : MonoBehaviour
 {
-    public TextMeshProUGUI wordText;
-    public Image wordPicture;
+    public TextMeshPro wordText;
+    public SpriteRenderer wordPicture;
     public AudioSource word_audiosource;
 
     private void Awake()
     {
 
-        wordPicture = GetComponent<Image>();
-        wordText = GetComponent<TextMeshProUGUI>();
+        wordPicture = GetComponent<SpriteRenderer>();
+        wordText = GetComponent<TextMeshPro>();
 
     }
 
