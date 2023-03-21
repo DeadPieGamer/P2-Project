@@ -9,7 +9,7 @@ using UnityEditor;
 
 public class DummyOutlineHandler : MonoBehaviour
 {
-    [SerializeField, Tooltip("Whether the sprite starts outlined"), InspectorName("Start Outlined")] private bool isOutlined = false;
+    [SerializeField, Tooltip("Whether the sprite starts outlined")] private bool isOutlined = false;
 
     // For finding the basic materials
     [Tooltip("Path to folder containing the material references")] private string materialPath = "Dummy/MaterialTesting/";
@@ -17,12 +17,12 @@ public class DummyOutlineHandler : MonoBehaviour
     [Tooltip("Name of the custom outlined material")] private string outlinedName = "Mat_FelixOutline";
 
     // Whether the advanced options should be used or not
-    [Space(), InspectorName("Use Advanced Options"), SerializeField, Tooltip("Whether to use advanced options")] private bool useAdvanced = false;
+    [Space(), SerializeField, Tooltip("Whether to use advanced options")] private bool useAdvanced = false;
     
     // Things changable in the Advanced Options menu
     [HideInInspector, SerializeField, Tooltip("The custom outlined material")] private Material outlinedMaterial;
     [HideInInspector, SerializeField, Tooltip("Scriptable object containing the basic Unity material")] private Material basicMaterial;
-    [HideInInspector, SerializeField, Tooltip("Functions to be called when this becomes outlined"), InspectorName("Outline Actions")] private BoolEvent outlineActions;
+    [HideInInspector, SerializeField, Tooltip("Functions to be called when this becomes outlined")] private BoolEvent outlineActions;
 
     // I don't care about the warning Unity wants to give me here, so I'll just ignore it
 #pragma warning disable 0414
