@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class ItemSlot : MonoBehaviour, IDropHandler
 {
+    // code from Code Monkey on youtube, link: https://www.youtube.com/watch?v=BGr-7GZJNXg
+
     public void OnDrop(PointerEventData eventData)
     {
         Debug.Log("OnDrop");

@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 
-// code from Code Mokey on youtube, link: https://www.youtube.com/watch?v=BGr-7GZJNXg
+// code from Code Monkey on youtube, link: https://www.youtube.com/watch?v=BGr-7GZJNXg
 
 {
     private RectTransform rectTransform; // Grab our RectTransform component
