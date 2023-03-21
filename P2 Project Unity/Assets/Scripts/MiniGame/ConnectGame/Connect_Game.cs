@@ -10,20 +10,21 @@ public class Connect_Game : MonoBehaviour
 {
     public TextMeshPro wordText;
     public SpriteRenderer wordPicture;
-    public AudioSource word_audiosource;
+    public AudioSource wordaudiosource;
 
     private void Awake()
     {
 
         wordPicture = GetComponent<SpriteRenderer>();
         wordText = GetComponent<TextMeshPro>();
+        wordaudiosource = GetComponent<AudioSource>();
 
     }
 
     public void setSprite(WordCards card)
     {
         wordPicture.sprite = card.word_Picture;
-        //word_audiosource.clip = card.word_Audio;
+        wordaudiosource.clip = card.word_Audio;
     }
     public void setWord(WordCards card)
     {

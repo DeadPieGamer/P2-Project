@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   danish_Word: Fisk
   word_Picture: {fileID: 21300000, guid: f01add42cffeb334398e435236388b87, type: 3}
-  word_Audio: {fileID: 0}
+  word_Audio: {fileID: 8300000, guid: 2fa548ff76ad34550b2e08b06a0a1d08, type: 3}
