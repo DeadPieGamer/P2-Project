@@ -21,7 +21,7 @@ public class InputManager : MonoBehaviour
 
 
     public delegate void ContinuousTouchEvent(Vector2 position);
-    public event ContinuousTouchEvent OnContinuedTouch;
+    [Tooltip("Called every frame, tells where the user is currently touching")] public event ContinuousTouchEvent OnContinuedTouch;
 
     // The above should be able to be replaced with the following
     //public event Action<Vector2, float> OnTouchStart;
