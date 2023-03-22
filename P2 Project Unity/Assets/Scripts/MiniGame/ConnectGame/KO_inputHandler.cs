@@ -31,6 +31,7 @@ public class KO_inputHandler : MonoBehaviour
                 Debug.Log(hit.collider.gameObject.name);
                 SelectedObject = hit.collider.gameObject;
                 inputManager.OnContinuedTouch += Dodrag;
+                Play_Audio();
 
             }
         }
