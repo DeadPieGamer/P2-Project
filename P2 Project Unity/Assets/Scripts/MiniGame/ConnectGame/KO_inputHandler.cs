@@ -8,7 +8,6 @@ public class KO_inputHandler : MonoBehaviour
 {
     private InputManager inputManager;
     private GameObject SelectedObject;
-    private bool isDragging;
     private AudioSource ObjectAudio;
 
     private void Start()
@@ -16,7 +15,6 @@ public class KO_inputHandler : MonoBehaviour
         inputManager = GameObject.FindGameObjectWithTag("Input Manager").GetComponent<InputManager>();
         inputManager.OnStartTouch += LaserBeam;
         inputManager.OnEndTouch += Lift;
-        isDragging = false;
         
     }
     private void LaserBeam(Vector2 postition, float time)
@@ -32,7 +30,6 @@ public class KO_inputHandler : MonoBehaviour
                 //hit.collider.GetComponent<KO_Draggable>().OnDrag(postition);
                 Debug.Log(hit.collider.gameObject.name);
                 SelectedObject = hit.collider.gameObject;
-                isDragging=true;
                 inputManager.OnContinuedTouch += Dodrag;
 
             }
