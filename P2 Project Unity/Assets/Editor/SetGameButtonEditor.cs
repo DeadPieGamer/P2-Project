@@ -17,7 +17,7 @@ public class SetGameButtonEditor : Editor
         switch (myScript.ButtonType)
         {
             case SetGameButton.EButtonType.PairNumberBtn:
-                myScript.PairNumber = (GameSettings.EPairNumber)EditorGUILayout.EnumPopup("Pair N umbers", myScript.PairNumber);
+                myScript.PairNumber = (GameSettings.EPairNumber)EditorGUILayout.EnumPopup("Pair Numbers", myScript.PairNumber);
                 break; 
             case SetGameButton.EButtonType.PuzzleCategoryBtn:
                 myScript.PiuzzlCategories = (GameSettings.EPuzzleCategories)EditorGUILayout.EnumPopup ("Puzzle Categories", myScript.PiuzzlCategories);
