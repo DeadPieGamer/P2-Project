@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   danish_Word: Kylling
   word_Picture: {fileID: 21300000, guid: 784d2e2de33d4a34a9cf24109cfac821, type: 3}
-  word_Audio: {fileID: 8300000, guid: 2e226b9f326ea48aca625da4c6d5e8c3, type: 3}
+  word_Audio: {fileID: 8300000, guid: 01f9230beb4b16946bbc382864347c51, type: 3}

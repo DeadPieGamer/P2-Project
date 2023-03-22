@@ -17,17 +17,17 @@ public class KO_inputHandler : MonoBehaviour
         inputManager.OnEndTouch += Lift;
         
     }
-    private void LaserBeam(Vector2 postition, float time)
+    private void LaserBeam(Vector2 InputPosition, float time)
     {
         
-        Ray ray = Camera.main.ScreenPointToRay(postition);
+        Ray ray = Camera.main.ScreenPointToRay(InputPosition);
         RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
         if (hit.collider != null)
         {
             
             if (hit.collider.CompareTag("Draggable"))
             {
-                //hit.collider.GetComponent<KO_Draggable>().OnDrag(postition);
+               
                 Debug.Log(hit.collider.gameObject.name);
                 SelectedObject = hit.collider.gameObject;
                 inputManager.OnContinuedTouch += Dodrag;
@@ -42,12 +42,12 @@ public class KO_inputHandler : MonoBehaviour
     }
     private void Play_Audio()
     {
-       
+       SelectedObject.GetComponent<AudioSource>().Play();
     }
 
-    private void Dodrag(Vector2 pos)
+    private void Dodrag(Vector2 inputPosition)
     {
-        Vector2 Pos = Camera.main.ScreenToWorldPoint(new Vector3(pos.x, pos.y));
+        Vector2 Pos = Camera.main.ScreenToWorldPoint(new Vector3(inputPosition.x, inputPosition.y));
         SelectedObject.transform.position = Pos;
     }
 
