@@ -11,6 +11,7 @@ public class Connect_Game : MonoBehaviour
     public TextMeshPro wordText;
     public SpriteRenderer wordPicture;
     public AudioSource wordaudiosource;
+    public WordCards AssignedCard;
 
     private void Awake()
     {
@@ -25,10 +26,11 @@ public class Connect_Game : MonoBehaviour
     {
         wordPicture.sprite = card.word_Picture;
         wordaudiosource.clip = card.word_Audio;
+        AssignedCard = card;
     }
     public void setWord(WordCards card)
     {
         wordText.text = card.danish_Word;
-        
+        AssignedCard = card;
     }
 }

@@ -38,8 +38,8 @@ public class KO_inputHandler : MonoBehaviour
     }
     private void Lift(Vector2 Pos,float time)
     {
-     
         inputManager.OnContinuedTouch -= Dodrag;
+        SelectedObject.GetComponent<KO_Draggable>().CollidingDetect();
     }
     private void Play_Audio()
     {
@@ -51,6 +51,5 @@ public class KO_inputHandler : MonoBehaviour
         Vector2 Pos = Camera.main.ScreenToWorldPoint(new Vector3(inputPosition.x, inputPosition.y));
         SelectedObject.transform.position = Pos;
     }
-
 
 }
