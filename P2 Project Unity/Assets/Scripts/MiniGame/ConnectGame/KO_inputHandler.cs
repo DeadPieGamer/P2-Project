@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
+using static UnityEditor.PlayerSettings;
 
 public class KO_inputHandler : MonoBehaviour
 {
@@ -15,10 +17,11 @@ public class KO_inputHandler : MonoBehaviour
         inputManager.OnStartTouch += LaserBeam;
         inputManager.OnEndTouch += Lift;
         isDragging = false;
+        
     }
     private void LaserBeam(Vector2 postition, float time)
     {
-        Vector3 Pos = Camera.main.ScreenToWorldPoint(new Vector3(postition.x,postition.y,10f));
+        
         Ray ray = Camera.main.ScreenPointToRay(postition);
         RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
         if (hit.collider != null)
@@ -30,26 +33,26 @@ public class KO_inputHandler : MonoBehaviour
                 Debug.Log(hit.collider.gameObject.name);
                 SelectedObject = hit.collider.gameObject;
                 isDragging=true;
-                
-            }
-            if (isDragging)
-            {
-                
-                SelectedObject.transform.position = Pos;
-                Debug.Log("Dragging");
+                inputManager.OnContinuedTouch += Dodrag;
+
             }
         }
     }
     private void Lift(Vector2 Pos,float time)
     {
-        isDragging = false;
-        Debug.Log("Stop Dragging");
+     
+        inputManager.OnContinuedTouch -= Dodrag;
     }
     private void Play_Audio()
     {
        
     }
 
+    private void Dodrag(Vector2 pos)
+    {
+        Vector2 Pos = Camera.main.ScreenToWorldPoint(new Vector3(pos.x, pos.y));
+        SelectedObject.transform.position = Pos;
+    }
 
 
 }
