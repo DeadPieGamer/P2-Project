@@ -19,9 +19,13 @@ public class InputManager : MonoBehaviour
     // This EndTouchEvent is repetitive and unneeded at the moment, as it does the exact same as the StartTouchEvent
     public event StartTouchEvent OnEndTouch;
 
+
+    public delegate void ContinuousTouchEvent(Vector2 position);
+    public event ContinuousTouchEvent OnContinuedTouch;
+
     // The above should be able to be replaced with the following
-    public event Action<Vector2, float> OnTouchStart;
-    public event Action<Vector2, float> OnTouchEnd;
+    //public event Action<Vector2, float> OnTouchStart;
+    //public event Action<Vector2, float> OnTouchEnd;
     // 'using System' at the start can be replaced with (System.). Actions are basically ready-made delegate voids (Line 22,23 can replace 13,15,19).
 
     // If we wish to be able to drag and drop events using the inspector, UnityEvents should be used in place of event.
@@ -57,6 +61,16 @@ public class InputManager : MonoBehaviour
 
         // When an input is registered to be stopped, get the context of the input, then call the EndTouch function and tell it that context
         touchControls.Touch.TouchPress.canceled += ctx => EndTouch(ctx);
+    }
+
+    // Update is called once per frame
+    private void Update()
+    {
+        // If there is a function subscribed to the continued touch, call it and feed it the touch location
+        if (OnContinuedTouch != null)
+        {
+            OnContinuedTouch(touchControls.Touch.TouchPosition.ReadValue<Vector2>());
+        }
     }
 
     /// <summary>
