@@ -7,6 +7,7 @@ public class KO_inputHandler : MonoBehaviour
     private InputManager inputManager;
     private GameObject SelectedObject;
     private bool isDragging;
+    private AudioSource ObjectAudio;
 
     private void Start()
     {
@@ -22,6 +23,7 @@ public class KO_inputHandler : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
         if (hit.collider != null)
         {
+            
             if (hit.collider.CompareTag("Draggable"))
             {
                 //hit.collider.GetComponent<KO_Draggable>().OnDrag(postition);
@@ -43,7 +45,10 @@ public class KO_inputHandler : MonoBehaviour
         isDragging = false;
         Debug.Log("Stop Dragging");
     }
-   
+    private void Play_Audio()
+    {
+       
+    }
 
 
 
