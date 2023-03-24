@@ -653,6 +653,18 @@ MonoBehaviour:
           m_StringArgument: SetGame
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 34783626}
+        m_TargetAssemblyTypeName: ButtonBehaviour, Assembly-CSharp
+        m_MethodName: ResetGameSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &431439166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -883,6 +895,7 @@ GameObject:
   - component: {fileID: 1607383675}
   - component: {fileID: 1607383674}
   - component: {fileID: 1607383673}
+  - component: {fileID: 1607383676}
   m_Layer: 5
   m_Name: MuteButton
   m_TagString: Untagged
@@ -953,7 +966,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1607383674}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1607383676}
+        m_TargetAssemblyTypeName: MuteSoundEffectButton, Assembly-CSharp
+        m_MethodName: ToggleFXIcon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1607383674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -992,6 +1017,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1607383671}
   m_CullTransparentMesh: 1
+--- !u!114 &1607383676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607383671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d13e5c84fdcd842d3907089c3b7f0521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UnMutedFXSprite: {fileID: 21300000, guid: d20fbeaabb14441acbd3119c40ed4ddb, type: 3}
+  MutedFXSprite: {fileID: 21300000, guid: b98916dca71354ee38e515c334fb88e6, type: 3}
 --- !u!1 &1636597223
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,6 +1208,10 @@ PrefabInstance:
     - target: {fileID: 2681264340291696104, guid: 1371911e1708d403685de4b9aa480c9f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 5941219599835971070, guid: 1371911e1708d403685de4b9aa480c9f, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6105833167713129979, guid: 1371911e1708d403685de4b9aa480c9f, type: 3}
       propertyPath: m_Name

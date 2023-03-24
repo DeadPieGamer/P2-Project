@@ -5,12 +5,13 @@ using UnityEngine;
 public class GameSettings : MonoBehaviour
 {
     private readonly Dictionary<EPuzzleCategories, string> _puzzleCatDirectory = new Dictionary<EPuzzleCategories, string>();//Storing the category name and folder 
-        private int _settings;
+    private int _settings;
     private const int SettingsNumber = 2;
+    private bool _muteFXPermanently = false;
 
     public enum EPairNumber
     {
-        NotSet = 0, 
+        NotSet = 0,
         E10Pairs = 10,
         E15Pairs = 15,
         E20Pairs = 20,
@@ -38,10 +39,10 @@ public class GameSettings : MonoBehaviour
     {
         if (Instance == null)
         {
-            DontDestroyOnLoad(target:this);
+            DontDestroyOnLoad(target: this);
             Instance = this;
         }
-       
+
         else
         {
             Destroy(obj: this);
@@ -105,8 +106,18 @@ public class GameSettings : MonoBehaviour
         {
             Debug.LogError("ERROR: CANNOT GET DIRECTORY NAME");
             return "";
-        } 
+        }
     }
+    public void MuteSoundEffectPermanently(bool muted)
+    {
+        _muteFXPermanently = muted;
+    }
+
+    public bool IsSoundMutedPermanently()
+    {
+        return _muteFXPermanently;
+    }
+
 }
 
 
