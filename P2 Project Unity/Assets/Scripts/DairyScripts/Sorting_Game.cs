@@ -1,18 +1,38 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Sorting_Game : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public TextMeshProUGUI wordText;
+    public Image wordPicture;
+    public AudioSource wordaudiosource;
+    public WordCards AssignedCard;
+
+    private void Awake()
     {
-        
+
+        wordPicture = GetComponent<Image>();
+        wordText = GetComponentInChildren<TextMeshProUGUI>();
+        wordaudiosource = GetComponent<AudioSource>();
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void setBottom(WordCards card)
     {
-        
+        wordPicture.sprite = card.word_Picture;
+        wordaudiosource.clip = card.word_Audio;
+        AssignedCard = card;
+    }
+    public void setTop(WordCards card)
+    {
+        wordPicture.sprite = card.word_Picture;
+        wordText.text = card.danish_Word;
+        wordaudiosource.clip = card.word_Audio;
+        AssignedCard = card;
     }
 }
