@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 76266021}
   - component: {fileID: 76266020}
   - component: {fileID: 76266019}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,6 +184,7 @@ MonoBehaviour:
   wordText: {fileID: 0}
   wordPicture: {fileID: 0}
   wordaudiosource: {fileID: 0}
+  AssignedCard: {fileID: 0}
 --- !u!114 &76266021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,7 +352,7 @@ GameObject:
   - component: {fileID: 84889304}
   - component: {fileID: 84889303}
   - component: {fileID: 84889302}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,6 +400,7 @@ MonoBehaviour:
   wordText: {fileID: 0}
   wordPicture: {fileID: 0}
   wordaudiosource: {fileID: 0}
+  AssignedCard: {fileID: 0}
 --- !u!114 &84889304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -641,7 +643,7 @@ GameObject:
   - component: {fileID: 151107319}
   - component: {fileID: 151107318}
   - component: {fileID: 151107317}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -689,6 +691,7 @@ MonoBehaviour:
   wordText: {fileID: 0}
   wordPicture: {fileID: 0}
   wordaudiosource: {fileID: 0}
+  AssignedCard: {fileID: 0}
 --- !u!114 &151107319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -857,7 +860,7 @@ GameObject:
   - component: {fileID: 186182415}
   - component: {fileID: 186182416}
   - component: {fileID: 186182417}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Card1
   m_TagString: Draggable
   m_Icon: {fileID: 0}
@@ -876,6 +879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318b8432552ddec4cb7c8a8e847be9bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCard: {fileID: 0}
 --- !u!212 &186182413
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -984,6 +988,7 @@ MonoBehaviour:
   wordText: {fileID: 0}
   wordPicture: {fileID: 0}
   wordaudiosource: {fileID: 0}
+  AssignedCard: {fileID: 0}
 --- !u!82 &186182417
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1094,7 +1099,7 @@ GameObject:
   - component: {fileID: 245660849}
   - component: {fileID: 245660853}
   - component: {fileID: 245660854}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Card2
   m_TagString: Draggable
   m_Icon: {fileID: 0}
@@ -1139,6 +1144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318b8432552ddec4cb7c8a8e847be9bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCard: {fileID: 0}
 --- !u!212 &245660851
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1221,6 +1227,7 @@ MonoBehaviour:
   wordText: {fileID: 0}
   wordPicture: {fileID: 0}
   wordaudiosource: {fileID: 0}
+  AssignedCard: {fileID: 0}
 --- !u!82 &245660854
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1468,6 +1475,7 @@ MonoBehaviour:
   wordText: {fileID: 0}
   wordPicture: {fileID: 0}
   wordaudiosource: {fileID: 0}
+  AssignedCard: {fileID: 0}
 --- !u!1 &309440897
 GameObject:
   m_ObjectHideFlags: 0
@@ -1619,6 +1627,7 @@ MonoBehaviour:
   wordText: {fileID: 0}
   wordPicture: {fileID: 0}
   wordaudiosource: {fileID: 0}
+  AssignedCard: {fileID: 0}
 --- !u!1 &372776598
 GameObject:
   m_ObjectHideFlags: 0
@@ -1632,7 +1641,7 @@ GameObject:
   - component: {fileID: 372776601}
   - component: {fileID: 372776600}
   - component: {fileID: 372776599}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1680,6 +1689,7 @@ MonoBehaviour:
   wordText: {fileID: 0}
   wordPicture: {fileID: 0}
   wordaudiosource: {fileID: 0}
+  AssignedCard: {fileID: 0}
 --- !u!114 &372776601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1928,6 +1938,7 @@ MonoBehaviour:
   wordText: {fileID: 0}
   wordPicture: {fileID: 0}
   wordaudiosource: {fileID: 0}
+  AssignedCard: {fileID: 0}
 --- !u!114 &377960153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1940,6 +1951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318b8432552ddec4cb7c8a8e847be9bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCard: {fileID: 0}
 --- !u!61 &377960154
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2228,6 +2240,7 @@ MonoBehaviour:
   wordText: {fileID: 0}
   wordPicture: {fileID: 0}
   wordaudiosource: {fileID: 0}
+  AssignedCard: {fileID: 0}
 --- !u!114 &810934878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2240,6 +2253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318b8432552ddec4cb7c8a8e847be9bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCard: {fileID: 0}
 --- !u!61 &810934879
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2326,6 +2340,7 @@ MonoBehaviour:
   - {fileID: 257709501}
   - {fileID: 937404489}
   - {fileID: 309440897}
+  Setamount: 4
 --- !u!1 &937404489
 GameObject:
   m_ObjectHideFlags: 0
@@ -2477,6 +2492,7 @@ MonoBehaviour:
   wordText: {fileID: 0}
   wordPicture: {fileID: 0}
   wordaudiosource: {fileID: 0}
+  AssignedCard: {fileID: 0}
 --- !u!1 &961928102
 GameObject:
   m_ObjectHideFlags: 0
@@ -2824,6 +2840,7 @@ MonoBehaviour:
   wordText: {fileID: 0}
   wordPicture: {fileID: 0}
   wordaudiosource: {fileID: 0}
+  AssignedCard: {fileID: 0}
 --- !u!1 &1205176843
 GameObject:
   m_ObjectHideFlags: 0
@@ -2986,6 +3003,7 @@ MonoBehaviour:
   wordText: {fileID: 0}
   wordPicture: {fileID: 0}
   wordaudiosource: {fileID: 0}
+  AssignedCard: {fileID: 0}
 --- !u!114 &1459026433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2998,6 +3016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318b8432552ddec4cb7c8a8e847be9bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCard: {fileID: 0}
 --- !u!61 &1459026434
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3082,7 +3101,7 @@ GameObject:
   - component: {fileID: 1480459664}
   - component: {fileID: 1480459668}
   - component: {fileID: 1480459669}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Card3
   m_TagString: Draggable
   m_Icon: {fileID: 0}
@@ -3127,6 +3146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318b8432552ddec4cb7c8a8e847be9bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCard: {fileID: 0}
 --- !u!212 &1480459666
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3209,6 +3229,7 @@ MonoBehaviour:
   wordText: {fileID: 0}
   wordPicture: {fileID: 0}
   wordaudiosource: {fileID: 0}
+  AssignedCard: {fileID: 0}
 --- !u!82 &1480459669
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3395,7 +3416,7 @@ GameObject:
   - component: {fileID: 1552727805}
   - component: {fileID: 1552727809}
   - component: {fileID: 1552727810}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Card4
   m_TagString: Draggable
   m_Icon: {fileID: 0}
@@ -3440,6 +3461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318b8432552ddec4cb7c8a8e847be9bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCard: {fileID: 0}
 --- !u!212 &1552727807
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3522,6 +3544,7 @@ MonoBehaviour:
   wordText: {fileID: 0}
   wordPicture: {fileID: 0}
   wordaudiosource: {fileID: 0}
+  AssignedCard: {fileID: 0}
 --- !u!82 &1552727810
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3842,6 +3865,7 @@ MonoBehaviour:
   wordText: {fileID: 0}
   wordPicture: {fileID: 0}
   wordaudiosource: {fileID: 0}
+  AssignedCard: {fileID: 0}
 --- !u!114 &1877476005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3854,6 +3878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318b8432552ddec4cb7c8a8e847be9bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCard: {fileID: 0}
 --- !u!61 &1877476006
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3922,6 +3947,7 @@ MonoBehaviour:
   - {fileID: 372776598}
   - {fileID: 151107316}
   - {fileID: 76266018}
+  Setamount: 4
 --- !u!4 &1906504281
 Transform:
   m_ObjectHideFlags: 0

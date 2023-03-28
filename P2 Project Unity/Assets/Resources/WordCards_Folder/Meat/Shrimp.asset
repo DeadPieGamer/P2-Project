@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5722ad76733d1144894a2ccb177f4e70, type: 3}
   m_Name: Shrimp
   m_EditorClassIdentifier: 
-  danish_Word: 
-  word_Picture: {fileID: 0}
+  danish_Word: Rejer
+  word_Picture: {fileID: 21300000, guid: b376e7e6ccf001644b800bcfd9d38ab5, type: 3}
   word_Audio: {fileID: 0}

@@ -7,10 +7,17 @@ public class KO_Draggable : MonoBehaviour
 {
     public WordCards myCard;
     private GameObject hitObject;
+    private BoxCollider2D coll;
+
+    private void Start()
+    {
+        myCard = GetComponent<Connect_Game>().AssignedCard;
+        coll = GetComponent<BoxCollider2D>();
+    }
 
     public void CollidingDetect()
     {
-        RaycastHit2D hit = Physics2D.CircleCast(transform.position, 100f, Vector2.zero);
+        RaycastHit2D hit = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size,0f , Vector2.zero);
         if (hit.collider != null)
         {
             hitObject = hit.collider.gameObject;
@@ -37,4 +44,6 @@ public class KO_Draggable : MonoBehaviour
         Debug.Log("inCorrect");
 
     }
+
+    
 }
