@@ -13,17 +13,18 @@ public class Connect_Cards : MonoBehaviour
 
     [SerializeField] private GameObject[] avaiableLeftIndex;
     [SerializeField] private GameObject[] avaiableRightIndex;
+    [SerializeField] private int Setamount = 4;
 
     private void Awake()
     {
        avaiableRightIndex = Shuffle_Array(avaiableRightIndex);
-        avaiableLeftIndex = Shuffle_Array(avaiableLeftIndex);
+       avaiableLeftIndex = Shuffle_Array(avaiableLeftIndex);
     }
     private void Start()
     {
         usingSet = CardSetLoader.Get_Set(SetTypes.Meat);
 
-        while (avaiableSet.Count < 4)
+        while (avaiableSet.Count < Setamount)
         {
             int randomCard = Random.Range(0, usingSet.Length);
 
@@ -33,7 +34,7 @@ public class Connect_Cards : MonoBehaviour
             }
         }
 
-       for (int i = 0; i < avaiableSet.Count; i++)
+       for (int i = 0; i < Setamount; i++)
         {
             avaiableLeftIndex[i].GetComponent<Connect_Game>().setSprite(avaiableSet[i]);
             avaiableRightIndex[i].GetComponent<Connect_Game>().setWord(avaiableSet[i]);
