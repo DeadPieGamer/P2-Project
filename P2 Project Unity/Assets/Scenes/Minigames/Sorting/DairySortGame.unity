@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 292339294}
   - component: {fileID: 292339297}
   - component: {fileID: 292339298}
+  - component: {fileID: 292339301}
   - component: {fileID: 292339299}
   - component: {fileID: 292339300}
   m_Layer: 0
@@ -158,7 +159,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1541028046}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -339,6 +340,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &292339301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292339292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4704e52bfd83584780141a209d9858d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myItem: {fileID: 11400000, guid: aa5f6c755a363cf46b9af1f1a5b80498, type: 2}
 --- !u!1 &323610539
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75092937e2f81574f834b7127525aff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 
+  shelfItem: {fileID: 11400000, guid: aa5f6c755a363cf46b9af1f1a5b80498, type: 2}
 --- !u!114 &323610542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -891,7 +905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75092937e2f81574f834b7127525aff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 
+  shelfItem: {fileID: 0}
 --- !u!114 &518150487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1308,6 +1322,7 @@ GameObject:
   - component: {fileID: 943869861}
   - component: {fileID: 943869860}
   - component: {fileID: 943869863}
+  - component: {fileID: 943869866}
   - component: {fileID: 943869864}
   - component: {fileID: 943869865}
   m_Layer: 5
@@ -1330,7 +1345,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1541028046}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1511,6 +1526,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &943869866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943869858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4704e52bfd83584780141a209d9858d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myItem: {fileID: 0}
 --- !u!1 &957727731
 GameObject:
   m_ObjectHideFlags: 0
@@ -2018,9 +2046,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 292339293}
   - {fileID: 943869859}
   - {fileID: 1856669701}
+  - {fileID: 292339293}
   m_Father: {fileID: 2032989826}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2347,7 +2375,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1541028046}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2428,7 +2456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4704e52bfd83584780141a209d9858d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 
+  myItem: {fileID: 0}
 --- !u!114 &1856669707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2800,7 +2828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75092937e2f81574f834b7127525aff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 
+  shelfItem: {fileID: 0}
 --- !u!114 &2070198828
 MonoBehaviour:
   m_ObjectHideFlags: 0

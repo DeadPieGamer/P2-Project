@@ -6,13 +6,13 @@ using UnityEngine.EventSystems;
 public class ItemSlot : MonoBehaviour, IDropHandler
 {
     // code from Code Monkey on youtube, link: https://www.youtube.com/watch?v=BGr-7GZJNXg
-    public string Id;
+    public WordCards shelfItem;
 
-    private string droppedItemId = string.Empty;
+    private WordCards droppedItemId;
 
     public bool IsCorrect()
     {
-         return Id == droppedItemId;
+         return shelfItem == droppedItemId;
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -26,7 +26,15 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
             if (Items != null)
             {
-                droppedItemId = Items.Id;
+                droppedItemId = Items.myItem;
+                if (IsCorrect())
+                {
+                    Debug.Log("They're the same");
+                }
+                else
+                {
+                    Debug.Log("They're different");
+                }
             }
             else
             {
