@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Felix.Events;
 
 #if UNITY_EDITOR
@@ -64,7 +65,14 @@ public class DummyOutlineHandler : MonoBehaviour
     {
         isOutlined = activateOutline;
 
-        GetComponent<Renderer>().material = isOutlined ? outlinedMaterial : basicMaterial;
+        if (GetComponent<Renderer>() != null)
+        {
+            GetComponent<Renderer>().material = isOutlined ? outlinedMaterial : basicMaterial;
+        }
+        else
+        {
+            GetComponent<Image>().material = isOutlined ? outlinedMaterial : basicMaterial;
+        }
 
         // If using advanced, trigger outlineActions
         if (useAdvanced)
