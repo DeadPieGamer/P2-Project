@@ -10,6 +10,8 @@ public class KO_inputHandler : MonoBehaviour
     private GameObject SelectedObject;
     private AudioSource ObjectAudio;
 
+    [SerializeField] private LayerMask layersToHit;
+
     private void Start()
     {
         inputManager = GameObject.FindGameObjectWithTag("Input Manager").GetComponent<InputManager>();
@@ -21,7 +23,7 @@ public class KO_inputHandler : MonoBehaviour
     {
         
         Ray ray = Camera.main.ScreenPointToRay(InputPosition);
-        RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
+        RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity, layersToHit);
         if (hit.collider != null)
         {
             
@@ -39,7 +41,11 @@ public class KO_inputHandler : MonoBehaviour
     private void Lift(Vector2 Pos,float time)
     {
         inputManager.OnContinuedTouch -= Dodrag;
-        SelectedObject.GetComponent<KO_Draggable>().CollidingDetect();
+        if (SelectedObject != null)
+        {
+            SelectedObject.GetComponent<KO_Draggable>().CollidingDetect();
+            SelectedObject = null;
+        }
     }
     private void Play_Audio()
     {

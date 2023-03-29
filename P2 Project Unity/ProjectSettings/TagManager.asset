@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Input Manager
   - Draggable
+  - DanishWord
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - Water
   - UI
   - Game
-  - 
+  - DanishWord
   - 
   - 
   - 
