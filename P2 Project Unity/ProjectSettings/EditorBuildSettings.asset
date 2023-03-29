@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigames/Pairmatcinggame/GameScene.unity
     guid: ad56e94ffab2740fb86d7d9b06da4908
+  - enabled: 1
+    path: Assets/Scenes/Minigames/Pairmatcinggame/ScoresScene.unity
+    guid: 2109bbc411f294688af2ed6e1741e68c
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: d7e3c8c037399ab4bb833e5d2aabf24e, type: 2}
