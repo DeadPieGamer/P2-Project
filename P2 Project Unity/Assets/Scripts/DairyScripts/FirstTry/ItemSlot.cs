@@ -10,10 +10,14 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
     private WordCards droppedItemId;
 
+    private Vector2 startPos;
+
     public bool IsCorrect()
     {
          return shelfItem == droppedItemId;
     }
+
+
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -34,6 +38,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                 else
                 {
                     Debug.Log("They're different");
+                    Items.moveBack();
                 }
             }
             else

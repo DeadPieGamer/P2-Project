@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Input Manager
-  - Draggable
   - DanishWord
+  - Undrag
   layers:
   - Default
   - TransparentFX

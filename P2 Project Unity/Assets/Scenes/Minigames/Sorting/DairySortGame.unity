@@ -159,11 +159,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1541028046}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -106.4, y: -182.9}
+  m_AnchoredPosition: {x: -106.400345, y: -182.89998}
   m_SizeDelta: {x: 3.0057, y: 3.0286}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &292339294
@@ -353,6 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myItem: {fileID: 11400000, guid: aa5f6c755a363cf46b9af1f1a5b80498, type: 2}
+  startPos: {x: 0, y: 0}
 --- !u!1 &323610539
 GameObject:
   m_ObjectHideFlags: 0
@@ -1345,11 +1346,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1541028046}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17.3, y: -182.6}
+  m_AnchoredPosition: {x: -17.300013, y: -182.60054}
   m_SizeDelta: {x: 74.0762, y: 76.109}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &943869860
@@ -1539,6 +1540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myItem: {fileID: 0}
+  startPos: {x: 0, y: 0}
 --- !u!1 &957727731
 GameObject:
   m_ObjectHideFlags: 0
@@ -2046,9 +2048,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 292339293}
   - {fileID: 943869859}
   - {fileID: 1856669701}
-  - {fileID: 292339293}
   m_Father: {fileID: 2032989826}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2375,11 +2377,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1541028046}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 68.9, y: -183.6}
+  m_AnchoredPosition: {x: 68.9, y: -183.59996}
   m_SizeDelta: {x: 74.7185, y: 77.4344}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1856669702
@@ -2457,6 +2459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myItem: {fileID: 0}
+  startPos: {x: 0, y: 0}
 --- !u!114 &1856669707
 MonoBehaviour:
   m_ObjectHideFlags: 0
