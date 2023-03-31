@@ -1026,7 +1026,7 @@ MonoBehaviour:
   isOutlined: 1
   useAdvanced: 1
   outlinedMaterial: {fileID: 2100000, guid: 0ec9891f3ea8f5f4dbb58476581a87c0, type: 2}
-  basicMaterial: {fileID: 0}
+  basicMaterial: {fileID: 2100000, guid: b6634d04f48153c4aa24cc883f2e04a1, type: 2}
   outlineActions:
     m_PersistentCalls:
       m_Calls: []
