@@ -8,7 +8,7 @@ public class KO_inputHandler : MonoBehaviour
 {
     private InputManager inputManager;
     private GameObject SelectedObject;
-    private AudioSource ObjectAudio;
+    private Vector2 startPos;
 
     [SerializeField] private LayerMask layersToHit;
 
@@ -18,6 +18,7 @@ public class KO_inputHandler : MonoBehaviour
         inputManager.OnStartTouch += LaserBeam;
         inputManager.OnEndTouch += Lift;
         
+
     }
     private void LaserBeam(Vector2 InputPosition, float time)
     {
@@ -32,6 +33,7 @@ public class KO_inputHandler : MonoBehaviour
                
                 Debug.Log(hit.collider.gameObject.name);
                 SelectedObject = hit.collider.gameObject;
+                startPos = SelectedObject.transform.parent.position;
                 inputManager.OnContinuedTouch += Dodrag;
                 Play_Audio();
 
@@ -56,6 +58,12 @@ public class KO_inputHandler : MonoBehaviour
     {
         Vector2 Pos = Camera.main.ScreenToWorldPoint(new Vector3(inputPosition.x, inputPosition.y));
         SelectedObject.transform.position = Pos;
+
+        Vector3 Direction = Pos - startPos;
+        SelectedObject.transform.right = Direction;
+
+        float dist = Vector2.Distance(startPos,Pos);
+        //SelectedObject.size = new Vector2(dist, SelectedObject.size.y);
     }
 
 }

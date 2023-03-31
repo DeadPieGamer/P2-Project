@@ -12,7 +12,7 @@ public class KO_Draggable : MonoBehaviour
 
     [SerializeField] private LayerMask layersToHit;
 
-    [SerializeField] private bool drawStuff = false;
+    //[SerializeField] private bool drawStuff = false;
 
     private void Start()
     {
@@ -59,13 +59,13 @@ public class KO_Draggable : MonoBehaviour
 
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        if (drawStuff)
-            Gizmos.DrawWireCube(coll.bounds.center, coll.bounds.size + PlusSize);
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    if (drawStuff)
+    //        Gizmos.DrawWireCube(coll.bounds.center, coll.bounds.size + PlusSize);
 
-    }
+    //}
 
 
 }
