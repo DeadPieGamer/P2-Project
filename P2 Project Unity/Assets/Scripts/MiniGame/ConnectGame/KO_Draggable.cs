@@ -9,8 +9,9 @@ public class KO_Draggable : MonoBehaviour
     private GameObject hitObject;
     private BoxCollider2D coll;
     private Vector3 PlusSize = new Vector3(0f, 0f,0f);
-
+    private Vector2 startPos;
     [SerializeField] private LayerMask layersToHit;
+    private LineRenderer lineRenderer;
 
     //[SerializeField] private bool drawStuff = false;
 
@@ -18,7 +19,8 @@ public class KO_Draggable : MonoBehaviour
     {
         myCard = GetComponent<Connect_Game>().AssignedCard;
         coll = GetComponent<BoxCollider2D>();
-
+        startPos = this.transform.parent.position;
+        lineRenderer = transform.parent.GetComponentInChildren<LineRenderer>();
     }
 
     public void CollidingDetect()
@@ -50,13 +52,16 @@ public class KO_Draggable : MonoBehaviour
     {
 
     Debug.Log("Correct");
-        
-
+        this.gameObject.tag = "Untagged";
+        this.transform.position = hitObject.transform.position;
+        lineRenderer.SetPosition(1, transform.position - transform.parent.position-(0.5f * Vector3.right));
     }
     private void inCorrect()
     {
 
         Debug.Log("inCorrect");
+        this.transform.position = startPos + (0.5f * Vector2.right);
+        lineRenderer.SetPosition(1, transform.position - transform.parent.position - (0.5f * Vector3.right));
 
     }
 
