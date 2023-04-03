@@ -457,7 +457,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 82221211}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 11}
+  m_LocalPosition: {x: -300, y: 500, z: 11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1284,7 +1284,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0280eaf841f264618889eee394d76866, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ecdd54a90287d429a8add875ee0218e1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1643,7 +1643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PicturePrefab: {fileID: 3013924302805217956, guid: 1371911e1708d403685de4b9aa480c9f, type: 3}
   PicSpawnPosition: {fileID: 82221212}
-  StartPosition: {x: -2.15, y: 3.62, z: 0}
+  StartPosition: {x: -350, y: 500, z: 0}
   EndGamePanel: {fileID: 1558660256}
   NewBestScoreText: {fileID: 125292847}
   YourScoreText: {fileID: 541196628}
@@ -1660,7 +1660,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1636597223}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 11}
+  m_LocalPosition: {x: -350, y: 500, z: 11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

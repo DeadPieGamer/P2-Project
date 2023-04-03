@@ -7,7 +7,7 @@ public class PictureManager : MonoBehaviour
 {
     public Picture PicturePrefab;
     public Transform PicSpawnPosition;
-    public Vector3 StartPosition = new Vector3(-400.15f, 600.62f, 0);
+    public Vector3 StartPosition = new Vector3(-400f, 700f, 0);
 
     [Space]
     [Header("End Game Screen")]
@@ -36,11 +36,11 @@ public class PictureManager : MonoBehaviour
     [HideInInspector]
     public List<Picture> PictureList;
 
-    private Vector3 _offset = new Vector3(150f, 152f, 0);
-    private Vector3 _offsetFor15pairs = new Vector3(105f, 120f, 0);
-    private Vector3 _offsetFor20pairs = new Vector3(105f, 100f, 0);
+    private Vector3 _offset = new Vector3(205f, 250f, 0);
+    private Vector3 _offsetFor15pairs = new Vector3(205f, 220f, 0);
+    private Vector3 _offsetFor20pairs = new Vector3(205f, 180f, 0);
 
-    private Vector3 _newScaleDown = new Vector3(90f, 90f, 0.001f);
+    private Vector3 _newScaleDown = new Vector3(200f, 200f, 0.001f);
 
     private List<Material> _materialList = new List<Material>();
     private List<string> _texturePathList = new List<string>();
@@ -317,7 +317,7 @@ public class PictureManager : MonoBehaviour
     }
     private IEnumerator MoveToPosition(Vector3 target, Picture obj)
     {
-        var randomDis = 140;
+        var randomDis = 400;
 
         while (obj.transform.position != target)
         {

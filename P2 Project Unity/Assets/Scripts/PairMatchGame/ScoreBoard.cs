@@ -40,7 +40,10 @@ public class ScoreBoard : MonoBehaviour
                 float seconds = Mathf.RoundToInt(scoreTimeList[index] % 60);
 
                 scoreText[index].text = minutes.ToString("00") + ":" + seconds.ToString("00");
-                dataText[index].text = deltaTime[0] + "" + deltaTime[1];
+                if (dataText.Length >= 2)
+                {
+                    dataText[index].text = deltaTime[0] + "" + deltaTime[1];
+                }
             }
             else 
             {
