@@ -13,13 +13,13 @@ public class Sorting_Game : MonoBehaviour
     public AudioSource wordaudiosource;
     public WordCards AssignedCard;
 
+
     private void Awake()
     {
 
         wordPicture = GetComponent<Image>();
         wordText = GetComponentInChildren<TextMeshProUGUI>();
         wordaudiosource = GetComponent<AudioSource>();
-
     }
 
     public void setBottom(WordCards card)

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -9,30 +10,28 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     public WordCards shelfItem;
 
     private WordCards droppedItemId;
-
+    private Sorting_PointChecker checker;
     private Vector2 startPos;
 
-    private int points = 0;
+    private void Start()
+    {
+        checker = GameObject.FindGameObjectWithTag("checker").GetComponent<Sorting_PointChecker>();
+    }
+    
 
     public bool IsCorrect()
     {
-         return shelfItem == droppedItemId;
+        return shelfItem == droppedItemId;
     }
 
-    private void Update()
-    {
-        if (points >= 3)
-        {
-            Debug.Log("You won");
-        }
-    }
 
     public void OnDrop(PointerEventData eventData)
     {
-        //Debug.Log("OnDrop");
+        Debug.Log("OnDrop");
         if (eventData.pointerDrag != null) // this is the gameobject that is currently being dragged and do a little test to see if it is not null, 
         {
-            if (CompareTag("Undrag")) return;
+            // To avoid moving already correct items
+            if (eventData.pointerDrag.CompareTag("Undrag")) return;
 
             // then lets take it, get the component of RectTransform and set the anchorposition to this anchored position
             eventData.pointerDrag.GetComponent<RectTransform>() .anchoredPosition = GetComponent<RectTransform>().anchoredPosition; // With This our items should snap into position when we drop it near the itemslot
@@ -42,12 +41,13 @@ public class ItemSlot : MonoBehaviour, IDropHandler
             if (Items != null)
             {
                 droppedItemId = Items.myItem;
+
                 if (IsCorrect())
                 {
                     Debug.Log("They're the same");
                     Items.tag = "Undrag";
                     Debug.Log(Items.tag);
-                    points += 1;
+                    checker.AddPoints(1);
                 }
                 else
                 {

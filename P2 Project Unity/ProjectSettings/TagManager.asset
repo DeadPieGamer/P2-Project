@@ -9,6 +9,7 @@ TagManager:
   - Undrag
   - Undefined
   - Draggable
+  - checker
   layers:
   - Default
   - TransparentFX
