@@ -7,6 +7,8 @@ TagManager:
   - Input Manager
   - DanishWord
   - Undrag
+  - Undefined
+  - Draggable
   layers:
   - Default
   - TransparentFX

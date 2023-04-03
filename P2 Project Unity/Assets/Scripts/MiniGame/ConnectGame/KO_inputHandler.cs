@@ -51,7 +51,7 @@ public class KO_inputHandler : MonoBehaviour
     }
     private void Play_Audio()
     {
-       SelectedObject.GetComponent<AudioSource>().Play();
+       SelectedObject.GetComponentInParent<AudioSource>().Play();
     }
 
     private void Dodrag(Vector2 inputPosition)

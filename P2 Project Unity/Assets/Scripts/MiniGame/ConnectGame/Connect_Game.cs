@@ -16,7 +16,7 @@ public class Connect_Game : MonoBehaviour
     private void Awake()
     {
 
-        wordPicture = transform.parent.GetComponent<SpriteRenderer>();
+        //wordPicture = transform.parent.GetComponent<SpriteRenderer>();
         wordText = GetComponent<TextMeshPro>();
         wordaudiosource = GetComponent<AudioSource>();
 

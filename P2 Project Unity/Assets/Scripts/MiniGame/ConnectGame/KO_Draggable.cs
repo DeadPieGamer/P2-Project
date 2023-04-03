@@ -50,6 +50,7 @@ public class KO_Draggable : MonoBehaviour
     {
 
     Debug.Log("Correct");
+        
 
     }
     private void inCorrect()
