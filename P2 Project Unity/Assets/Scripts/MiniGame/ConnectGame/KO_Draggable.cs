@@ -23,7 +23,7 @@ public class KO_Draggable : MonoBehaviour
 
     public void CollidingDetect()
     {
-        RaycastHit2D hit = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size+PlusSize,0f , Vector2.zero, Mathf.Infinity, layersToHit);
+        RaycastHit2D hit = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size + PlusSize,0f , Vector2.zero, Mathf.Infinity, layersToHit);
         if (hit.collider != null)
         {
             if (hit.collider.CompareTag("DanishWord"))

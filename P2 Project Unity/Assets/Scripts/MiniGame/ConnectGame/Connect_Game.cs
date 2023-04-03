@@ -12,7 +12,6 @@ public class Connect_Game : MonoBehaviour
     public SpriteRenderer wordPicture;
     public AudioSource wordaudiosource;
     public WordCards AssignedCard;
-    //public SpriteRenderer connectorSprite;
 
     private void Awake()
     {

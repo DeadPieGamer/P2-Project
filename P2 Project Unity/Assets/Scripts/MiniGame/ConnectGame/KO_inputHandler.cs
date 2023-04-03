@@ -10,6 +10,8 @@ public class KO_inputHandler : MonoBehaviour
     private GameObject SelectedObject;
     private Vector2 startPos;
 
+    private LineRenderer lineRenderer;
+
     [SerializeField] private LayerMask layersToHit;
 
     private void Start()
@@ -56,14 +58,17 @@ public class KO_inputHandler : MonoBehaviour
 
     private void Dodrag(Vector2 inputPosition)
     {
-        Vector2 Pos = Camera.main.ScreenToWorldPoint(new Vector3(inputPosition.x, inputPosition.y));
+        Vector2 Pos = Camera.main.ScreenToWorldPoint(new Vector2(inputPosition.x, inputPosition.y));
         SelectedObject.transform.position = Pos;
 
-        Vector3 Direction = Pos - startPos;
+        Vector2 Direction = Pos - startPos;
         SelectedObject.transform.right = Direction;
 
-        float dist = Vector2.Distance(startPos,Pos);
-        SelectedObject.transform.localScale = new Vector3(dist,0.33f,1);
+        
+        
+        lineRenderer = SelectedObject.transform.parent.GetComponentInChildren<LineRenderer>();
+        lineRenderer.SetPosition(1, Direction - (0.5f * Vector2.right));
+        
     }
 
 }
