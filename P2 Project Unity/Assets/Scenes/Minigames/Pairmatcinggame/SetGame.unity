@@ -566,7 +566,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f6234c6f49ba342b5b63b0ec0e7fdec0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2965b2ac8e357284c8512f6c1b33d6d1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1610,7 +1610,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Menu_MatchGame
+          m_StringArgument: MainGame
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1572400619
