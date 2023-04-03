@@ -12,16 +12,24 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
     private Vector2 startPos;
 
+    private int points = 0;
+
     public bool IsCorrect()
     {
          return shelfItem == droppedItemId;
     }
 
-
+    private void Update()
+    {
+        if (points >= 3)
+        {
+            Debug.Log("You won");
+        }
+    }
 
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log("OnDrop");
+        //Debug.Log("OnDrop");
         if (eventData.pointerDrag != null) // this is the gameobject that is currently being dragged and do a little test to see if it is not null, 
         {
             if (CompareTag("Undrag")) return;
@@ -38,7 +46,8 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                 {
                     Debug.Log("They're the same");
                     Items.tag = "Undrag";
-                    Debug.Log(Items.tag);   
+                    Debug.Log(Items.tag);
+                    points += 1;
                 }
                 else
                 {
