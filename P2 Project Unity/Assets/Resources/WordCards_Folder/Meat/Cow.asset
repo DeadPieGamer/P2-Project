@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Cow
   m_EditorClassIdentifier: 
   danish_Word: "Oksek\xF8d"
-  word_Picture: {fileID: 21300000, guid: 7d038e8c056924c448e8ab517d97989f, type: 3}
-  word_Audio: {fileID: 8300000, guid: 7cb06a510264a9c40b2d89b34331a399, type: 3}
+  word_Picture: {fileID: 21300000, guid: 5ceb6d1650d1fb740b98290fa06a9b14, type: 3}
+  word_Audioclips: []
