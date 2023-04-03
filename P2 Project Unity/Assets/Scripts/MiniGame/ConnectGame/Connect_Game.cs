@@ -12,11 +12,12 @@ public class Connect_Game : MonoBehaviour
     public SpriteRenderer wordPicture;
     public AudioSource wordaudiosource;
     public WordCards AssignedCard;
+    //public SpriteRenderer connectorSprite;
 
     private void Awake()
     {
 
-        //wordPicture = transform.parent.GetComponent<SpriteRenderer>();
+        //connectorSprite = GetComponent<SpriteRenderer>();
         wordText = GetComponent<TextMeshPro>();
         wordaudiosource = GetComponent<AudioSource>();
 
@@ -26,6 +27,7 @@ public class Connect_Game : MonoBehaviour
     {
         wordPicture.sprite = card.word_Picture;
         wordaudiosource.clip = card.word_Audio;
+        //connectorSprite.sprite = card.word_Picture;
         AssignedCard = card;
         GetComponent<KO_Draggable>().myCard = card;
     }

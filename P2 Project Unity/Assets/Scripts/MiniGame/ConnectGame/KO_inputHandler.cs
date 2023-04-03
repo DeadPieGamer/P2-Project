@@ -51,7 +51,7 @@ public class KO_inputHandler : MonoBehaviour
     }
     private void Play_Audio()
     {
-       SelectedObject.GetComponentInParent<AudioSource>().Play();
+       SelectedObject.GetComponent<AudioSource>().Play();
     }
 
     private void Dodrag(Vector2 inputPosition)
@@ -63,7 +63,7 @@ public class KO_inputHandler : MonoBehaviour
         SelectedObject.transform.right = Direction;
 
         float dist = Vector2.Distance(startPos,Pos);
-        //SelectedObject.size = new Vector2(dist, SelectedObject.size.y);
+        SelectedObject.transform.localScale = new Vector3(dist,0.33f,1);
     }
 
 }
