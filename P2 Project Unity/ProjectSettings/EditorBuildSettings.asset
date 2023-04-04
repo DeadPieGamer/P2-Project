@@ -23,5 +23,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigames/Sorting/DairySortGame.unity
     guid: cc7a362d8e27eb849a85bf008ffa4b82
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: 3f2e5cbc5b6685b4d87e24c7551e6a9a
+  - enabled: 1
+    path: Assets/Scenes/Dictionary.unity
+    guid: f5e07ee7fe3465a4cb87f6737224b94c
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: d7e3c8c037399ab4bb833e5d2aabf24e, type: 2}
