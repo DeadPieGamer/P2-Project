@@ -54,14 +54,14 @@ public class KO_Draggable : MonoBehaviour
     Debug.Log("Correct");
         this.gameObject.tag = "Untagged";
         this.transform.position = hitObject.transform.position;
-        lineRenderer.SetPosition(1, transform.position - transform.parent.position-(0.5f * Vector3.right));
+        lineRenderer.SetPosition(1, transform.position - transform.parent.position);
     }
     private void inCorrect()
     {
 
         Debug.Log("inCorrect");
-        this.transform.position = startPos + (0.5f * Vector2.right);
-        lineRenderer.SetPosition(1, transform.position - transform.parent.position - (0.5f * Vector3.right));
+        this.transform.position = startPos;
+        lineRenderer.SetPosition(1, transform.position - transform.parent.position);
 
     }
 

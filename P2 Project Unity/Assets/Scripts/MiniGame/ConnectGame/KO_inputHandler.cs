@@ -65,7 +65,7 @@ public class KO_inputHandler : MonoBehaviour
         SelectedObject.transform.right = Direction;
         
         lineRenderer = SelectedObject.transform.parent.GetComponentInChildren<LineRenderer>();
-        lineRenderer.SetPosition(1, Direction - (0.5f * Vector2.right));
+        lineRenderer.SetPosition(1, Direction);
         
     }
 
