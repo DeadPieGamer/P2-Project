@@ -15,7 +15,7 @@ public class KO_PointChecker : MonoBehaviour
     public void AddPoints(int amount)
     {
         points += amount;
-        if (points >= 3)
+        if (points >= 4)
         {
             Debug.Log("You won");
             wonMenu.SetActive(true);

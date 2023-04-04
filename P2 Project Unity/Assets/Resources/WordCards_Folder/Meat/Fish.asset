@@ -15,4 +15,6 @@ MonoBehaviour:
   danish_Word: Fisk
   word_Picture: {fileID: 21300000, guid: 26be5914d761d41488bb0722eb3d1816, type: 3}
   word_Audioclips:
-  - {fileID: 8300000, guid: b3fba58ed1afc7c43a4c44ebcfb8c8d3, type: 3}
+  - {fileID: 8300000, guid: 5e18a9462bf769649b67754f2b723d95, type: 3}
+  - {fileID: 8300000, guid: cbe5b83850c74f741b60003b101cda14, type: 3}
+  - {fileID: 8300000, guid: cb7aa86857e5eee43a588495bedd7879, type: 3}

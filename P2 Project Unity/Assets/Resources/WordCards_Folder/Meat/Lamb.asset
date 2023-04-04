@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5722ad76733d1144894a2ccb177f4e70, type: 3}
   m_Name: Lamb
   m_EditorClassIdentifier: 
-  danish_Word: 
+  danish_Word: Lam
   word_Picture: {fileID: 0}
-  word_Audioclips: []
+  word_Audioclips:
+  - {fileID: 8300000, guid: 4197099b09352d543853f5e032e33f76, type: 3}
+  - {fileID: 8300000, guid: 97dd7a9221f2671478284bf439bd8cea, type: 3}
+  - {fileID: 8300000, guid: 6c27b6fee8ad983489e69527ae866b49, type: 3}

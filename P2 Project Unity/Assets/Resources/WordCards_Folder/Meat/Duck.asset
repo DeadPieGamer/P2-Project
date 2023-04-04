@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5722ad76733d1144894a2ccb177f4e70, type: 3}
   m_Name: Duck
   m_EditorClassIdentifier: 
-  danish_Word: 
+  danish_Word: And
   word_Picture: {fileID: 0}
-  word_Audioclips: []
+  word_Audioclips:
+  - {fileID: 8300000, guid: 2725ea355fa3f704dbb183b9dde8beba, type: 3}
+  - {fileID: 8300000, guid: c89761bcf22349d4fa057ed6c13be57e, type: 3}
+  - {fileID: 8300000, guid: 40d38644007794e4383e477efa915a89, type: 3}

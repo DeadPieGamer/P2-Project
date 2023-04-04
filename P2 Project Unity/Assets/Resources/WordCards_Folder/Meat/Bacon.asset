@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5722ad76733d1144894a2ccb177f4e70, type: 3}
   m_Name: Bacon
   m_EditorClassIdentifier: 
-  danish_Word: 
+  danish_Word: Bacon
   word_Picture: {fileID: 0}
-  word_Audioclips: []
+  word_Audioclips:
+  - {fileID: 8300000, guid: 65bcd71bd96bc3b4bafe4bd6ad9520b3, type: 3}
+  - {fileID: 8300000, guid: f8b154a4ef3136d49bb9da3c5be81ded, type: 3}
+  - {fileID: 8300000, guid: c46874bd5b86d3048922cefdf8b8393c, type: 3}

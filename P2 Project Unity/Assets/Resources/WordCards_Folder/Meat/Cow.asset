@@ -15,4 +15,6 @@ MonoBehaviour:
   danish_Word: "Oksek\xF8d"
   word_Picture: {fileID: 21300000, guid: 5ceb6d1650d1fb740b98290fa06a9b14, type: 3}
   word_Audioclips:
-  - {fileID: 8300000, guid: 7cb06a510264a9c40b2d89b34331a399, type: 3}
+  - {fileID: 8300000, guid: 84c8be5da87214942aa218e65cdb8ccd, type: 3}
+  - {fileID: 8300000, guid: f1f5b91db12c1754095e549748403fde, type: 3}
+  - {fileID: 8300000, guid: 7ce6867477ed2a74b9b8bd6e3edb9c72, type: 3}

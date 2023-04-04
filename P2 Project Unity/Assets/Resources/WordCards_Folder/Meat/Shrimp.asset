@@ -15,7 +15,6 @@ MonoBehaviour:
   danish_Word: Rejer
   word_Picture: {fileID: 21300000, guid: b9a5e1d1fe664c84fa3bea616c9d83c1, type: 3}
   word_Audioclips:
-  - {fileID: 8300000, guid: 7cb06a510264a9c40b2d89b34331a399, type: 3}
-  - {fileID: 8300000, guid: 01f9230beb4b16946bbc382864347c51, type: 3}
-  - {fileID: 8300000, guid: b3fba58ed1afc7c43a4c44ebcfb8c8d3, type: 3}
-  - {fileID: 8300000, guid: eb0a698755dc75948b1cccd689b3f6fd, type: 3}
+  - {fileID: 8300000, guid: 287b3afa2e1a1c546ac7655ace4971f9, type: 3}
+  - {fileID: 8300000, guid: 01133994f26d9a34c828f81c27ddbdcb, type: 3}
+  - {fileID: 8300000, guid: 2958800520ac1f24686b58dbdb1018a7, type: 3}
