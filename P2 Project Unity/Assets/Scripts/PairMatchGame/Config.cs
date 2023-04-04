@@ -20,14 +20,14 @@ public class Config
 
     private const int NumberOfScoreRecords = 3; //number of saved scores 3 for each catergory 
 
-    public static float[] ScoreTimeList10Pairs = new float[NumberOfScoreRecords]; //hold the time how long it took to complete the game 
-    public static string[] PairNumberList10Pairs = new string[NumberOfScoreRecords]; //hold date when the user played the game
+    public static float[] ScoreTimeList6Pairs = new float[NumberOfScoreRecords]; //hold the time how long it took to complete the game 
+    public static string[] PairNumberList6Pairs = new string[NumberOfScoreRecords]; //hold date when the user played the game
 
-    public static float[] ScoreTimeList15Pairs = new float[NumberOfScoreRecords];
-    public static string[] PairNumberList15Pairs = new string[NumberOfScoreRecords];
+    public static float[] ScoreTimeList8Pairs = new float[NumberOfScoreRecords];
+    public static string[] PairNumberList8Pairs = new string[NumberOfScoreRecords];
 
-    public static float[] ScoreTimeList20Pairs = new float[NumberOfScoreRecords];
-    public static string[] PairNumberList20Pairs = new string[NumberOfScoreRecords];
+    public static float[] ScoreTimeList10Pairs = new float[NumberOfScoreRecords];
+    public static string[] PairNumberList10Pairs = new string[NumberOfScoreRecords];
 
     private static bool _bestScore = false;
 
@@ -42,9 +42,9 @@ public class Config
     public static void UpdateScoreList()
     {
         var file = new StreamReader(Path);
+        UpdateScoreList(file, ScoreTimeList6Pairs, PairNumberList6Pairs);
+        UpdateScoreList(file, ScoreTimeList8Pairs, PairNumberList8Pairs);
         UpdateScoreList(file, ScoreTimeList10Pairs, PairNumberList10Pairs);
-        UpdateScoreList(file, ScoreTimeList15Pairs, PairNumberList15Pairs);
-        UpdateScoreList(file, ScoreTimeList20Pairs, PairNumberList20Pairs);
         file.Close();
     }
     private static void UpdateScoreList(StreamReader file, float[] scoreTimeList, string[] pairNumberList)
@@ -94,14 +94,14 @@ public class Config
 
         switch (GameSettings.Instance.GetPairNumber())
         {
+            case GameSettings.EPairNumber.E6Pairs:
+                PlaceScoreOnBoard(time, ScoreTimeList6Pairs, PairNumberList6Pairs);
+                break;
+            case GameSettings.EPairNumber.E8Pairs:
+                PlaceScoreOnBoard(time, ScoreTimeList8Pairs, PairNumberList8Pairs);
+                break;
             case GameSettings.EPairNumber.E10Pairs:
                 PlaceScoreOnBoard(time, ScoreTimeList10Pairs, PairNumberList10Pairs);
-                break;
-            case GameSettings.EPairNumber.E15Pairs:
-                PlaceScoreOnBoard(time, ScoreTimeList10Pairs, PairNumberList15Pairs);
-                break;
-            case GameSettings.EPairNumber.E20Pairs:
-                PlaceScoreOnBoard(time, ScoreTimeList10Pairs, PairNumberList20Pairs);
                 break;
         }
         SaveScoreList();
@@ -142,25 +142,25 @@ public class Config
         System.IO.File.WriteAllText(Path, string.Empty);
         var writer = new StreamWriter(Path, false);
 
+        writer.WriteLine("(6PAIRS)");
+        for (var i = 1; i <= NumberOfScoreRecords; i++)
+        {
+            var x = ScoreTimeList6Pairs[i - 1].ToString();
+            writer.WriteLine(i.ToString() + "#" + x + "D" + PairNumberList6Pairs[i - 1]);
+        }
+
+        writer.WriteLine("(8PAIRS)");
+        for (var i = 1; i <= NumberOfScoreRecords; i++)
+        {
+            var x = ScoreTimeList8Pairs[i - 1].ToString();
+            writer.WriteLine(i.ToString() + "#" + x + "D" + PairNumberList8Pairs[i - 1]);
+        }
+
         writer.WriteLine("(10PAIRS)");
         for (var i = 1; i <= NumberOfScoreRecords; i++)
         {
             var x = ScoreTimeList10Pairs[i - 1].ToString();
             writer.WriteLine(i.ToString() + "#" + x + "D" + PairNumberList10Pairs[i - 1]);
-        }
-
-        writer.WriteLine("(15PAIRS)");
-        for (var i = 1; i <= NumberOfScoreRecords; i++)
-        {
-            var x = ScoreTimeList15Pairs[i - 1].ToString();
-            writer.WriteLine(i.ToString() + "#" + x + "D" + PairNumberList15Pairs[i - 1]);
-        }
-
-        writer.WriteLine("(20PAIRS)");
-        for (var i = 1; i <= NumberOfScoreRecords; i++)
-        {
-            var x = ScoreTimeList20Pairs[i - 1].ToString();
-            writer.WriteLine(i.ToString() + "#" + x + "D" + PairNumberList20Pairs[i - 1]);
         }
 
         writer.Close();

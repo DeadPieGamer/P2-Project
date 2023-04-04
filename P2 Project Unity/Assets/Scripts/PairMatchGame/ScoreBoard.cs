@@ -6,14 +6,14 @@ using System.Text.RegularExpressions;
 
 public class ScoreBoard : MonoBehaviour
 {
+    public Text[] scoresText_6Pairs;
+    public Text[] dateText_6Pairs;
+
+    public Text[] scoresText_8Pairs;
+    public Text[] dateText_8Pairs;
+
     public Text[] scoresText_10Pairs;
     public Text[] dateText_10Pairs;
-
-    public Text[] scoresText_15Pairs;
-    public Text[] dateText_15Pairs;
-
-    public Text[] scoresText_20Pairs;
-    public Text[] dateText_20Pairs;
 
     void Start()
     {
@@ -23,9 +23,9 @@ public class ScoreBoard : MonoBehaviour
     public void UpdateScoreBoard()
     {
         Config.UpdateScoreList();
+        DisplayPairsScoreData(Config.ScoreTimeList10Pairs, Config.PairNumberList6Pairs, scoresText_6Pairs, dateText_6Pairs);
+        DisplayPairsScoreData(Config.ScoreTimeList10Pairs, Config.PairNumberList8Pairs, scoresText_8Pairs, dateText_8Pairs);
         DisplayPairsScoreData(Config.ScoreTimeList10Pairs, Config.PairNumberList10Pairs, scoresText_10Pairs, dateText_10Pairs);
-        DisplayPairsScoreData(Config.ScoreTimeList10Pairs, Config.PairNumberList15Pairs, scoresText_15Pairs, dateText_15Pairs);
-        DisplayPairsScoreData(Config.ScoreTimeList10Pairs, Config.PairNumberList10Pairs, scoresText_20Pairs, dateText_20Pairs);
 
     }
 

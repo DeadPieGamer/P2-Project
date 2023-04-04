@@ -36,11 +36,11 @@ public class PictureManager : MonoBehaviour
     [HideInInspector]
     public List<Picture> PictureList;
 
-    private Vector3 _offset = new Vector3(305f, 350f, 0);
-    private Vector3 _offsetFor15pairs = new Vector3(255f, 320f, 0);
-    private Vector3 _offsetFor20pairs = new Vector3(255f, 320f, 0);
+    private Vector3 _offset = new Vector3(600f, 600f, 0);
+    private Vector3 _offsetFor8pairs = new Vector3(560f, 380f, 0);
+    private Vector3 _offsetFor10pairs = new Vector3(560f, 320f, 0);
 
-    private Vector3 _newScaleDown = new Vector3(200f, 200f, 0.001f);
+    private Vector3 _newScaleDown = new Vector3(300f, 300f, 0.001f);
 
     private List<Material> _materialList = new List<Material>();
     private List<string> _texturePathList = new List<string>();
@@ -74,23 +74,23 @@ public class PictureManager : MonoBehaviour
         _gameTimer = GameObject.Find("Main Camera").GetComponent<Timer>();
 
         LoadMaterials();
-        if (GameSettings.Instance.GetPairNumber() == GameSettings.EPairNumber.E10Pairs)
+        if (GameSettings.Instance.GetPairNumber() == GameSettings.EPairNumber.E6Pairs)
         {
             CurrentGameState = GameState.MovingOnPositions;
-            SpwanPictureMesh(3, 4, StartPosition, _offset, false);
-            MovePicture(3, 4, StartPosition, _offset);
+            SpwanPictureMesh(2, 3, StartPosition, _offset, false);
+            MovePicture(2, 3, StartPosition, _offset);
         }
-        else if (GameSettings.Instance.GetPairNumber() == GameSettings.EPairNumber.E15Pairs)
+        else if (GameSettings.Instance.GetPairNumber() == GameSettings.EPairNumber.E8Pairs)
         {
             CurrentGameState = GameState.MovingOnPositions;
-            SpwanPictureMesh(4, 4, StartPosition, _offset, false);
-            MovePicture(4, 4, StartPosition, _offsetFor15pairs);
+            SpwanPictureMesh(2, 4, StartPosition, _offset, false);
+            MovePicture(2, 4, StartPosition, _offsetFor8pairs);
         }
-        else if (GameSettings.Instance.GetPairNumber() == GameSettings.EPairNumber.E20Pairs)
+        else if (GameSettings.Instance.GetPairNumber() == GameSettings.EPairNumber.E10Pairs)
         {
             CurrentGameState = GameState.MovingOnPositions;
-            SpwanPictureMesh(4, 5, StartPosition, _offset, true);
-            MovePicture(4, 5, StartPosition, _offsetFor20pairs);
+            SpwanPictureMesh(2, 5, StartPosition, _offset, true);
+            MovePicture(2, 5, StartPosition, _offsetFor10pairs);
         }
     }
     public void CheckPicture() //check how many pictures revealed 
