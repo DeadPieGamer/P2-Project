@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   danish_Word: "Fl\xF8de"
   word_Picture: {fileID: 21300000, guid: 1a9f6eebaa1ad67408de1c24e552e89c, type: 3}
-  word_Audio: {fileID: 8300000, guid: 651985c8a5a25544184f5c46386320c6, type: 3}
+  word_Audioclips:
+  - {fileID: 8300000, guid: c4f6376dbf946e14e8f4dcbcf8bd6b0c, type: 3}
+  - {fileID: 8300000, guid: acfa8039f3c38eb4e8ae6ef743a05e27, type: 3}
+  - {fileID: 8300000, guid: 7f1c796c47f65464080b4f2e06591729, type: 3}

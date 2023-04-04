@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   danish_Word: Ost
   word_Picture: {fileID: 21300000, guid: 665cb981610f9ae4cb4a8a85c86c901b, type: 3}
-  word_Audio: {fileID: 8300000, guid: 644386c07edbefd4497c384f27d9f599, type: 3}
+  word_Audioclips:
+  - {fileID: 8300000, guid: 73512aa2f8dda5c4d88b80e358afd9b6, type: 3}
+  - {fileID: 8300000, guid: 720bb9cbd3ce3f749bd4297fbd736c02, type: 3}
+  - {fileID: 8300000, guid: 87e9c472febc552459648679104f6f72, type: 3}

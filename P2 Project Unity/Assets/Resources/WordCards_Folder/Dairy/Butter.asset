@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   danish_Word: "Sm\xF8r"
   word_Picture: {fileID: 21300000, guid: 238353f68762898498a1dd82beafd57b, type: 3}
-  word_Audio: {fileID: 8300000, guid: f539f8cf26d256c47875a768a0833c37, type: 3}
+  word_Audioclips:
+  - {fileID: 8300000, guid: 4abd50132be8b49469f546a21a7660c0, type: 3}
+  - {fileID: 8300000, guid: 18a8f9fd30687bb48ade2657ff32ffc8, type: 3}
+  - {fileID: 8300000, guid: de4b696f71a51c94d8c888058cc30a7c, type: 3}

@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   danish_Word: Yoghurt
   word_Picture: {fileID: 21300000, guid: aab46926e2323a941951d8872c97f71f, type: 3}
-  word_Audio: {fileID: 8300000, guid: 86a6e3627b663b04fbf2793af39e00cf, type: 3}
+  word_Audioclips:
+  - {fileID: 8300000, guid: 2a6092f54ee2545419763b84c3159c9d, type: 3}
+  - {fileID: 8300000, guid: b50997eecfad6c1468fe9c4cd6864f4a, type: 3}
+  - {fileID: 8300000, guid: 23ef111397bb99b4f85be07a5b934d86, type: 3}

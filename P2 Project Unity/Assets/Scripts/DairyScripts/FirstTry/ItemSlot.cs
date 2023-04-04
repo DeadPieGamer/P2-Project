@@ -8,9 +8,9 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 {
     // code from Code Monkey on youtube, link: https://www.youtube.com/watch?v=BGr-7GZJNXg
     public WordCards shelfItem;
-
     private WordCards droppedItemId;
     private Sorting_PointChecker checker;
+
     
 
     private void Start()
@@ -22,6 +22,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     public bool IsCorrect()
     {
         return shelfItem == droppedItemId;
+
     }
 
 
@@ -51,9 +52,13 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                 }
                 else
                 {
+                   
                     Debug.Log("They're different");
                     Items.moveBack();
+                    
                 }
+                
+                
             }
             else
             {
