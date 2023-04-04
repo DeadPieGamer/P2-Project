@@ -17,8 +17,9 @@ public class Sorting_Cards : MonoBehaviour
 
     private void Awake()
     {
-        avaiableTopIndex = Shuffle_Array(avaiableTopIndex);
+        //avaiableTopIndex = Shuffle_Array(avaiableTopIndex);
         avaiableBottomIndex = Shuffle_Array(avaiableBottomIndex);
+        
     }
     private void Start()
     {
@@ -37,7 +38,9 @@ public class Sorting_Cards : MonoBehaviour
         for (int i = 0; i < Setamount; i++)
         {
             avaiableBottomIndex[i].GetComponent<Sorting_Game>().setBottom(avaiableSet[i]);
+            avaiableBottomIndex[i+3].GetComponent<Sorting_Game>().setBottom(avaiableSet[i]);
             avaiableTopIndex[i].GetComponent<Sorting_Game>().setTop(avaiableSet[i]);
+            avaiableTopIndex[i+3].GetComponent<Sorting_Game>().setTop(avaiableSet[i]);
         }
     }
     private GameObject[] Shuffle_Array(GameObject[] inputarray)

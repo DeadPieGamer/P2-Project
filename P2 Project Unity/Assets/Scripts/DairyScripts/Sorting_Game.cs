@@ -31,10 +31,11 @@ public class Sorting_Game : MonoBehaviour
     }
     public void setTop(WordCards card)
     {
-        wordPicture.sprite = card.word_Picture;
         wordText.text = card.danish_Word;
         wordaudiosource.clip = card.word_Audio;
         AssignedCard = card;
         GetComponent<ItemSlot>().shelfItem = card;
+        wordPicture.sprite = card.word_Picture;
     }
+    
 }

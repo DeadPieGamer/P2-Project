@@ -11,7 +11,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
     private WordCards droppedItemId;
     private Sorting_PointChecker checker;
-    private Vector2 startPos;
+    
 
     private void Start()
     {
@@ -34,7 +34,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
             if (eventData.pointerDrag.CompareTag("Undrag")) return;
 
             // then lets take it, get the component of RectTransform and set the anchorposition to this anchored position
-            eventData.pointerDrag.GetComponent<RectTransform>() .anchoredPosition = GetComponent<RectTransform>().anchoredPosition; // With This our items should snap into position when we drop it near the itemslot
+            eventData.pointerDrag.GetComponent<RectTransform>() .transform.position = GetComponent<RectTransform>().transform.position; // With This our items should snap into position when we drop it near the itemslot
 
             var Items = eventData.pointerDrag.GetComponent<Items>();
 

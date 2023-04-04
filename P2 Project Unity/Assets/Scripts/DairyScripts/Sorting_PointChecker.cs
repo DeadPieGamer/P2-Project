@@ -16,7 +16,7 @@ public class Sorting_PointChecker : MonoBehaviour
     public void AddPoints(int amount)
     {
         points += amount;
-        if (points >= 3)
+        if (points >= 6)
         {
             Debug.Log("You won");
             wonMenu.SetActive(true);
