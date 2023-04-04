@@ -36,9 +36,9 @@ public class PictureManager : MonoBehaviour
     [HideInInspector]
     public List<Picture> PictureList;
 
-    private Vector3 _offset = new Vector3(205f, 250f, 0);
-    private Vector3 _offsetFor15pairs = new Vector3(205f, 220f, 0);
-    private Vector3 _offsetFor20pairs = new Vector3(205f, 180f, 0);
+    private Vector3 _offset = new Vector3(305f, 350f, 0);
+    private Vector3 _offsetFor15pairs = new Vector3(255f, 320f, 0);
+    private Vector3 _offsetFor20pairs = new Vector3(255f, 320f, 0);
 
     private Vector3 _newScaleDown = new Vector3(200f, 200f, 0.001f);
 
@@ -77,20 +77,20 @@ public class PictureManager : MonoBehaviour
         if (GameSettings.Instance.GetPairNumber() == GameSettings.EPairNumber.E10Pairs)
         {
             CurrentGameState = GameState.MovingOnPositions;
-            SpwanPictureMesh(4, 5, StartPosition, _offset, false);
-            MovePicture(4, 5, StartPosition, _offset);
+            SpwanPictureMesh(3, 4, StartPosition, _offset, false);
+            MovePicture(3, 4, StartPosition, _offset);
         }
         else if (GameSettings.Instance.GetPairNumber() == GameSettings.EPairNumber.E15Pairs)
         {
             CurrentGameState = GameState.MovingOnPositions;
-            SpwanPictureMesh(5, 6, StartPosition, _offset, false);
-            MovePicture(5, 6, StartPosition, _offsetFor15pairs);
+            SpwanPictureMesh(4, 4, StartPosition, _offset, false);
+            MovePicture(4, 4, StartPosition, _offsetFor15pairs);
         }
         else if (GameSettings.Instance.GetPairNumber() == GameSettings.EPairNumber.E20Pairs)
         {
             CurrentGameState = GameState.MovingOnPositions;
-            SpwanPictureMesh(5, 8, StartPosition, _offset, true);
-            MovePicture(5, 8, StartPosition, _offsetFor20pairs);
+            SpwanPictureMesh(4, 5, StartPosition, _offset, true);
+            MovePicture(4, 5, StartPosition, _offsetFor20pairs);
         }
     }
     public void CheckPicture() //check how many pictures revealed 
@@ -315,9 +315,9 @@ public class PictureManager : MonoBehaviour
             }
         }
     }
-    private IEnumerator MoveToPosition(Vector3 target, Picture obj)
+    private IEnumerator MoveToPosition(Vector3 target, Picture obj) 
     {
-        var randomDis = 400;
+        var randomDis = 400; 
 
         while (obj.transform.position != target)
         {
