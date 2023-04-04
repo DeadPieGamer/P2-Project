@@ -13,6 +13,7 @@ public class KO_inputHandler : MonoBehaviour
     private LineRenderer lineRenderer;
 
     [SerializeField] private LayerMask layersToHit;
+    
 
     private void Start()
     {
