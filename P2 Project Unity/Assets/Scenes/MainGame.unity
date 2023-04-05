@@ -699,8 +699,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 301980386}
-        m_TargetAssemblyTypeName: ButtonBehaviour, Assembly-CSharp
+      - m_Target: {fileID: 11400000, guid: 548ec02590acf06429686f6714678c61, type: 2}
+        m_TargetAssemblyTypeName: SceneManger, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
@@ -968,8 +968,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 301980386}
-        m_TargetAssemblyTypeName: ButtonBehaviour, Assembly-CSharp
+      - m_Target: {fileID: 11400000, guid: 548ec02590acf06429686f6714678c61, type: 2}
+        m_TargetAssemblyTypeName: SceneManger, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
@@ -1340,8 +1340,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 301980386}
-        m_TargetAssemblyTypeName: ButtonBehaviour, Assembly-CSharp
+      - m_Target: {fileID: 11400000, guid: 548ec02590acf06429686f6714678c61, type: 2}
+        m_TargetAssemblyTypeName: SceneManger, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
@@ -1744,8 +1744,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 301980386}
-        m_TargetAssemblyTypeName: ButtonBehaviour, Assembly-CSharp
+      - m_Target: {fileID: 11400000, guid: 548ec02590acf06429686f6714678c61, type: 2}
+        m_TargetAssemblyTypeName: SceneManger, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
@@ -2013,8 +2013,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 301980386}
-        m_TargetAssemblyTypeName: ButtonBehaviour, Assembly-CSharp
+      - m_Target: {fileID: 11400000, guid: 548ec02590acf06429686f6714678c61, type: 2}
+        m_TargetAssemblyTypeName: SceneManger, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
