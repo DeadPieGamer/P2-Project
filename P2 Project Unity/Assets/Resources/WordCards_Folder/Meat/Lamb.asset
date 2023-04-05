@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Lamb
   m_EditorClassIdentifier: 
   danish_Word: Lam
-  word_Picture: {fileID: 0}
+  word_Picture: {fileID: 21300000, guid: e5e57997462ee5446819615ef5644ec6, type: 3}
   word_Audioclips:
   - {fileID: 8300000, guid: 7a8027bdbe49b934181e6df28c2a0bfc, type: 3}
   - {fileID: 8300000, guid: 93bb52a48bd09d0499292f223aca9cd1, type: 3}
