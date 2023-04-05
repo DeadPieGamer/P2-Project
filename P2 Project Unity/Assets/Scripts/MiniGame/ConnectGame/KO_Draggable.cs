@@ -12,8 +12,11 @@ public class KO_Draggable : MonoBehaviour
     private Vector2 startPos;
     [SerializeField] private LayerMask layersToHit;
     private LineRenderer lineRenderer;
-    private AudioSource BGaudio;
     public KO_PointChecker Checker;
+
+    [SerializeField] private AudioSource BGaudsource;
+    [SerializeField] private AudioClip correctDing;
+    [SerializeField] private AudioClip wrongDing;
 
     //[SerializeField] private bool drawStuff = false;
 
@@ -23,8 +26,8 @@ public class KO_Draggable : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
         startPos = this.transform.parent.position;
         lineRenderer = transform.parent.GetComponentInChildren<LineRenderer>();
-        BGaudio = GameObject.FindGameObjectWithTag("checker").GetComponent<AudioSource>();
         Checker = GameObject.FindGameObjectWithTag("checker").GetComponent<KO_PointChecker>();
+        BGaudsource = GameObject.FindGameObjectWithTag("checker").GetComponent<AudioSource>();
     }
 
     public void CollidingDetect()
@@ -59,7 +62,7 @@ public class KO_Draggable : MonoBehaviour
         this.gameObject.tag = "Untagged";
         this.transform.position = hitObject.transform.position;
         lineRenderer.SetPosition(1, transform.position - transform.parent.position);
-        BGaudio.Play();
+        BGaudsource.PlayOneShot(correctDing);
         Checker.AddPoints(1);
     }
     private void inCorrect()
@@ -67,6 +70,7 @@ public class KO_Draggable : MonoBehaviour
 
         Debug.Log("inCorrect");
         this.transform.position = startPos;
+        BGaudsource.PlayOneShot(wrongDing);
         lineRenderer.SetPosition(1, transform.position - transform.parent.position);
 
     }
