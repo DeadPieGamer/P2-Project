@@ -50,4 +50,10 @@ public class SceneManger : ScriptableObject
             // If you want, you can call `Application.Quit()` instead
         }
     }
+
+    public void RememberScene(string sceneName)
+    {
+        if (!initialized) Init();
+        loadedLevels.Push(GetActiveScene().buildIndex);
+    }
 }
