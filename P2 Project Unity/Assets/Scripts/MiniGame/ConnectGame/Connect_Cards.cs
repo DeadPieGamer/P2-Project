@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class Connect_Cards : MonoBehaviour
 {
+    //some sections of this script was inspried mostly by these 2 video
+    //https://youtu.be/n2cYUbtt28M by Smart Pengiuns
+    //https://youtu.be/bILijwzJrZg by Redefine Gamedev
     public CardSetLoader CardSetLoader;
     //public Connect_Game Connect_Game;
     public WordCards[] usingSet;
@@ -40,6 +43,8 @@ public class Connect_Cards : MonoBehaviour
             avaiableRightIndex[i].GetComponent<Connect_Game>().setWord(avaiableSet[i]);
         }
     }
+    //This function was inspired by an answer from stackoverflow
+    //https://stackoverflow.com/questions/108819/best-way-to-randomize-an-array-with-net
     private GameObject[] Shuffle_Array(GameObject[] inputarray)
     {
         GameObject Temp_array;
