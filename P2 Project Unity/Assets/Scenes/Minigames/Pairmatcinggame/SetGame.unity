@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -462,7 +462,7 @@ GameObject:
   - component: {fileID: 328309413}
   - component: {fileID: 328309416}
   m_Layer: 5
-  m_Name: 20PairsButton
+  m_Name: 10PairsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -517,9 +517,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: eef4dc976d7514246a3e49e289709be4, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: eef4dc976d7514246a3e49e289709be4, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: eef4dc976d7514246a3e49e289709be4, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 9befb9fdf5224c440bbba38677fa311f, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 9befb9fdf5224c440bbba38677fa311f, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 9befb9fdf5224c440bbba38677fa311f, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -596,7 +596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ButtonType: 1
   PairNumber: 20
-  PiuzzlCategories: 0
+  PuzzleCategories: 0
 --- !u!1 &431439163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1063,7 +1063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ButtonType: 2
   PairNumber: 0
-  PiuzzlCategories: 2
+  PuzzleCategories: 0
 --- !u!1 &1383680258
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,7 +1078,7 @@ GameObject:
   - component: {fileID: 1383680260}
   - component: {fileID: 1383680263}
   m_Layer: 5
-  m_Name: 15PairsButton
+  m_Name: 8PairsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1133,9 +1133,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: bacb6b0cb676143579c99f51e5fafd65, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: bacb6b0cb676143579c99f51e5fafd65, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: bacb6b0cb676143579c99f51e5fafd65, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 79fc1d462f23d7341af9a6834186c0bd, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 79fc1d462f23d7341af9a6834186c0bd, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 79fc1d462f23d7341af9a6834186c0bd, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -1212,7 +1212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ButtonType: 1
   PairNumber: 15
-  PiuzzlCategories: 0
+  PuzzleCategories: 0
 --- !u!1 &1506168827
 GameObject:
   m_ObjectHideFlags: 0
@@ -1361,7 +1361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ButtonType: 2
   PairNumber: 0
-  PiuzzlCategories: 1
+  PuzzleCategories: 0
 --- !u!1 &1536226451
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,7 +1376,7 @@ GameObject:
   - component: {fileID: 1536226453}
   - component: {fileID: 1536226456}
   m_Layer: 5
-  m_Name: 10PairsButton
+  m_Name: 6PairsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1431,9 +1431,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 4e19e317c75c649aba7f5a433c20e100, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 4e19e317c75c649aba7f5a433c20e100, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: 4e19e317c75c649aba7f5a433c20e100, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 2e77b8f37199d8f42b9bde28b92701d6, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 2e77b8f37199d8f42b9bde28b92701d6, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 2e77b8f37199d8f42b9bde28b92701d6, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -1510,7 +1510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ButtonType: 1
   PairNumber: 10
-  PiuzzlCategories: 0
+  PuzzleCategories: 0
 --- !u!1 &1572400616
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class GameSettings : MonoBehaviour
 {
     private readonly Dictionary<EPuzzleCategories, string> _puzzleCatDirectory = new Dictionary<EPuzzleCategories, string>();//Storing the category name and folder 
     private int _settings;
-    private const int SettingsNumber = 2;
+    private const int SettingsNumber = 2; //set 1 setting in order to start the game 
     private bool _muteFXPermanently = false;
 
     public enum EPairNumber
@@ -20,8 +20,7 @@ public class GameSettings : MonoBehaviour
     public enum EPuzzleCategories
     {
         NotSet,
-        Fruits,
-        Vegetables,
+        All,
     }
 
 
@@ -33,11 +32,11 @@ public class GameSettings : MonoBehaviour
 
     private Settings _gameSettings;
 
-    public static GameSettings Instance;
+    public static GameSettings Instance; //to make sure the script is not detroyed on when changing scenes  
 
     void Awake()
     {
-        if (Instance == null)
+        if (Instance == null) 
         {
             DontDestroyOnLoad(target: this);
             Instance = this;
@@ -56,8 +55,7 @@ public class GameSettings : MonoBehaviour
     }
     private void SetPuzzleCatDirectory()
     {
-        _puzzleCatDirectory.Add(EPuzzleCategories.Fruits, "Fruits");
-        _puzzleCatDirectory.Add(EPuzzleCategories.Vegetables, "Vegetables");
+        _puzzleCatDirectory.Add(EPuzzleCategories.All, "All");
     }
 
     public void SetPairNumber(EPairNumber Number)

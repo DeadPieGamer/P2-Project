@@ -77,19 +77,19 @@ public class PictureManager : MonoBehaviour
         if (GameSettings.Instance.GetPairNumber() == GameSettings.EPairNumber.E6Pairs)
         {
             CurrentGameState = GameState.MovingOnPositions;
-            SpwanPictureMesh(2, 3, StartPosition, _offset, false);
+            SpawnPictureMesh(2, 3, StartPosition, _offset, false);
             MovePicture(2, 3, StartPosition, _offset);
         }
         else if (GameSettings.Instance.GetPairNumber() == GameSettings.EPairNumber.E8Pairs)
         {
             CurrentGameState = GameState.MovingOnPositions;
-            SpwanPictureMesh(2, 4, StartPosition, _offset, false);
+            SpawnPictureMesh(2, 4, StartPosition, _offset, false);
             MovePicture(2, 4, StartPosition, _offsetFor8pairs);
         }
         else if (GameSettings.Instance.GetPairNumber() == GameSettings.EPairNumber.E10Pairs)
         {
             CurrentGameState = GameState.MovingOnPositions;
-            SpwanPictureMesh(2, 5, StartPosition, _offset, true);
+            SpawnPictureMesh(2, 5, StartPosition, _offset, true);
             MovePicture(2, 5, StartPosition, _offsetFor10pairs);
         }
     }
@@ -243,7 +243,7 @@ public class PictureManager : MonoBehaviour
         EndTimeText.GetComponent<Text>().text = newText;
     }
 
-    private void SpwanPictureMesh(int rows, int columns, Vector3 Pos, Vector3 offset, bool scaleDown)
+    private void SpawnPictureMesh(int rows, int columns, Vector3 Pos, Vector3 offset, bool scaleDown)
     {
         for (int col = 0; col < columns; col++)
             for (int row = 0; row < rows; row++)

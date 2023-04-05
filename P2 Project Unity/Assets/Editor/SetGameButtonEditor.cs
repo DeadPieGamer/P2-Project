@@ -20,7 +20,7 @@ public class SetGameButtonEditor : Editor
                 myScript.PairNumber = (GameSettings.EPairNumber)EditorGUILayout.EnumPopup("Pair Numbers", myScript.PairNumber);
                 break; 
             case SetGameButton.EButtonType.PuzzleCategoryBtn:
-                myScript.PiuzzlCategories = (GameSettings.EPuzzleCategories)EditorGUILayout.EnumPopup ("Puzzle Categories", myScript.PiuzzlCategories);
+                myScript.PuzzleCategories = (GameSettings.EPuzzleCategories)EditorGUILayout.EnumPopup ("Puzzle Categories", myScript.PuzzleCategories);
                 break;
         }
         if (GUI.changed)

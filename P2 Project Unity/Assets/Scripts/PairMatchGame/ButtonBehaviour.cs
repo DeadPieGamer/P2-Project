@@ -9,7 +9,7 @@ public class ButtonBehaviour : MonoBehaviour
     {
         Config.CreateScoreFile();
     }
-    public void LoadScene(string scene_name)
+    public void LoadScene(string scene_name) //loads scene when called 
     {
         SceneManager.LoadScene(scene_name);
     }

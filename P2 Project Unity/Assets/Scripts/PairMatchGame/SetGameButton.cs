@@ -13,11 +13,7 @@ public class SetGameButton : MonoBehaviour
     }
     [SerializeField] public EButtonType ButtonType = EButtonType.NotSet;
     [HideInInspector] public GameSettings.EPairNumber PairNumber = GameSettings.EPairNumber.NotSet;
-    [HideInInspector] public GameSettings.EPuzzleCategories PiuzzlCategories = GameSettings.EPuzzleCategories.NotSet;
-    void Start()
-    {
-
-    }
+    [HideInInspector] public GameSettings.EPuzzleCategories PuzzleCategories = GameSettings.EPuzzleCategories.NotSet;
 
     public void SetGameOption(string GameSceneName)
     {
@@ -30,12 +26,11 @@ public class SetGameButton : MonoBehaviour
                 GameSettings.Instance.SetPairNumber(comp.PairNumber);
                 break;
             case EButtonType.PuzzleCategoryBtn:
-                GameSettings.Instance.SetPuzzleCategories(comp.PiuzzlCategories);
+                GameSettings.Instance.SetPuzzleCategories(comp.PuzzleCategories);
                 break;
-
         }
 
-        if (GameSettings.Instance.AllSettingsReady()) //from the script gamesetting
+        if (GameSettings.Instance.AllSettingsReady()) //from the script gamesetting, if settings are set then load scene
         {
             SceneManager.LoadScene(GameSceneName);
         }

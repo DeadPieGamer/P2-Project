@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Minigames/Sorting/DairySortGame.unity
     guid: cc7a362d8e27eb849a85bf008ffa4b82
   - enabled: 1
+    path: Assets/Scenes/Minigames/Connect/ConnectMeat.unity
+    guid: a9eea505480757349850a2f1e6909cfd
+  - enabled: 1
     path: Assets/Scenes/Settings.unity
     guid: 3f2e5cbc5b6685b4d87e24c7551e6a9a
   - enabled: 1
