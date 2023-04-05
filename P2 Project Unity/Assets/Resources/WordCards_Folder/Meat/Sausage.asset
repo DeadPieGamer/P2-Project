@@ -15,6 +15,6 @@ MonoBehaviour:
   danish_Word: "P\xF8lse"
   word_Picture: {fileID: 0}
   word_Audioclips:
-  - {fileID: 8300000, guid: 76e10ad2554426049bf666d2061cc34e, type: 3}
-  - {fileID: 8300000, guid: 9e6ac86b8544a1a45956b7c7eac7d649, type: 3}
-  - {fileID: 8300000, guid: 1f9cd81a2b64f5847a3f10781ac5447f, type: 3}
+  - {fileID: 8300000, guid: a876d81c1bf2aa44e94dba364bc54f88, type: 3}
+  - {fileID: 8300000, guid: c8aecfe91788f184fa1a5b0483773c8e, type: 3}
+  - {fileID: 8300000, guid: 477b0ecb4029b57479b2ce929ac39439, type: 3}

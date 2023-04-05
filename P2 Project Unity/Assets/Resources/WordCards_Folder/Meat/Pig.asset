@@ -15,6 +15,6 @@ MonoBehaviour:
   danish_Word: Svine
   word_Picture: {fileID: 21300000, guid: a3c40db86b3826f458f799d356af23ed, type: 3}
   word_Audioclips:
-  - {fileID: 8300000, guid: 311fc4389f7dcd24e9ce1db49a3538be, type: 3}
-  - {fileID: 8300000, guid: 1d82d89490b5a3743ab50394b42729ea, type: 3}
-  - {fileID: 8300000, guid: b3c1eec6dcd2be84eb01f66e7420ec79, type: 3}
+  - {fileID: 8300000, guid: 5af20809c13ae7948bd123415672f1ae, type: 3}
+  - {fileID: 8300000, guid: a40d28b0e6b54804fbca601f29261ca2, type: 3}
+  - {fileID: 8300000, guid: e7bd63f5267034a4bb1b1252a012b800, type: 3}

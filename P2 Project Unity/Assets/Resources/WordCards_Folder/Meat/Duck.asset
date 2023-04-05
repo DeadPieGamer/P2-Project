@@ -15,6 +15,6 @@ MonoBehaviour:
   danish_Word: And
   word_Picture: {fileID: 0}
   word_Audioclips:
-  - {fileID: 8300000, guid: 2725ea355fa3f704dbb183b9dde8beba, type: 3}
-  - {fileID: 8300000, guid: c89761bcf22349d4fa057ed6c13be57e, type: 3}
-  - {fileID: 8300000, guid: 40d38644007794e4383e477efa915a89, type: 3}
+  - {fileID: 8300000, guid: b66863f69d89a9a4eb851ec151c869e9, type: 3}
+  - {fileID: 8300000, guid: 436a4f740d22acf4fbb1fb6c97c987c1, type: 3}
+  - {fileID: 8300000, guid: 77eebbcd6c9188b499eab165835e7c9f, type: 3}

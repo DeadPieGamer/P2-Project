@@ -15,6 +15,6 @@ MonoBehaviour:
   danish_Word: Lam
   word_Picture: {fileID: 0}
   word_Audioclips:
-  - {fileID: 8300000, guid: 4197099b09352d543853f5e032e33f76, type: 3}
-  - {fileID: 8300000, guid: 97dd7a9221f2671478284bf439bd8cea, type: 3}
-  - {fileID: 8300000, guid: 6c27b6fee8ad983489e69527ae866b49, type: 3}
+  - {fileID: 8300000, guid: 7a8027bdbe49b934181e6df28c2a0bfc, type: 3}
+  - {fileID: 8300000, guid: 93bb52a48bd09d0499292f223aca9cd1, type: 3}
+  - {fileID: 8300000, guid: 2240efe5d5687f14190066727d58d950, type: 3}

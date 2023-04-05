@@ -15,6 +15,6 @@ MonoBehaviour:
   danish_Word: Bacon
   word_Picture: {fileID: 0}
   word_Audioclips:
-  - {fileID: 8300000, guid: 65bcd71bd96bc3b4bafe4bd6ad9520b3, type: 3}
-  - {fileID: 8300000, guid: f8b154a4ef3136d49bb9da3c5be81ded, type: 3}
-  - {fileID: 8300000, guid: c46874bd5b86d3048922cefdf8b8393c, type: 3}
+  - {fileID: 8300000, guid: 6ceea8f1117851746abf321ad41179be, type: 3}
+  - {fileID: 8300000, guid: 96591d1b939b0a24b8440a31d4dc4e24, type: 3}
+  - {fileID: 8300000, guid: 26088cefb540d894e9a9cdd88815d929, type: 3}

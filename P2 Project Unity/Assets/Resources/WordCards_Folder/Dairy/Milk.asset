@@ -15,6 +15,6 @@ MonoBehaviour:
   danish_Word: "M\xE6lk"
   word_Picture: {fileID: 21300000, guid: 2c83f26b85f5b5f4280392c168852f58, type: 3}
   word_Audioclips:
-  - {fileID: 8300000, guid: 9d78f1260ee08ea4b90a71b74836f6d2, type: 3}
-  - {fileID: 8300000, guid: 012dbbe52e10632499c40ccb60c8a3a6, type: 3}
-  - {fileID: 8300000, guid: 85545a2d4484a5a43b1b7f224fa68e60, type: 3}
+  - {fileID: 8300000, guid: a19381d0b0002754396eee833c1bfea9, type: 3}
+  - {fileID: 8300000, guid: 46458cfb6faee7048866f77c1ff98410, type: 3}
+  - {fileID: 8300000, guid: ffa2bcb1017c6454cbe30aac74da8132, type: 3}

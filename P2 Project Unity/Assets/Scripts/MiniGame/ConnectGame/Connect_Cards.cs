@@ -9,6 +9,7 @@ public class Connect_Cards : MonoBehaviour
     //some sections of this script was inspried mostly by these 2 video
     //https://youtu.be/n2cYUbtt28M by Smart Pengiuns
     //https://youtu.be/bILijwzJrZg by Redefine Gamedev
+
     public CardSetLoader CardSetLoader;
     //public Connect_Game Connect_Game;
     public WordCards[] usingSet;

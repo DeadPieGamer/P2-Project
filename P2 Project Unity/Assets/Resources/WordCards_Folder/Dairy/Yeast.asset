@@ -15,6 +15,6 @@ MonoBehaviour:
   danish_Word: "G\xE6r"
   word_Picture: {fileID: 21300000, guid: e44ad41bb9de7a040b05c446df824301, type: 3}
   word_Audioclips:
-  - {fileID: 8300000, guid: 9ea8c686bc45ea54ab27c7d1e7b7e0d6, type: 3}
-  - {fileID: 8300000, guid: 1336e890b57db794787e8f7cc08bb809, type: 3}
-  - {fileID: 8300000, guid: 45f13690a1a106840a81de15728e2df3, type: 3}
+  - {fileID: 8300000, guid: cdad063028428934fa4b2c5bca1ed881, type: 3}
+  - {fileID: 8300000, guid: e3c1cd3bdc0c3024f906d4ba71c2e2f0, type: 3}
+  - {fileID: 8300000, guid: 86875f56c527f9349b686b4dfc956e46, type: 3}
