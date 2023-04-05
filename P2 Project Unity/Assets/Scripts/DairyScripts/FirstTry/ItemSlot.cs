@@ -11,11 +11,15 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     private WordCards droppedItemId;
     private Sorting_PointChecker checker;
 
-    
+    [SerializeField] AudioSource soundChecker;
+    [SerializeField] AudioClip correctSound;
+    [SerializeField] AudioClip wrongSound;
+
 
     private void Start()
     {
         checker = GameObject.FindGameObjectWithTag("checker").GetComponent<Sorting_PointChecker>();
+        soundChecker = GameObject.FindGameObjectWithTag("checker").GetComponent<AudioSource>();
     }
     
 
@@ -49,13 +53,15 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                     Items.tag = "Undrag";
                     Debug.Log(Items.tag);
                     checker.AddPoints(1);
+                    soundChecker.PlayOneShot(correctSound);
+           
                 }
                 else
                 {
                    
                     Debug.Log("They're different");
                     Items.moveBack();
-                    
+                    soundChecker.PlayOneShot(wrongSound);
                 }
                 
                 
