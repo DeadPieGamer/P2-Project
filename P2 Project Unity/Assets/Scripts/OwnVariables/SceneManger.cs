@@ -4,14 +4,14 @@ using System.Collections.Generic;
 [CreateAssetMenu(fileName = "SceneManger")]
 public class SceneManger : ScriptableObject
 {
-    private Stack<int> loadedLevels;
+    private Stack<int> loadedScenes;
 
     [System.NonSerialized]
     private bool initialized;
 
     private void Init()
     {
-        loadedLevels = new Stack<int>();
+        loadedScenes = new Stack<int>();
         initialized = true;
     }
 
@@ -23,14 +23,14 @@ public class SceneManger : ScriptableObject
     public void LoadScene(int buildIndex)
     {
         if (!initialized) Init();
-        loadedLevels.Push(GetActiveScene().buildIndex);
+        loadedScenes.Push(GetActiveScene().buildIndex);
         UnityEngine.SceneManagement.SceneManager.LoadScene(buildIndex);
     }
 
     public void LoadScene(string sceneName)
     {
         if (!initialized) Init();
-        loadedLevels.Push(GetActiveScene().buildIndex);
+        loadedScenes.Push(GetActiveScene().buildIndex);
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
     }
 
@@ -40,20 +40,19 @@ public class SceneManger : ScriptableObject
         {
             Debug.LogError("You haven't used the LoadScene functions of the scriptable object. Use them instead of the LoadScene functions of Unity's SceneManager.");
         }
-        if (loadedLevels.Count > 0)
+        if (loadedScenes.Count > 0)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(loadedLevels.Pop());
+            UnityEngine.SceneManagement.SceneManager.LoadScene(loadedScenes.Pop());
         }
         else
         {
             Debug.LogError("No previous scene loaded");
-            // If you want, you can call `Application.Quit()` instead
         }
     }
 
     public void RememberScene(string sceneName)
     {
         if (!initialized) Init();
-        loadedLevels.Push(GetActiveScene().buildIndex);
+        loadedScenes.Push(GetActiveScene().buildIndex);
     }
 }
