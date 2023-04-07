@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Yeast
   m_EditorClassIdentifier: 
   danish_Word: "G\xE6r"
-  word_Picture: {fileID: 21300000, guid: e44ad41bb9de7a040b05c446df824301, type: 3}
+  word_Picture: {fileID: 21300000, guid: 61898075becb2524ba182504daaa39db, type: 3}
   word_Audioclips:
   - {fileID: 8300000, guid: cdad063028428934fa4b2c5bca1ed881, type: 3}
   - {fileID: 8300000, guid: e3c1cd3bdc0c3024f906d4ba71c2e2f0, type: 3}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Yogurt
   m_EditorClassIdentifier: 
   danish_Word: Yoghurt
-  word_Picture: {fileID: 21300000, guid: aab46926e2323a941951d8872c97f71f, type: 3}
+  word_Picture: {fileID: 21300000, guid: 436a3d94cf013544d8727472d36b402e, type: 3}
   word_Audioclips:
   - {fileID: 8300000, guid: 948d80183a6ec6945a668350299f4e78, type: 3}
   - {fileID: 8300000, guid: 94160e68706d64c438f5b15c58176edd, type: 3}

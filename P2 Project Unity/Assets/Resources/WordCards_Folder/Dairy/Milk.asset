@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Milk
   m_EditorClassIdentifier: 
   danish_Word: "M\xE6lk"
-  word_Picture: {fileID: 21300000, guid: 2c83f26b85f5b5f4280392c168852f58, type: 3}
+  word_Picture: {fileID: 21300000, guid: 1bcd3d9c52923b648b9b929aaffd4adb, type: 3}
   word_Audioclips:
   - {fileID: 8300000, guid: a19381d0b0002754396eee833c1bfea9, type: 3}
   - {fileID: 8300000, guid: 46458cfb6faee7048866f77c1ff98410, type: 3}
