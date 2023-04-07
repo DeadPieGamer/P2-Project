@@ -38,7 +38,8 @@ public class SceneManger : ScriptableObject
     {
         if (!initialized)
         {
-            Debug.LogError("You haven't used the LoadScene functions of the scriptable object. Use them instead of the LoadScene functions of Unity's SceneManager.");
+            //Debug.LogError("You haven't used the LoadScene functions of the scriptable object. Use them instead of the LoadScene functions of Unity's SceneManager.");
+            LoadScene("MainGame");
         }
         if (loadedScenes.Count > 0)
         {
@@ -46,7 +47,8 @@ public class SceneManger : ScriptableObject
         }
         else
         {
-            Debug.LogError("No previous scene loaded");
+            //Debug.LogError("No previous scene loaded");
+            LoadScene("MainGame");
         }
     }
 
