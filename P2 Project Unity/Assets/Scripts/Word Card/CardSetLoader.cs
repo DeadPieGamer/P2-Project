@@ -42,15 +42,14 @@ public class CardSetLoader : MonoBehaviour
         int randomCard = UnityEngine.Random.Range(0, cards.Length);
         return cards[randomCard];
     }
-    public WordCards Select_RandomCards(WordCards[] cards)
+    public WordCards Select_RandomCards(WordCards[] deck)
     {
-        if (cards.Length == 0)
+        if (deck.Length == 0)
         {
-            
+            return null;
         }
-
-        int randomCard = UnityEngine.Random.Range(0, cards.Length);
-        return cards[randomCard];
+        int randomCard = UnityEngine.Random.Range(0, deck.Length);
+        return deck[randomCard];
     }
     public void Select_CardSet()
     {
