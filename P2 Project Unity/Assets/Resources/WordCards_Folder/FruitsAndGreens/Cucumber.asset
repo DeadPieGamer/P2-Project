@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5722ad76733d1144894a2ccb177f4e70, type: 3}
   m_Name: Cucumber
   m_EditorClassIdentifier: 
-  danish_Word: 
-  word_Picture: {fileID: 0}
-  word_Audioclips: []
+  danish_Word: Agurk
+  word_Picture: {fileID: 21300000, guid: 37bdb02114e624a90946debe4eb322f7, type: 3}
+  word_Audioclips:
+  - {fileID: 8300000, guid: 90e01f79f9a623b40936fb539512ada6, type: 3}
+  - {fileID: 8300000, guid: f21b3f7c6d67665488d6c654c7b3797a, type: 3}
+  - {fileID: 8300000, guid: b195293bb96b54046b97cdbf8e514470, type: 3}

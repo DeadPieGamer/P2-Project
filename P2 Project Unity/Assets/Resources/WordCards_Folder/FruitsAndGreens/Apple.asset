@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5722ad76733d1144894a2ccb177f4e70, type: 3}
   m_Name: Apple
   m_EditorClassIdentifier: 
-  danish_Word: 
-  word_Picture: {fileID: 0}
-  word_Audioclips: []
+  danish_Word: "\xC6ble"
+  word_Picture: {fileID: 21300000, guid: 5e218f9c355d8471da84393a4449b19c, type: 3}
+  word_Audioclips:
+  - {fileID: 8300000, guid: 090f39de4cccf4c49a0cdfb7aa90fba7, type: 3}
+  - {fileID: 8300000, guid: 24d4b43c77b6db24faf9acb822622d8c, type: 3}
+  - {fileID: 8300000, guid: 1ae7ad7e2fd3175468d55e064706757f, type: 3}

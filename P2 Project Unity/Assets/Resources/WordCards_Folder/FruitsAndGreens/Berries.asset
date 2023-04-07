@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5722ad76733d1144894a2ccb177f4e70, type: 3}
   m_Name: Berries
   m_EditorClassIdentifier: 
-  danish_Word: 
-  word_Picture: {fileID: 0}
-  word_Audioclips: []
+  danish_Word: "B\xE6r"
+  word_Picture: {fileID: 21300000, guid: 30955380b7f994065a53e9a38caafce6, type: 3}
+  word_Audioclips:
+  - {fileID: 8300000, guid: 3c77678cbfdb1914da341f647884c4dd, type: 3}
+  - {fileID: 8300000, guid: 3710c567ee779774292b4a8aecbaa42d, type: 3}
+  - {fileID: 8300000, guid: b0bd3a17d80155043a8eeb3f12fba6cf, type: 3}

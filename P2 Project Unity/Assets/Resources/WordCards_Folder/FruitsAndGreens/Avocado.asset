@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5722ad76733d1144894a2ccb177f4e70, type: 3}
   m_Name: Avocado
   m_EditorClassIdentifier: 
-  danish_Word: 
-  word_Picture: {fileID: 0}
-  word_Audioclips: []
+  danish_Word: Avocado
+  word_Picture: {fileID: 21300000, guid: d0fd0ccf719c6402da1b6c2684394276, type: 3}
+  word_Audioclips:
+  - {fileID: 8300000, guid: 817be8390b6076a4f87d002bad6961bc, type: 3}
+  - {fileID: 8300000, guid: 1819ce00fecac704c9e6e9b3ae094eae, type: 3}
+  - {fileID: 8300000, guid: c2f6f27ec6a82c34ebe070ee5b9f4b03, type: 3}

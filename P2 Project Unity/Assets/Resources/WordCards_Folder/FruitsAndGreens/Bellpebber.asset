@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5722ad76733d1144894a2ccb177f4e70, type: 3}
   m_Name: Bellpebber
   m_EditorClassIdentifier: 
-  danish_Word: 
-  word_Picture: {fileID: 0}
-  word_Audioclips: []
+  danish_Word: Peberfrugt
+  word_Picture: {fileID: 21300000, guid: a9b49c43f71cb4f148451fc439f7d81a, type: 3}
+  word_Audioclips:
+  - {fileID: 8300000, guid: 16166e106b04c2a49a6b1cd30e9ec481, type: 3}
+  - {fileID: 8300000, guid: 8d78b4a01c3a807449bbca07f63c4a22, type: 3}
+  - {fileID: 8300000, guid: 0db6a92ecd35130498d82c76c9c2a84c, type: 3}

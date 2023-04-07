@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5722ad76733d1144894a2ccb177f4e70, type: 3}
   m_Name: Salad
   m_EditorClassIdentifier: 
-  danish_Word: 
-  word_Picture: {fileID: 0}
-  word_Audioclips: []
+  danish_Word: Salat
+  word_Picture: {fileID: 21300000, guid: 07a5852f3f7cb43fa8a721e3d266b00c, type: 3}
+  word_Audioclips:
+  - {fileID: 8300000, guid: c1421750aeba69243bcf08b0209bd593, type: 3}
+  - {fileID: 8300000, guid: 37a2af0afdeace14b9973cffa912a392, type: 3}
+  - {fileID: 8300000, guid: 885d818d45364e94cbe9d52b2f729e2e, type: 3}

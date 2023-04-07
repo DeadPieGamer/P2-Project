@@ -4,11 +4,7 @@ using System;
 public enum SetTypes
 {
     Test,
-    Bread,
-    Cashier,
     Dairy,
-    DryProduct,
     FruitsAndGreens,
-    Meat,
-    StaffDialog
+    Meat
 }

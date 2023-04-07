@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5722ad76733d1144894a2ccb177f4e70, type: 3}
   m_Name: Potato
   m_EditorClassIdentifier: 
-  danish_Word: 
-  word_Picture: {fileID: 0}
-  word_Audioclips: []
+  danish_Word: Kartoffel
+  word_Picture: {fileID: 21300000, guid: 2bd0c84d591bd495486ee9763e086ee9, type: 3}
+  word_Audioclips:
+  - {fileID: 8300000, guid: 1e162aa93c591a845bc010059c110431, type: 3}
+  - {fileID: 8300000, guid: 4ad9f6aef41c81f40ac02e749adecf11, type: 3}
+  - {fileID: 8300000, guid: a82dfbf580422e0429b4ddf75bf82031, type: 3}

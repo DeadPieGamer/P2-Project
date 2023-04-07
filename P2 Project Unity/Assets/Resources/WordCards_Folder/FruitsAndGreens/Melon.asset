@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5722ad76733d1144894a2ccb177f4e70, type: 3}
   m_Name: Melon
   m_EditorClassIdentifier: 
-  danish_Word: 
-  word_Picture: {fileID: 0}
-  word_Audioclips: []
+  danish_Word: Melon
+  word_Picture: {fileID: 21300000, guid: 7fe811c14a5d14c60adafd0b4e471cae, type: 3}
+  word_Audioclips:
+  - {fileID: 8300000, guid: e2dc90da74803214994c62e03cd6ec2c, type: 3}
+  - {fileID: 8300000, guid: 603c7c1f621d5a44e9988ea18ef7c623, type: 3}
+  - {fileID: 8300000, guid: f549e2a75c3cbf0429598187fe88da6a, type: 3}

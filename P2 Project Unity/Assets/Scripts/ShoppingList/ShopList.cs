@@ -37,7 +37,7 @@ public class ShopList : MonoBehaviour
     
     private void GetRandomSet()
     {
-        int randomSet = Random.Range(0, CardSetLoader.CardSet_Dict.Count);
+        int randomSet = Random.Range(1, CardSetLoader.CardSet_Dict.Count);
         usingSet = CardSetLoader.Get_Set(randomSet);
     }
 }

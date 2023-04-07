@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5722ad76733d1144894a2ccb177f4e70, type: 3}
   m_Name: Tomato
   m_EditorClassIdentifier: 
-  danish_Word: 
-  word_Picture: {fileID: 0}
-  word_Audioclips: []
+  danish_Word: Tomat
+  word_Picture: {fileID: 21300000, guid: 03bf090621c204ee7bbda35987fff235, type: 3}
+  word_Audioclips:
+  - {fileID: 8300000, guid: 7a4079a241672ec40bde04857eaa7749, type: 3}
+  - {fileID: 8300000, guid: 459062990aa3c684fbe06c2418ff75a3, type: 3}
+  - {fileID: 8300000, guid: abce264e7212ecd4384378f3e9831420, type: 3}

@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5722ad76733d1144894a2ccb177f4e70, type: 3}
   m_Name: Garlic
   m_EditorClassIdentifier: 
-  danish_Word: 
-  word_Picture: {fileID: 0}
-  word_Audioclips: []
+  danish_Word: "Hvidl\xF8g"
+  word_Picture: {fileID: 21300000, guid: ea0fdc57d5c3b406bbb25b8a9b5b26d3, type: 3}
+  word_Audioclips:
+  - {fileID: 8300000, guid: 612650b74e1090c4282d90126626e12c, type: 3}
+  - {fileID: 8300000, guid: 3c009500f810da74d85e765b5e7271ba, type: 3}
+  - {fileID: 8300000, guid: 6f31444cd98b9cf4fb492ccb6888e809, type: 3}

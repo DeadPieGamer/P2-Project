@@ -46,7 +46,7 @@ public class CardSetLoader : MonoBehaviour
     {
         if (cards.Length == 0)
         {
-            return null;
+            
         }
 
         int randomCard = UnityEngine.Random.Range(0, cards.Length);

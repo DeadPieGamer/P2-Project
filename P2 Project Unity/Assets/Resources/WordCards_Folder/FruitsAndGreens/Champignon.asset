@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5722ad76733d1144894a2ccb177f4e70, type: 3}
   m_Name: Champignon
   m_EditorClassIdentifier: 
-  danish_Word: 
-  word_Picture: {fileID: 0}
-  word_Audioclips: []
+  danish_Word: Champignon
+  word_Picture: {fileID: 21300000, guid: 987041962ce3045969ff5c019850ac6b, type: 3}
+  word_Audioclips:
+  - {fileID: 8300000, guid: d970f5ded40e62945a419d1f129a7879, type: 3}
+  - {fileID: 8300000, guid: 5e2e85c5262a11341bbde72ab320a07a, type: 3}
+  - {fileID: 8300000, guid: b29a633ffa622ab41b0ea193e3024c75, type: 3}

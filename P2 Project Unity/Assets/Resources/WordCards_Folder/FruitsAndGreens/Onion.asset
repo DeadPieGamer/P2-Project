@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5722ad76733d1144894a2ccb177f4e70, type: 3}
   m_Name: Onion
   m_EditorClassIdentifier: 
-  danish_Word: 
-  word_Picture: {fileID: 0}
-  word_Audioclips: []
+  danish_Word: "L\xF8g"
+  word_Picture: {fileID: 21300000, guid: ecd73c949fbd54b89b51327596d98600, type: 3}
+  word_Audioclips:
+  - {fileID: 8300000, guid: 871ee75382664894b8b0a0673e93d56c, type: 3}
+  - {fileID: 8300000, guid: 0ea86a2541bba2048b921253211be709, type: 3}
+  - {fileID: 8300000, guid: 9cfb0d28e58ff6d45b9b6173bce35224, type: 3}
