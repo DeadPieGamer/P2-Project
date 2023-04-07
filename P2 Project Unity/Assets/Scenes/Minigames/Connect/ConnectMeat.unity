@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -408,8 +408,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 854068000}
-        m_TargetAssemblyTypeName: ButtonBehaviour, Assembly-CSharp
+      - m_Target: {fileID: 11400000, guid: 548ec02590acf06429686f6714678c61, type: 2}
+        m_TargetAssemblyTypeName: SceneManger, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
@@ -1934,8 +1934,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 854068000}
-        m_TargetAssemblyTypeName: ButtonBehaviour, Assembly-CSharp
+      - m_Target: {fileID: 11400000, guid: 548ec02590acf06429686f6714678c61, type: 2}
+        m_TargetAssemblyTypeName: SceneManger, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:

@@ -19,6 +19,7 @@ public class ShopList : MonoBehaviour
             GetRandomSet();
             avaiableSet.Add(CardSetLoader.Select_RandomCards(usingSet));
         }
+        if(avaiableSet.Contains(null)) avaiableSet.Add(CardSetLoader.Select_RandomCards(usingSet));
         setListItem(avaiableSet);
 
     }
