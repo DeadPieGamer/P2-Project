@@ -10,7 +10,7 @@ public class CardSetLoader : MonoBehaviour
 
     public WordCards[] cards = new WordCards[0];
 
-    Dictionary<SetTypes, WordCards[]> CardSet_Dict = new Dictionary<SetTypes, WordCards[]>();
+    public Dictionary<SetTypes, WordCards[]> CardSet_Dict = new Dictionary<SetTypes, WordCards[]>();
     private void Awake()
     {
         foreach(SetTypes folder in Enum.GetValues(typeof(SetTypes)))
@@ -42,11 +42,22 @@ public class CardSetLoader : MonoBehaviour
         int randomCard = UnityEngine.Random.Range(0, cards.Length);
         return cards[randomCard];
     }
+    public WordCards Select_RandomCards(WordCards[] cards)
+    {
+        if (cards.Length == 0)
+        {
+            return null;
+        }
 
+        int randomCard = UnityEngine.Random.Range(0, cards.Length);
+        return cards[randomCard];
+    }
     public void Select_CardSet()
     {
-        SetTypes randomSet = (SetTypes)UnityEngine.Random.Range(0, CardSet_Dict.Count);
-        cards = CardSet_Dict[randomSet];
+        
+       SetTypes randomSet = (SetTypes)UnityEngine.Random.Range(0, CardSet_Dict.Count);
+       cards = CardSet_Dict[randomSet];
+        
     }
     
     public void Select_CardSet(SetTypes Deck)
@@ -65,6 +76,10 @@ public class CardSetLoader : MonoBehaviour
     {
         cards = CardSet_Dict[(SetTypes)Deck];
 
+    }
+    public WordCards[] Get_Set(int Deck)
+    {
+        return CardSet_Dict[(SetTypes)Deck];
     }
 
     public WordCards[] Get_Set(SetTypes Deck)
