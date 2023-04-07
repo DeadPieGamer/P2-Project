@@ -309,7 +309,7 @@ MonoBehaviour:
   usingSet: []
   TryOut: []
   avaiableListIndex: []
-  Setamount: 4
+  Setamount: 10
 --- !u!1 &702694208
 GameObject:
   m_ObjectHideFlags: 0
