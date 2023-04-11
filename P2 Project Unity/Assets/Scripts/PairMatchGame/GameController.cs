@@ -10,11 +10,11 @@ public class GameController : MonoBehaviour
     public List<Button> btns = new List<Button>();
 
     public WordCards[] _puzzles;
-    public List<Sprite> _gamePuzzles = new List<Sprite>();
+    public List<WordCards> _gamePuzzles = new List<WordCards>();
 
-    public AudioClip _DanishAudio;
+    //public AudioClip _DanishAudio;
     public List<AudioSource> DanishWordAudio = new List<AudioSource>();
-    private AudioSource _audio;
+    public AudioSource _audio;
 
     private bool firstGuess, secondGuess;
 
@@ -40,7 +40,6 @@ public class GameController : MonoBehaviour
         AddGamePuzzles();
         Shufffle(_gamePuzzles);
         gameGuesses = _gamePuzzles.Count / 2;
-        _audio = GetComponent<AudioSource>();
 
     }
     void GetButton()
@@ -64,7 +63,7 @@ public class GameController : MonoBehaviour
             {
                 index = 0;
             }
-            _gamePuzzles.Add(_puzzles[index].word_Picture);
+            _gamePuzzles.Add(_puzzles[index]);
             index++;
         }
     }
@@ -85,16 +84,21 @@ public class GameController : MonoBehaviour
         {
             firstGuess = true;
             firstGuessIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name); //convert a string to an int
-            firstGuessPuzzle = _gamePuzzles[firstGuessIndex].name;  //getting the name of the image 
-            btns[firstGuessIndex].image.sprite = _gamePuzzles[firstGuessIndex];
+            firstGuessPuzzle = _gamePuzzles[firstGuessIndex].danish_Word;  //getting the name of the image
+            btns[firstGuessIndex].image.sprite = _gamePuzzles[firstGuessIndex].word_Picture;
+            _audio.clip = _gamePuzzles[firstGuessIndex].word_Audio;
+            _audio.Play();
+
         }
 
         else if (!secondGuess)
         {
             secondGuess = true;
             secondGuessIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name); //convert a string to an int
-            secondGuessPuzzle = _gamePuzzles[secondGuessIndex].name;  //getting the name of the image and comparing them 
-            btns[secondGuessIndex].image.sprite = _gamePuzzles[secondGuessIndex];
+            secondGuessPuzzle = _gamePuzzles[secondGuessIndex].danish_Word;  //getting the name of the image and comparing them 
+            btns[secondGuessIndex].image.sprite = _gamePuzzles[secondGuessIndex].word_Picture;
+            _audio.clip = _gamePuzzles[secondGuessIndex].word_Audio;
+            _audio.Play();
             countGuesses++;
             StartCoroutine(CheckIfThePuzzlesMatch());
 
@@ -135,11 +139,11 @@ public class GameController : MonoBehaviour
 
         }
     }
-    void Shufffle(List<Sprite> list)
+    void Shufffle(List<WordCards> list)
     {
         for (int i = 0; i < list.Count; i++)
         {
-            Sprite temp = list[i];
+            WordCards temp = list[i];
             int randomIndex = Random.Range(i, list.Count);
             list[i] = list[randomIndex];
             list[randomIndex] = temp;
