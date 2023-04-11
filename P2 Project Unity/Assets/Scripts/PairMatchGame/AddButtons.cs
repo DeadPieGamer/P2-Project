@@ -20,5 +20,5 @@ public class AddButtons : MonoBehaviour
         }
     }
 }
-//Credit to Awesome Tuts - Anyone Can Learn To Make Games For Inspo
+//Credit to Awesome Tuts
 //https://www.youtube.com/@awesometuts

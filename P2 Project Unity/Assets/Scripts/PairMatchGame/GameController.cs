@@ -9,8 +9,12 @@ public class GameController : MonoBehaviour
     private Sprite _bgImage;
     public List<Button> btns = new List<Button>();
 
-    public Sprite[] _puzzles;
+    public WordCards[] _puzzles;
     public List<Sprite> _gamePuzzles = new List<Sprite>();
+
+    public AudioClip _DanishAudio;
+    public List<AudioSource> DanishWordAudio = new List<AudioSource>();
+    private AudioSource _audio;
 
     private bool firstGuess, secondGuess;
 
@@ -21,10 +25,12 @@ public class GameController : MonoBehaviour
     private int firstGuessIndex, secondGuessIndex;
 
     private string firstGuessPuzzle, secondGuessPuzzle;
+    public GameObject EndGamePanel;
+
 
     private void Awake()
     {
-        _puzzles = Resources.LoadAll<Sprite>("Graphics/PuzzleCat/");//might have to add the last folder 
+        _puzzles = Resources.LoadAll<WordCards>("WordCards_Folder/FruitsAndGreens/");
     }
 
     private void Start()
@@ -34,6 +40,8 @@ public class GameController : MonoBehaviour
         AddGamePuzzles();
         Shufffle(_gamePuzzles);
         gameGuesses = _gamePuzzles.Count / 2;
+        _audio = GetComponent<AudioSource>();
+
     }
     void GetButton()
     {
@@ -56,7 +64,7 @@ public class GameController : MonoBehaviour
             {
                 index = 0;
             }
-            _gamePuzzles.Add(_puzzles[index]);
+            _gamePuzzles.Add(_puzzles[index].word_Picture);
             index++;
         }
     }
@@ -121,8 +129,9 @@ public class GameController : MonoBehaviour
         countCorrectGuesses++;
         if (countCorrectGuesses == gameGuesses)
         {
+            EndGamePanel.SetActive(true);
             Debug.Log("Game Finished");
-            Debug.Log("it took you" + countGuesses + "Guess(es) to finish the game");
+            Debug.Log("it took you " + countGuesses + " Guess(es) to finish the game");
 
         }
     }
@@ -137,5 +146,5 @@ public class GameController : MonoBehaviour
         }
     }
 }
-//Credit to Awesome Tuts - Anyone Can Learn To Make Games For Inspo
+//Credit to Awesome Tuts
 //https://www.youtube.com/@awesometuts
