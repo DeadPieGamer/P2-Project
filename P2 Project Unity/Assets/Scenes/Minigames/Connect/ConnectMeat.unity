@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -743,7 +743,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 135, y: 259.16003}
+  m_AnchoredPosition: {x: 300, y: 460}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &893640347
@@ -1232,7 +1232,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 135, y: -265}
+  m_AnchoredPosition: {x: 297.9, y: -459.79}
   m_SizeDelta: {x: 44.2086, y: 40.4212}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1250419239
@@ -1617,8 +1617,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000015259, y: 0}
-  m_SizeDelta: {x: 326, y: 580}
+  m_AnchoredPosition: {x: -0.000045777, y: 0}
+  m_SizeDelta: {x: 640, y: 960}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1595445006
 MonoBehaviour:
@@ -2138,7 +2138,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -129, y: 259.16}
+  m_AnchoredPosition: {x: -294.42, y: 455.16}
   m_SizeDelta: {x: 51.1561, y: 49.6845}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2088300161
@@ -2538,6 +2538,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2142545979}
     m_Modifications:
+    - target: {fileID: 155873650317260746, guid: 8a95959ed98227749b1b8a67d8301305, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7737661372326157753, guid: 8a95959ed98227749b1b8a67d8301305, type: 3}
       propertyPath: m_Name
       value: Card
@@ -2585,6 +2589,18 @@ PrefabInstance:
     - target: {fileID: 7737661372326157754, guid: 8a95959ed98227749b1b8a67d8301305, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7737661372326157755, guid: 8a95959ed98227749b1b8a67d8301305, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7737661372326157755, guid: 8a95959ed98227749b1b8a67d8301305, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7737661372326157755, guid: 8a95959ed98227749b1b8a67d8301305, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a95959ed98227749b1b8a67d8301305, type: 3}
