@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -16,16 +17,35 @@ public class ShopList : MonoBehaviour
     [SerializeField] private int Setamount;
     private SetTypes[] ST = { SetTypes.Meat,SetTypes.FruitsAndGreens,SetTypes.Dairy};
 
-    private TextMeshProUGUI[] shopText;
-    private Image[] shopPic;
+    string json;
 
     private void Start()
     {
+        
         Setamount = 6;//UnityEngine.Random.Range(3, 10);
         TryOut = new WordCards[Setamount];
-        DefineCards();
-        setListItem(avaiableSet);
-        AssignListItem();
+        //PlayerPrefs.SetInt("currentDay", -1);
+
+        if (PlayerPrefs.GetInt("currentDay", -1) != DateTime.Now.DayOfYear)
+        {
+            DefineCards();
+            setListItem(avaiableSet);
+            json = JsonUtility.ToJson(avaiableSet,true);
+            File.WriteAllText(Application.dataPath + "/Resources/ShopListData/cardDatafile.json" ,json);
+            PlayerPrefs.SetInt("currentDay", DateTime.Now.DayOfYear);
+        }
+        else
+        {
+            Debug.Log("SameDate");
+            json = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/cardDatafile.json");
+            avaiableSet = JsonUtility.FromJson<List<WordCards>>(json);
+        }
+        
+        SetComp();
+        
+        
+        
+        
     }
     private void setListItem(List<WordCards> Input)
     {
@@ -37,21 +57,21 @@ public class ShopList : MonoBehaviour
         for(int i=0;i<Setamount;i++)
         {
             TryOut[i] = output[i];
-            Debug.Log(TryOut[i]);
+            //Debug.Log(TryOut[i]);
         }
         
         //RemoveNull(TryOut);
     }
-    private void RemoveNull(WordCards[] input)
-    {
+    //private void RemoveNull(WordCards[] input)
+    //{
         
-        input = input.Where(c => c != null).ToArray();
-    }
-    private void GetRandomSet()
-    {
-        int randomSet = UnityEngine.Random.Range(1, CardSetLoader.CardSet_Dict.Count);
-        usingSet = CardSetLoader.Get_Set(randomSet);
-    }
+    //    input = input.Where(c => c != null).ToArray();
+    //}
+    //private void GetRandomSet()
+    //{
+    //    int randomSet = UnityEngine.Random.Range(1, CardSetLoader.CardSet_Dict.Count);
+    //    usingSet = CardSetLoader.Get_Set(randomSet);
+    //}
     private void GetPreDefinedSet(SetTypes Deck)
     {
         usingSet = CardSetLoader.Get_Set(Deck);
@@ -74,25 +94,20 @@ public class ShopList : MonoBehaviour
                 else
                 {
                     avaiableSet.Add(newCard);
+                    
                 }
             }
         }
-    }
 
-    private void AssignListItem()
-    {
-        for (int i = 0; i < Setamount; i++)
-        {
-            shopText[i] = avaiableListIndex[i].GetComponent<TextMeshProUGUI>();
-            shopPic[i] = avaiableListIndex[i].GetComponent<Image>();
-        }
+        
     }
-    private void AddCompListItem()
+    private void SetComp()
     {
-        for (int i = 0; i < Setamount; i++)
+        for(int i = 0; i < Setamount; i++)
         {
-            shopText[i].text = avaiableSet[i].danish_Word;
-            shopPic[i].sprite = avaiableSet[i].word_Picture;
+            avaiableListIndex[i].GetComponent<SL_ListItem>().SetListComp(avaiableSet[i]);
         }
+        
     }
+    
 }

@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Word", menuName = "Word Card")] //Creating an instance inside the create menu in unity inspector
+[Serializable, CreateAssetMenu(fileName = "New Word", menuName = "Word Card")] //Creating an instance inside the create menu in unity inspector
 
 public class WordCards : ScriptableObject //using ScriptableObject instead of monobehavior since we're not editing a gameobject directly
 {
@@ -13,6 +14,6 @@ public class WordCards : ScriptableObject //using ScriptableObject instead of mo
 
     [HideInInspector, Tooltip("Returns one of the word audio clips")] public AudioClip word_Audio
     {
-        get { return word_Audioclips[Random.Range(0, word_Audioclips.Length)]; }
+        get { return word_Audioclips[UnityEngine.Random.Range(0, word_Audioclips.Length)]; }
     }
 }
