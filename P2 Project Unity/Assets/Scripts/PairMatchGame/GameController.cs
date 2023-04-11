@@ -95,10 +95,10 @@ public class GameController : MonoBehaviour
     }
     IEnumerator CheckIfThePuzzlesMatch()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         if (firstGuessPuzzle == secondGuessPuzzle)
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.2f);
             btns[firstGuessIndex].interactable = false;//can not click on the button after choosen the right pair 
             btns[secondGuessIndex].interactable = false;
 
@@ -113,7 +113,7 @@ public class GameController : MonoBehaviour
             btns[firstGuessIndex].image.sprite = _bgImage;
             btns[secondGuessIndex].image.sprite = _bgImage;
         }
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
         firstGuess = secondGuess = false;
     }
     void CheckIfTheGameIsFinished()
