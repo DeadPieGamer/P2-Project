@@ -23,7 +23,6 @@ public class GameSettings : MonoBehaviour
         All,
     }
 
-
     public struct Settings
     {
         public EPairNumber PairsNumber;
@@ -118,4 +117,5 @@ public class GameSettings : MonoBehaviour
 
 }
 
-
+//Credit to CodePlanStudio for the inspo
+//https://www.youtube.com/watch?v=0IJscW4-Fas&list=PLJLLSehgFnspLcAi4hvWQZPcJiN28miOT&index=4

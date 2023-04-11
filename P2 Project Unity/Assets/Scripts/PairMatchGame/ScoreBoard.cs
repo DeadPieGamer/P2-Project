@@ -54,3 +54,4 @@ public class ScoreBoard : MonoBehaviour
         }
     }
 }
+//Credit to CodePlanStudio for the inspo

@@ -21,4 +21,6 @@ public class ButtonBehaviour : MonoBehaviour
         GameSettings.Instance.ResetGameSettings();
     }
 }
+//Credit to CodePlanStudio for the inspo 
+//https://www.youtube.com/watch?v=7gxMVOs6rEs&list=PLJLLSehgFnspLcAi4hvWQZPcJiN28miOT&index=2
 

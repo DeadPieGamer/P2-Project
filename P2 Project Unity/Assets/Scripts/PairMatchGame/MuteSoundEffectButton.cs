@@ -52,3 +52,4 @@ public class MuteSoundEffectButton : MonoBehaviour
     }
 
 }
+//Credit to CodePlanStudio for the inspo 

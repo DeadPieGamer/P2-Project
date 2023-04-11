@@ -117,7 +117,7 @@ public class Picture : MonoBehaviour
     public void SetFirstMaterial(Material mat, string texturePath)
     {
         _firstMaterial = mat;
-        _firstMaterial.mainTexture = Resources.Load(texturePath, typeof(Texture2D)) as Texture2D;
+        _firstMaterial.mainTexture = Resources.Load(texturePath, typeof(Texture2D)) as Texture2D;//takning the textures from the Resources folder
     }
     public void SetSecondMaterial(Material mat, string texturePath)
     {
@@ -155,3 +155,4 @@ public class Picture : MonoBehaviour
         gameObject.SetActive(false);
     }
 }
+//Credit to CodePlanStudio for the inspo 

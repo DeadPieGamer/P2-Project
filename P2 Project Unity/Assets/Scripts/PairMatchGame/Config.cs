@@ -166,3 +166,4 @@ public class Config
         writer.Close();
     }
 }
+//Credit to CodePlanStudio for the inspo 

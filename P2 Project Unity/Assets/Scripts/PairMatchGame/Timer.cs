@@ -51,3 +51,4 @@ public class Timer : MonoBehaviour
         _stopTimer = true;
     }
 }
+//Credit to CodePlanStudio for the inspo
