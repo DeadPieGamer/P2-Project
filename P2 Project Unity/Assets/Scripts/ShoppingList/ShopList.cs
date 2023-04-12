@@ -12,12 +12,13 @@ public class ShopList : MonoBehaviour
     public CardSetLoader CardSetLoader;
     public WordCards[] usingSet;
     public WordCards[] TryOut;
+    public List<WordCards> savedSet = new List<WordCards>();
     private List<WordCards> avaiableSet = new List<WordCards>();
     [SerializeField] private GameObject[] avaiableListIndex;
     [SerializeField] private int Setamount;
     private SetTypes[] ST = { SetTypes.Meat,SetTypes.FruitsAndGreens,SetTypes.Dairy};
 
-    string json;
+    [SerializeField] private WordCardList cardList;
 
     private void Start()
     {
@@ -25,23 +26,27 @@ public class ShopList : MonoBehaviour
         Setamount = 6;//UnityEngine.Random.Range(3, 10);
         TryOut = new WordCards[Setamount];
         //PlayerPrefs.SetInt("currentDay", -1);
-
+        
         if (PlayerPrefs.GetInt("currentDay", -1) != DateTime.Now.DayOfYear)
         {
             DefineCards();
             setListItem(avaiableSet);
-            json = JsonUtility.ToJson(avaiableSet,true);
+            string json = JsonUtility.ToJson(cardList,true);
             File.WriteAllText(Application.dataPath + "/Resources/ShopListData/cardDatafile.json" ,json);
             PlayerPrefs.SetInt("currentDay", DateTime.Now.DayOfYear);
+            Debug.Log(json);
+            SetComp();
         }
         else
         {
             Debug.Log("SameDate");
-            json = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/cardDatafile.json");
-            avaiableSet = JsonUtility.FromJson<List<WordCards>>(json);
+            string json = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/cardDatafile.json");
+            cardList = JsonUtility.FromJson<WordCardList>(json);
+            avaiableSet = cardList.cards;
+            SetComp();
         }
         
-        SetComp();
+        
         
         
         
@@ -94,7 +99,7 @@ public class ShopList : MonoBehaviour
                 else
                 {
                     avaiableSet.Add(newCard);
-                    
+                    cardList.cards.Add(newCard);
                 }
             }
         }

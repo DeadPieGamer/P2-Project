@@ -17,3 +17,9 @@ public class WordCards : ScriptableObject //using ScriptableObject instead of mo
         get { return word_Audioclips[UnityEngine.Random.Range(0, word_Audioclips.Length)]; }
     }
 }
+
+[Serializable]
+public class WordCardList
+{
+    public List<WordCards> cards;
+}
