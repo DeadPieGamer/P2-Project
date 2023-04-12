@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,9 +13,8 @@ public class GameController : MonoBehaviour
     public WordCards[] _puzzles;
     public List<WordCards> _gamePuzzles = new List<WordCards>();
 
-    //public AudioClip _DanishAudio;
-    public List<AudioSource> DanishWordAudio = new List<AudioSource>();
     public AudioSource _audio;
+    public TextMeshProUGUI _wordText;
 
     private bool firstGuess, secondGuess;
 
@@ -26,6 +26,10 @@ public class GameController : MonoBehaviour
 
     private string firstGuessPuzzle, secondGuessPuzzle;
     public GameObject EndGamePanel;
+
+    [SerializeField] private AudioSource _anwsersSoundSource;
+    [SerializeField] private AudioClip correctDing;
+    [SerializeField] private AudioClip wrongDing;
 
 
     private void Awake()
@@ -40,6 +44,8 @@ public class GameController : MonoBehaviour
         AddGamePuzzles();
         Shufffle(_gamePuzzles);
         gameGuesses = _gamePuzzles.Count / 2;
+        _wordText = GetComponentInChildren<TextMeshProUGUI>();
+
 
     }
     void GetButton()
@@ -50,6 +56,11 @@ public class GameController : MonoBehaviour
         {
             btns.Add(objects[i].GetComponent<Button>());
             btns[i].image.sprite = _bgImage; //adding the image to our cards
+            // Goes through every text the button may have and resets the text
+            foreach (TextMeshProUGUI textBox in btns[i].GetComponentsInChildren<TextMeshProUGUI>())
+            {
+                textBox.text = "";
+            }
         }
     }
     void AddGamePuzzles()
@@ -73,7 +84,7 @@ public class GameController : MonoBehaviour
         foreach (Button btn in btns)
         {
             btn.onClick.AddListener(() => PickAPuzzle());
-      
+
         }
     }
     public void PickAPuzzle()
@@ -86,6 +97,11 @@ public class GameController : MonoBehaviour
             firstGuessIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name); //convert a string to an int
             firstGuessPuzzle = _gamePuzzles[firstGuessIndex].danish_Word;  //getting the name of the image
             btns[firstGuessIndex].image.sprite = _gamePuzzles[firstGuessIndex].word_Picture;
+            // Because image of the button was changed, we change the text to match
+            foreach (TextMeshProUGUI textBox in btns[firstGuessIndex].GetComponentsInChildren<TextMeshProUGUI>())
+            {
+                textBox.text = _gamePuzzles[firstGuessIndex].danish_Word;
+            }
             _audio.clip = _gamePuzzles[firstGuessIndex].word_Audio;
             _audio.Play();
 
@@ -97,6 +113,11 @@ public class GameController : MonoBehaviour
             secondGuessIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name); //convert a string to an int
             secondGuessPuzzle = _gamePuzzles[secondGuessIndex].danish_Word;  //getting the name of the image and comparing them 
             btns[secondGuessIndex].image.sprite = _gamePuzzles[secondGuessIndex].word_Picture;
+            // Because image of the button was changed, we change the text to match
+            foreach (TextMeshProUGUI textBox in btns[secondGuessIndex].GetComponentsInChildren<TextMeshProUGUI>())
+            {
+                textBox.text = _gamePuzzles[secondGuessIndex].danish_Word;
+            }
             _audio.clip = _gamePuzzles[secondGuessIndex].word_Audio;
             _audio.Play();
             countGuesses++;
@@ -116,6 +137,17 @@ public class GameController : MonoBehaviour
 
             btns[firstGuessIndex].image.color = new Color(0, 0, 0, 0);//can not see the button after choosen the right pair 
             btns[secondGuessIndex].image.color = new Color(0, 0, 0, 0);
+            // Because images were removed, we also empty the text fields
+            foreach (TextMeshProUGUI textBox in btns[firstGuessIndex].GetComponentsInChildren<TextMeshProUGUI>())
+            {
+                textBox.text = "";
+            }
+            foreach (TextMeshProUGUI textBox in btns[secondGuessIndex].GetComponentsInChildren<TextMeshProUGUI>())
+            {
+                textBox.text = "";
+            }
+
+            _anwsersSoundSource.PlayOneShot(correctDing);
             CheckIfTheGameIsFinished();
         }
         else
@@ -124,6 +156,17 @@ public class GameController : MonoBehaviour
 
             btns[firstGuessIndex].image.sprite = _bgImage;
             btns[secondGuessIndex].image.sprite = _bgImage;
+            // Because images were reset, we also reset the words
+            foreach (TextMeshProUGUI textBox in btns[firstGuessIndex].GetComponentsInChildren<TextMeshProUGUI>())
+            {
+                textBox.text = "";
+            }
+            foreach (TextMeshProUGUI textBox in btns[secondGuessIndex].GetComponentsInChildren<TextMeshProUGUI>())
+            {
+                textBox.text = "";
+            }
+            _anwsersSoundSource.PlayOneShot(wrongDing);
+
         }
         yield return new WaitForSeconds(0.2f);
         firstGuess = secondGuess = false;
