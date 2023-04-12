@@ -2602,9 +2602,5 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7737661373570545029, guid: 8a95959ed98227749b1b8a67d8301305, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: 8f7113a956712c24aa195a3fe9bb6fc7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a95959ed98227749b1b8a67d8301305, type: 3}
