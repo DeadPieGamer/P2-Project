@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bacon
   m_EditorClassIdentifier: 
   danish_Word: Bacon
-  word_Picture: {fileID: 0}
+  word_Picture: {fileID: 21300000, guid: e551961a9197ff74f8f5af96526bbb98, type: 3}
   word_Audioclips:
   - {fileID: 8300000, guid: 6ceea8f1117851746abf321ad41179be, type: 3}
   - {fileID: 8300000, guid: 96591d1b939b0a24b8440a31d4dc4e24, type: 3}

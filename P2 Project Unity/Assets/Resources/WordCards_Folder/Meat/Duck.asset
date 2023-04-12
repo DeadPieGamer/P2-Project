@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Duck
   m_EditorClassIdentifier: 
   danish_Word: And
-  word_Picture: {fileID: 0}
+  word_Picture: {fileID: 21300000, guid: c312f539749f09a44929242b42d347fd, type: 3}
   word_Audioclips:
   - {fileID: 8300000, guid: b66863f69d89a9a4eb851ec151c869e9, type: 3}
   - {fileID: 8300000, guid: 436a4f740d22acf4fbb1fb6c97c987c1, type: 3}
