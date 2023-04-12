@@ -32,26 +32,56 @@ public class KO_Draggable : MonoBehaviour
 
     public void CollidingDetect()
     {
-        RaycastHit2D hit = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size + PlusSize,0f , Vector2.zero, Mathf.Infinity, layersToHit);
-        if (hit.collider != null)
+        // Gets all hits
+        RaycastHit2D[] allHits = Physics2D.BoxCastAll(coll.bounds.center, coll.bounds.size + PlusSize,0f , Vector2.zero, Mathf.Infinity, layersToHit);
+        // Assumes that it hit the wrong target
+        bool hitCorrect = false;
+        // Remember whatever target it hit, if it hit the correct one
+        GameObject correctObject = null;
+
+        // Goes through every target it hit
+        foreach (RaycastHit2D hit in allHits)
         {
-            if (hit.collider.CompareTag("DanishWord"))
+            // If it actually hit something, run this
+            if (hit.collider != null)
             {
-                hitObject = hit.collider.gameObject;
-                if (hitObject.GetComponent<Connect_Game>().AssignedCard == myCard)
+                // If the tag is the correct one, do this, otherwise mention to the dev that it didn't hit the correct thing
+                if (hit.collider.CompareTag("DanishWord"))
                 {
-                    Correct();
+                    // Get whatever gameobject it hit
+                    hitObject = hit.collider.gameObject;
+                    // If it hit a gameobject with the correct assigned card, remember that it hit the correct thing
+                    if (hitObject.GetComponent<Connect_Game>().AssignedCard == myCard)
+                    {
+                        hitCorrect = true;
+                        correctObject = hitObject;
+                    }
                 }
                 else
                 {
-                    inCorrect();
+                    Debug.Log("Didn't hit text");
                 }
+                Debug.Log("I hit " + hit.collider.name);
+            }
+        }
+
+        // If it had hit the correct thing, call the Correct() function, else do the inCorrect() function
+        if (hitCorrect)
+        {
+            // Make sure the next code runs with the correct object, so that the line doesn't snap to a wrong one
+            if (correctObject != null)
+            {
+                hitObject = correctObject;
             }
             else
             {
-                Debug.Log("Didn't hit text");
+                Debug.LogError("Variable \"correctObject\" is unassigned");
             }
-            Debug.Log("I hit " + hit.collider.name);
+            Correct();
+        }
+        else
+        {
+            inCorrect();
         }
     }
 
