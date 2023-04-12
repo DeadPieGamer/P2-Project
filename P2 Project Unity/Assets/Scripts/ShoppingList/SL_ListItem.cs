@@ -9,7 +9,8 @@ public class SL_ListItem : MonoBehaviour
     private TextMeshProUGUI shopText;
     private Image shopPic;
 
-
+    public WordCards itemCard;
+    public SetTypes setType;
     private void Awake()
     {
         shopText = GetComponentInChildren<TextMeshProUGUI>();
@@ -19,5 +20,11 @@ public class SL_ListItem : MonoBehaviour
     {
         shopText.text = card.danish_Word;
         shopPic.sprite = card.word_Picture;
+        itemCard = card;
+
+    }
+    public void setDeck(SetTypes Deck)
+    {
+        setType = Deck;
     }
 }

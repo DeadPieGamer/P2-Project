@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +12,7 @@ public class ShopList : MonoBehaviour
     public CardSetLoader CardSetLoader;
     public WordCards[] usingSet;
     public WordCards[] TryOut;
-    private List<WordCards> avaiableSet = new List<WordCards>();
+    public List<WordCards> avaiableSet = new List<WordCards>();
     [SerializeField] private GameObject[] avaiableListIndex;
     [SerializeField] private int Setamount;
     private SetTypes[] ST = { SetTypes.Meat,SetTypes.FruitsAndGreens,SetTypes.Dairy};
@@ -42,7 +41,7 @@ public class ShopList : MonoBehaviour
         }
         else
         {
-            Debug.Log("SameDate");
+            //Debug.Log("SameDate");
             //string json = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/cardDatafile.json");
             //shopListIndex = JsonUtility.FromJson<List<int>>(json);
             string savedData = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/cardDatafile.txt").ToString();
@@ -118,7 +117,9 @@ public class ShopList : MonoBehaviour
         for(int i = 0; i < Setamount; i++)
         {
             avaiableListIndex[i].GetComponent<SL_ListItem>().SetListComp(avaiableSet[i]);
+            avaiableListIndex[i].GetComponent<SL_ListItem>().setDeck(ST[i/2]);
         }
+
         
     }
     
