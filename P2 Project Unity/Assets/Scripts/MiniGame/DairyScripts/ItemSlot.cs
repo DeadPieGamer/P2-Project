@@ -26,9 +26,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     public bool IsCorrect()
     {
         return shelfItem == droppedItemId;
-
     }
-
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -64,14 +62,9 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                     soundChecker.PlayOneShot(wrongSound);
                 }
                 
-                
             }
-            else
-            {
-                Debug.LogError("There was no letter attached to the dropped item!");
-            }
+            
 
         }
-        
     }
 }
