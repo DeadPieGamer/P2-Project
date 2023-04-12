@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,13 +13,13 @@ public class ShopList : MonoBehaviour
     public CardSetLoader CardSetLoader;
     public WordCards[] usingSet;
     public WordCards[] TryOut;
-    public List<WordCards> savedSet = new List<WordCards>();
     private List<WordCards> avaiableSet = new List<WordCards>();
     [SerializeField] private GameObject[] avaiableListIndex;
     [SerializeField] private int Setamount;
     private SetTypes[] ST = { SetTypes.Meat,SetTypes.FruitsAndGreens,SetTypes.Dairy};
 
-    [SerializeField] private WordCardList cardList;
+    private List<int> shopListIndex = new List<int>();
+    //[SerializeField] private WordCardList cardList;
 
     private void Start()
     {
@@ -31,18 +32,24 @@ public class ShopList : MonoBehaviour
         {
             DefineCards();
             setListItem(avaiableSet);
-            string json = JsonUtility.ToJson(cardList,true);
-            File.WriteAllText(Application.dataPath + "/Resources/ShopListData/cardDatafile.json" ,json);
+            //string json = JsonUtility.ToJson(shopListIndex,true);
+            //File.WriteAllText(Application.dataPath + "/Resources/ShopListData/cardDatafile.json" ,json);
+            string savedData = String.Join(",",shopListIndex.ToArray());
+            File.WriteAllText(Application.dataPath + "/Resources/ShopListData/cardDatafile.txt", savedData);
             PlayerPrefs.SetInt("currentDay", DateTime.Now.DayOfYear);
-            Debug.Log(json);
+            Debug.Log(savedData);
             SetComp();
         }
         else
         {
             Debug.Log("SameDate");
-            string json = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/cardDatafile.json");
-            cardList = JsonUtility.FromJson<WordCardList>(json);
-            avaiableSet = cardList.cards;
+            //string json = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/cardDatafile.json");
+            //shopListIndex = JsonUtility.FromJson<List<int>>(json);
+            string savedData = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/cardDatafile.txt").ToString();
+            shopListIndex = savedData.Split(',').ToList().Select(int.Parse).ToList();
+            //string test = String.Join(",", shopListIndex.ToArray());
+            //Debug.Log(test);
+            DefineCards(shopListIndex);
             SetComp();
         }
         
@@ -99,7 +106,7 @@ public class ShopList : MonoBehaviour
                 else
                 {
                     avaiableSet.Add(newCard);
-                    cardList.cards.Add(newCard);
+                    shopListIndex.Add(System.Array.IndexOf<WordCards>(usingSet, newCard));
                 }
             }
         }
@@ -115,4 +122,20 @@ public class ShopList : MonoBehaviour
         
     }
     
+    private void DefineCards(List<int> inputlist)
+    {
+        avaiableSet.Clear();
+
+        GetPreDefinedSet(ST[0]);
+        avaiableSet.Add(usingSet[inputlist[0]]);
+        avaiableSet.Add(usingSet[inputlist[1]]);
+
+        GetPreDefinedSet(ST[1]);
+        avaiableSet.Add(usingSet[inputlist[2]]);
+        avaiableSet.Add(usingSet[inputlist[3]]);
+
+        GetPreDefinedSet(ST[2]);
+        avaiableSet.Add(usingSet[inputlist[4]]);
+        avaiableSet.Add(usingSet[inputlist[5]]);
+    }
 }
