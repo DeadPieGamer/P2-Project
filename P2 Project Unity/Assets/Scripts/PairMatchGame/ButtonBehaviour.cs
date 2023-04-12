@@ -8,7 +8,7 @@ public class ButtonBehaviour : MonoBehaviour
 
     private void Start()
     {
-        Config.CreateScoreFile();
+        //Config.CreateScoreFile();
     }
 
     public void LoadScene(string scene_name) //loads scene when called 
