@@ -10,7 +10,7 @@ using UnityEditor;
 
 public class DummyOutlineHandler : MonoBehaviour
 {
-    [SerializeField, Tooltip("Whether the sprite starts outlined")] private bool isOutlined = false;
+    [SerializeField, Tooltip("Whether the sprite starts outlined")] public bool isOutlined = false;
 
     // For finding the basic materials
     [Tooltip("Path to folder containing the material references")] private string materialPath = "Dummy/MaterialTesting/";

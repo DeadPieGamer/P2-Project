@@ -6,32 +6,48 @@ using UnityEngine.UI;
 
 public class OutlineHandler : MonoBehaviour
 {
-    [SerializeField] private Button Meat;
-    [SerializeField] private Button Vegg;
-    [SerializeField] private Button Dairy;
+    public bool boolMEAT = false;
+    public bool boolVEGG = false;
+    public bool boolDAIRY = false;
+
+    public Button meatButton;
+    public Button veggButton;
+    public Button dairyButton;
+
+    public DummyOutlineHandler outline;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        
         string savedData = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/PlaceDatafile.txt").ToString();
         switch (savedData)
         {
             case "Kød":
-                highLight("Meat"); 
+                outline = meatButton.GetComponent<DummyOutlineHandler>();
+                outline.isOutlined = true;
+                //highLight(boolMEAT);
+                //outline.ChangeOutline(boolMEAT);
             break;
             case "FrughtogGrønt":
-                highLight("Vegg");
+                outline = meatButton.GetComponent<DummyOutlineHandler>();
+                outline.isOutlined = true;
+                //highLight(boolVEGG);
+                //outline.ChangeOutline(boolVEGG);
             break;
             case "Mejeri":
-                highLight("Dairy");
+                outline = meatButton.GetComponent<DummyOutlineHandler>();
+                outline.isOutlined = true;
+                //highLight(boolDAIRY);
+                //outline.ChangeOutline(boolDAIRY);
             break;
             default: 
-                highLight("Nothing");
+                
             break;
         }
     }
 
-    private void highLight(string Place)
+    public bool highLight(bool place)
     {
-        Debug.Log("Highlight" + Place);
+        return place = true;
     }
 }
