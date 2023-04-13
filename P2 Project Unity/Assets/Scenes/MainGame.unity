@@ -361,7 +361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 301980387}
-  - component: {fileID: 301980386}
+  - component: {fileID: 301980388}
   m_Layer: 0
   m_Name: OutlineHandler
   m_TagString: Untagged
@@ -369,21 +369,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &301980386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 301980385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 625ff5110ceb69e4f8fedf668d5aebb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Meat: {fileID: 0}
-  Vegg: {fileID: 0}
-  Dairy: {fileID: 0}
 --- !u!4 &301980387
 Transform:
   m_ObjectHideFlags: 0
@@ -399,6 +384,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &301980388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301980385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625ff5110ceb69e4f8fedf668d5aebb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolMEAT: 0
+  boolVEGG: 0
+  boolDAIRY: 0
+  meatButton: {fileID: 699025616}
+  veggButton: {fileID: 629771273}
+  dairyButton: {fileID: 1951090878}
+  outline: {fileID: 0}
 --- !u!1 &475518757
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,6 +496,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: CashierGame
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 301980388}
+        m_TargetAssemblyTypeName: OutlineHandler, Assembly-CSharp
+        m_MethodName: removePlaceFile
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &475518760
@@ -628,6 +644,7 @@ GameObject:
   - component: {fileID: 629771275}
   - component: {fileID: 629771274}
   - component: {fileID: 629771273}
+  - component: {fileID: 629771276}
   m_Layer: 5
   m_Name: "Button Frugt&Gr\xF8nt"
   m_TagString: Untagged
@@ -711,6 +728,18 @@ MonoBehaviour:
           m_StringArgument: GameSceneNEW
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 301980388}
+        m_TargetAssemblyTypeName: OutlineHandler, Assembly-CSharp
+        m_MethodName: removePlaceFile
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &629771274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -749,6 +778,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 629771271}
   m_CullTransparentMesh: 1
+--- !u!114 &629771276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629771271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a39f30457610b8c4cbb97e867c08b54e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOutlined: 0
+  useAdvanced: 0
+  outlinedMaterial: {fileID: 0}
+  basicMaterial: {fileID: 0}
+  outlineActions:
+    m_PersistentCalls:
+      m_Calls: []
+  showAdvanced: 0
 --- !u!1 &699025614
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,6 +810,7 @@ GameObject:
   - component: {fileID: 699025618}
   - component: {fileID: 699025617}
   - component: {fileID: 699025616}
+  - component: {fileID: 699025619}
   m_Layer: 5
   m_Name: "Button K\xF8d"
   m_TagString: Untagged
@@ -844,6 +894,18 @@ MonoBehaviour:
           m_StringArgument: ConnectMeat
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 301980388}
+        m_TargetAssemblyTypeName: OutlineHandler, Assembly-CSharp
+        m_MethodName: removePlaceFile
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &699025617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -882,6 +944,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 699025614}
   m_CullTransparentMesh: 1
+--- !u!114 &699025619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699025614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a39f30457610b8c4cbb97e867c08b54e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOutlined: 0
+  useAdvanced: 0
+  outlinedMaterial: {fileID: 0}
+  basicMaterial: {fileID: 0}
+  outlineActions:
+    m_PersistentCalls:
+      m_Calls: []
+  showAdvanced: 0
 --- !u!1 &699107019
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,6 +1480,7 @@ GameObject:
   - component: {fileID: 1951090880}
   - component: {fileID: 1951090879}
   - component: {fileID: 1951090878}
+  - component: {fileID: 1951090881}
   m_Layer: 5
   m_Name: Button Mejeri
   m_TagString: Untagged
@@ -1481,6 +1564,18 @@ MonoBehaviour:
           m_StringArgument: DairySortGame
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 301980388}
+        m_TargetAssemblyTypeName: OutlineHandler, Assembly-CSharp
+        m_MethodName: removePlaceFile
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1951090879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1519,3 +1614,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1951090876}
   m_CullTransparentMesh: 1
+--- !u!114 &1951090881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951090876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a39f30457610b8c4cbb97e867c08b54e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOutlined: 0
+  useAdvanced: 0
+  outlinedMaterial: {fileID: 0}
+  basicMaterial: {fileID: 0}
+  outlineActions:
+    m_PersistentCalls:
+      m_Calls: []
+  showAdvanced: 0
