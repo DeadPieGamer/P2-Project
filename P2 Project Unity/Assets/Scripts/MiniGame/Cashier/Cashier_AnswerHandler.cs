@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 
@@ -29,19 +31,27 @@ public class Cashier_AnswerHandler : MonoBehaviour
     }
     private void DefinePlace(SetTypes deck)
     {
+        string savedData;
         switch (deck)
         {
             case SetTypes.Meat:
                 answerPlace.text = "Kød";
-            break;
+                savedData = "Kød" ;
+                File.WriteAllText(Application.dataPath + "/Resources/ShopListData/PlaceDatafile.txt", savedData);
+                break;
 
             case SetTypes.Dairy:
                 answerPlace.text = "Mejeri";
-            break;
+                savedData = "Mejeri";
+                File.WriteAllText(Application.dataPath + "/Resources/ShopListData/PlaceDatafile.txt", savedData);
+                break;
 
             case SetTypes.FruitsAndGreens:
-                answerPlace.text = "Grøn";
-            break;
+                answerPlace.text = "FrugtogGrøn";
+                savedData = "FrugtogGrøn";
+                File.WriteAllText(Application.dataPath + "/Resources/ShopListData/PlaceDatafile.txt", savedData);
+                break;
         }
     }
+    
 }

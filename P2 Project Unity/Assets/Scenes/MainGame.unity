@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 301980387}
   - component: {fileID: 301980386}
   m_Layer: 0
-  m_Name: SceneManageLoader
+  m_Name: OutlineHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -378,9 +378,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 301980385}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85a6a045af69a4885a372b1f59627231, type: 3}
+  m_Script: {fileID: 11500000, guid: 625ff5110ceb69e4f8fedf668d5aebb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Meat: {fileID: 0}
+  Vegg: {fileID: 0}
+  Dairy: {fileID: 0}
 --- !u!4 &301980387
 Transform:
   m_ObjectHideFlags: 0
