@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -52,5 +53,10 @@ public class OutlineHandler : MonoBehaviour
     public bool highLight(bool place)
     {
         return place = true;
+    }
+    public void removePlaceFile()
+    {
+        string savedData = "";
+        File.WriteAllText(Application.dataPath + "/Resources/ShopListData/PlaceDatafile.txt", savedData);
     }
 }
