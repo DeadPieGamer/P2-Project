@@ -42,7 +42,7 @@ public class PairMatch_GameController : MonoBehaviour
         GetButton();
         AddListerners();
         AddGamePuzzles();
-        Shufffle(_gamePuzzles);
+        ShuffflePlacement(_gamePuzzles);
         gameGuesses = _gamePuzzles.Count / 2;
         _wordText = GetComponentInChildren<TextMeshProUGUI>();
 
@@ -102,6 +102,7 @@ public class PairMatch_GameController : MonoBehaviour
             {
                 textBox.text = _gamePuzzles[firstGuessIndex].danish_Word;
             }
+            //Getting the audio attach to the wordcards 
             _audio.clip = _gamePuzzles[firstGuessIndex].word_Audio;
             _audio.Play();
 
@@ -118,8 +119,10 @@ public class PairMatch_GameController : MonoBehaviour
             {
                 textBox.text = _gamePuzzles[secondGuessIndex].danish_Word;
             }
+            //Getting the audio attach to the wordcards 
             _audio.clip = _gamePuzzles[secondGuessIndex].word_Audio;
             _audio.Play();
+            //Adding to the score 
             countGuesses++;
             StartCoroutine(CheckIfThePuzzlesMatch());
 
@@ -182,7 +185,7 @@ public class PairMatch_GameController : MonoBehaviour
 
         }
     }
-    void Shufffle(List<WordCards> list)
+    void ShuffflePlacement(List<WordCards> list)
     {
         for (int i = 0; i < list.Count; i++)
         {
