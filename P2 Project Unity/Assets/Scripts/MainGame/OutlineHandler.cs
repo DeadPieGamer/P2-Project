@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -25,21 +26,24 @@ public class OutlineHandler : MonoBehaviour
             case "Kød":
                 outline = meatButton.GetComponent<DummyOutlineHandler>();
                 outline.isOutlined = true;
+                Debug.Log("M");
                 //highLight(boolMEAT);
                 //outline.ChangeOutline(boolMEAT);
             break;
-            case "FrughtogGrønt":
-                outline = meatButton.GetComponent<DummyOutlineHandler>();
+            case "FrugtogGrøn":
+                outline = veggButton.GetComponent<DummyOutlineHandler>();
                 outline.isOutlined = true;
+                Debug.Log("V");
                 //highLight(boolVEGG);
                 //outline.ChangeOutline(boolVEGG);
-            break;
+                break;
             case "Mejeri":
-                outline = meatButton.GetComponent<DummyOutlineHandler>();
+                outline = dairyButton.GetComponent<DummyOutlineHandler>();
                 outline.isOutlined = true;
+                Debug.Log("D");
                 //highLight(boolDAIRY);
                 //outline.ChangeOutline(boolDAIRY);
-            break;
+                break;
             default: 
                 
             break;
@@ -49,5 +53,10 @@ public class OutlineHandler : MonoBehaviour
     public bool highLight(bool place)
     {
         return place = true;
+    }
+    public void removePlaceFile()
+    {
+        string savedData = "";
+        File.WriteAllText(Application.dataPath + "/Resources/ShopListData/PlaceDatafile.txt", savedData);
     }
 }
