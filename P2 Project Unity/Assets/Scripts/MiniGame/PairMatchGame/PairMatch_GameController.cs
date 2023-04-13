@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameController : MonoBehaviour
+public class PairMatch_GameController : MonoBehaviour
 {
     [SerializeField]
     private Sprite _bgImage;
