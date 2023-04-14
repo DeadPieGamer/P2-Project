@@ -14,7 +14,7 @@ public class PairMatch_GameController : MonoBehaviour
     public List<WordCards> _gamePuzzles = new List<WordCards>();
 
     public AudioSource _audio;
-    public TextMeshProUGUI _wordText;
+    private TextMeshProUGUI _wordText;
 
     private bool firstGuess, secondGuess;
 
@@ -46,7 +46,6 @@ public class PairMatch_GameController : MonoBehaviour
         gameGuesses = _gamePuzzles.Count / 2;
         _wordText = GetComponentInChildren<TextMeshProUGUI>();
 
-
     }
     void GetButton()
     {
@@ -55,7 +54,8 @@ public class PairMatch_GameController : MonoBehaviour
         for (int i = 0; i < objects.Length; i++)
         {
             btns.Add(objects[i].GetComponent<Button>());
-            btns[i].image.sprite = _bgImage; //adding the image to our cards
+            btns[i].image.sprite = _bgImage; //adding the back image to our cards
+
             // Goes through every text the button may have and resets the text
             foreach (TextMeshProUGUI textBox in btns[i].GetComponentsInChildren<TextMeshProUGUI>())
             {
@@ -84,6 +84,7 @@ public class PairMatch_GameController : MonoBehaviour
         foreach (Button btn in btns)
         {
             btn.onClick.AddListener(() => PickAPuzzle());
+            ShufffleImage(_puzzles);
 
         }
     }
@@ -94,8 +95,10 @@ public class PairMatch_GameController : MonoBehaviour
         if (!firstGuess)
         {
             firstGuess = true;
-            firstGuessIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name); //convert a string to an int
-            firstGuessPuzzle = _gamePuzzles[firstGuessIndex].danish_Word;  //getting the name of the image
+            //convert a string to an int
+            firstGuessIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
+            //getting the name of the image
+            firstGuessPuzzle = _gamePuzzles[firstGuessIndex].danish_Word;  
             btns[firstGuessIndex].image.sprite = _gamePuzzles[firstGuessIndex].word_Picture;
             // Because image of the button was changed, we change the text to match
             foreach (TextMeshProUGUI textBox in btns[firstGuessIndex].GetComponentsInChildren<TextMeshProUGUI>())
@@ -111,8 +114,10 @@ public class PairMatch_GameController : MonoBehaviour
         else if (!secondGuess)
         {
             secondGuess = true;
-            secondGuessIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name); //convert a string to an int
-            secondGuessPuzzle = _gamePuzzles[secondGuessIndex].danish_Word;  //getting the name of the image and comparing them 
+            //convert a string to an int
+            secondGuessIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
+            //getting the name of the image and comparing them 
+            secondGuessPuzzle = _gamePuzzles[secondGuessIndex].danish_Word;  
             btns[secondGuessIndex].image.sprite = _gamePuzzles[secondGuessIndex].word_Picture;
             // Because image of the button was changed, we change the text to match
             foreach (TextMeshProUGUI textBox in btns[secondGuessIndex].GetComponentsInChildren<TextMeshProUGUI>())
@@ -191,6 +196,16 @@ public class PairMatch_GameController : MonoBehaviour
         {
             WordCards temp = list[i];
             int randomIndex = Random.Range(i, list.Count);
+            list[i] = list[randomIndex];
+            list[randomIndex] = temp;
+        }
+    }
+    void ShufffleImage(WordCards[] list)
+    {
+        for (int i = 0; i < list.Length; i++)
+        {
+            WordCards temp = list[i];
+            int randomIndex = Random.Range(i, list.Length);
             list[i] = list[randomIndex];
             list[randomIndex] = temp;
         }
