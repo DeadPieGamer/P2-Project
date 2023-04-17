@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -15,11 +18,40 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     [SerializeField] AudioClip correctSound;
     [SerializeField] AudioClip wrongSound;
 
+    CardSetLoader loader;
 
+    int startIndex = 4;
+    List<int> wholeArrayInd;
+    List<int> ArrayNum = new List<int>();
+    List<WordCards> cardSlot = new List<WordCards>();
+    private bool[] LearnedArray = new bool[6];
+    SetTypes gameDeck = SetTypes.Dairy;
     private void Start()
     {
+        int Setamount = 6;
+        loader = GameObject.FindGameObjectWithTag("loader").GetComponent<CardSetLoader>();
         checker = GameObject.FindGameObjectWithTag("checker").GetComponent<Sorting_PointChecker>();
         soundChecker = GameObject.FindGameObjectWithTag("checker").GetComponent<AudioSource>();
+
+        string wordData = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/cardDatafile.txt").ToString();
+        wholeArrayInd = wordData.Split(',').ToList().Select(int.Parse).ToList();
+
+        for (int i = startIndex; i < startIndex+2; i++)
+        {
+            ArrayNum.Add(wholeArrayInd[i]);
+        }
+
+        for (int i = startIndex-startIndex; i < startIndex-2; i++)
+        {
+            cardSlot.Add(loader.Get_Set(gameDeck)[ArrayNum[i]]);
+        }
+
+        string boolData = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt").ToString();
+        string[] convertstep = boolData.Split(',').ToArray();
+        for (int i = 0; i < Setamount; i++)
+        {
+            LearnedArray[i] = Convert.ToBoolean(convertstep[i]);
+        }
     }
     
 
@@ -52,7 +84,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                     Debug.Log(Items.tag);
                     checker.AddPoints(1);
                     soundChecker.PlayOneShot(correctSound);
-           
+                    checkShoplist(shelfItem);
                 }
                 else
                 {
@@ -65,6 +97,18 @@ public class ItemSlot : MonoBehaviour, IDropHandler
             }
             
 
+        }
+    }
+    private void checkShoplist(WordCards card)
+    {
+        for (int i = startIndex; i < startIndex+2; i++)
+        {
+            if (cardSlot[i-startIndex] == card)
+            {
+                LearnedArray[i] = true;
+                string boolData = String.Join(",", LearnedArray);
+                File.WriteAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt", boolData);
+            }
         }
     }
 }

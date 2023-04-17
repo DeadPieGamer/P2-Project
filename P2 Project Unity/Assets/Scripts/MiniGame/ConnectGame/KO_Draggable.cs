@@ -22,9 +22,12 @@ public class KO_Draggable : MonoBehaviour
     [SerializeField] private AudioClip correctDing;
     [SerializeField] private AudioClip wrongDing;
 
-    List<int> ArrayNum;
+    List<int> wholeArrayInd;
+    List<int> ArrayNum = new List<int>();
     List<WordCards> cardSlot = new List<WordCards>();
     private bool[] LearnedArray = new bool[6];
+    int startIndex = 0;
+    SetTypes gameDeck = SetTypes.Meat;
     //[SerializeField] private bool drawStuff = false;
 
     private void Start()
@@ -39,11 +42,16 @@ public class KO_Draggable : MonoBehaviour
         BGaudsource = GameObject.FindGameObjectWithTag("checker").GetComponent<AudioSource>();
 
         string wordData = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/cardDatafile.txt").ToString();
-        ArrayNum = wordData.Split(',').ToList().Select(int.Parse).ToList();
+        wholeArrayInd = wordData.Split(',').ToList().Select(int.Parse).ToList();
 
-        for (int i = 0; i < ArrayNum.Count / 3; i++)
+        for (int i = startIndex; i < startIndex + 2; i++)
         {
-            cardSlot.Add(loader.Get_Set(SetTypes.Meat)[ArrayNum[i]]);
+            ArrayNum.Add(wholeArrayInd[i]);
+        }
+
+        for (int i = startIndex; i < startIndex+2; i++)
+        {
+            cardSlot.Add(loader.Get_Set(gameDeck)[ArrayNum[i]]);
         }
 
         string boolData = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt").ToString();
@@ -133,7 +141,7 @@ public class KO_Draggable : MonoBehaviour
 
     private void checkShoplist(WordCards card)
     {
-        for (int i = 0; i < ArrayNum.Count / 3; i++)
+        for (int i = startIndex; i < startIndex+2; i++)
         {
             if(cardSlot[i] == card)
             {
