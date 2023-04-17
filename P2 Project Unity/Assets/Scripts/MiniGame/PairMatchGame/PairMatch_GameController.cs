@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -31,6 +34,11 @@ public class PairMatch_GameController : MonoBehaviour
     [SerializeField] private AudioClip correctDing;
     [SerializeField] private AudioClip wrongDing;
 
+    int startIndex = 2;
+    List<int> wholeArrayInd;
+    List<int> ArrayNum = new List<int>();
+    List<WordCards> cardSlot = new List<WordCards>();
+    private bool[] LearnedArray = new bool[6];
 
     private void Awake()
     {
@@ -39,6 +47,8 @@ public class PairMatch_GameController : MonoBehaviour
 
     private void Start()
     {
+        int Setamount = 6;
+
         GetButton();
         AddListerners();
         AddGamePuzzles();
@@ -46,6 +56,25 @@ public class PairMatch_GameController : MonoBehaviour
         gameGuesses = _gamePuzzles.Count / 2;
         _wordText = GetComponentInChildren<TextMeshProUGUI>();
 
+        string wordData = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/cardDatafile.txt").ToString();
+        wholeArrayInd = wordData.Split(',').ToList().Select(int.Parse).ToList();
+
+        for (int i = startIndex; i < startIndex + 2; i++)
+        {
+            ArrayNum.Add(wholeArrayInd[i]);
+        }
+
+        for (int i = startIndex - startIndex; i < startIndex; i++)
+        {
+            cardSlot.Add(_puzzles[ArrayNum[i]]);
+        }
+
+        string boolData = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt").ToString();
+        string[] convertstep = boolData.Split(',').ToArray();
+        for (int i = 0; i < Setamount; i++)
+        {
+            LearnedArray[i] = Convert.ToBoolean(convertstep[i]);
+        }
     }
     void GetButton()
     {
@@ -139,6 +168,7 @@ public class PairMatch_GameController : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if (firstGuessPuzzle == secondGuessPuzzle)
         {
+            checkShoplist(_gamePuzzles[secondGuessIndex]);
             yield return new WaitForSeconds(0.2f);
             btns[firstGuessIndex].interactable = false;//can not click on the button after choosen the right pair 
             btns[secondGuessIndex].interactable = false;
@@ -195,7 +225,7 @@ public class PairMatch_GameController : MonoBehaviour
         for (int i = 0; i < list.Count; i++)
         {
             WordCards temp = list[i];
-            int randomIndex = Random.Range(i, list.Count);
+            int randomIndex = UnityEngine.Random.Range(i, list.Count);
             list[i] = list[randomIndex];
             list[randomIndex] = temp;
         }
@@ -205,9 +235,21 @@ public class PairMatch_GameController : MonoBehaviour
         for (int i = 0; i < list.Length; i++)
         {
             WordCards temp = list[i];
-            int randomIndex = Random.Range(i, list.Length);
+            int randomIndex = UnityEngine.Random.Range(i, list.Length);
             list[i] = list[randomIndex];
             list[randomIndex] = temp;
+        }
+    }
+    private void checkShoplist(WordCards card)
+    {
+        for (int i = startIndex; i < startIndex + 2; i++)
+        {
+            if (cardSlot[i - startIndex] == card)
+            {
+                LearnedArray[i] = true;
+                string boolData = String.Join(",", LearnedArray);
+                File.WriteAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt", boolData);
+            }
         }
     }
 }
