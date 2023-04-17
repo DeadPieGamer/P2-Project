@@ -9,7 +9,7 @@ Shader "Unlit/Custom/FelixOutline"
     {
         _MainTex ("Texture", 2D) = "white" {}
         _OutlineColor("Color", Color) = (1, 1, 1, 1)
-        _OutlineWidth("Width", Range(0.0, 4.0)) = 4
+        _OutlineWidth("Width", Range(0.0, 0.02)) = 0.01
     }
     SubShader
     { 
@@ -37,7 +37,7 @@ Shader "Unlit/Custom/FelixOutline"
         {
             v2fOutline o;
             o.pos = UnityObjectToClipPos(v.vertex);
-            o.pos.xy += offset * 2 * o.pos.w * _OutlineWidth / _ScreenParams.xy;
+            o.pos.xy += offset * 2 * o.pos.w * _OutlineWidth;
             o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
             return o;
         }
