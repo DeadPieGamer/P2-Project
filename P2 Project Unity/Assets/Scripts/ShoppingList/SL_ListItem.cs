@@ -27,4 +27,9 @@ public class SL_ListItem : MonoBehaviour
     {
         setType = Deck;
     }
+   public void Striket(bool Learned)
+    {
+        if (Learned) shopText.fontStyle = FontStyles.Strikethrough;
+        else shopText.fontStyle = FontStyles.Normal;
+    }
 }
