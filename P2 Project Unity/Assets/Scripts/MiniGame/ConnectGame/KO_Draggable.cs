@@ -1,10 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class KO_Draggable : MonoBehaviour
 {
+    [SerializeField]private CardSetLoader loader;
     public WordCards myCard;
     private GameObject hitObject;
     private BoxCollider2D coll;
@@ -18,16 +22,37 @@ public class KO_Draggable : MonoBehaviour
     [SerializeField] private AudioClip correctDing;
     [SerializeField] private AudioClip wrongDing;
 
+    List<int> ArrayNum;
+    List<WordCards> cardSlot = new List<WordCards>();
+    private bool[] LearnedArray = new bool[6];
     //[SerializeField] private bool drawStuff = false;
 
     private void Start()
     {
+        int Setamount = 6;
+        loader = GameObject.FindGameObjectWithTag("loader").GetComponent<CardSetLoader>();
         myCard = GetComponent<Connect_Game>().AssignedCard;
         coll = GetComponent<BoxCollider2D>();
         startPos = this.transform.parent.position;
         lineRenderer = transform.parent.GetComponentInChildren<LineRenderer>();
         Checker = GameObject.FindGameObjectWithTag("checker").GetComponent<KO_PointChecker>();
         BGaudsource = GameObject.FindGameObjectWithTag("checker").GetComponent<AudioSource>();
+
+        string wordData = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/cardDatafile.txt").ToString();
+        ArrayNum = wordData.Split(',').ToList().Select(int.Parse).ToList();
+
+        for (int i = 0; i < ArrayNum.Count / 3; i++)
+        {
+            cardSlot.Add(loader.Get_Set(SetTypes.Meat)[ArrayNum[i]]);
+        }
+
+        string boolData = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt").ToString();
+        string[] convertstep = boolData.Split(',').ToArray();
+        for (int i = 0; i < Setamount; i++)
+        {
+            LearnedArray[i] = Convert.ToBoolean(convertstep[i]);
+        }
+
     }
 
     public void CollidingDetect()
@@ -55,6 +80,7 @@ public class KO_Draggable : MonoBehaviour
                     {
                         hitCorrect = true;
                         correctObject = hitObject;
+                        checkShoplist(myCard);
                     }
                 }
                 else
@@ -103,6 +129,19 @@ public class KO_Draggable : MonoBehaviour
         BGaudsource.PlayOneShot(wrongDing);
         lineRenderer.SetPosition(1, transform.position - transform.parent.position);
 
+    }
+
+    private void checkShoplist(WordCards card)
+    {
+        for (int i = 0; i < ArrayNum.Count / 3; i++)
+        {
+            if(cardSlot[i] == card)
+            {
+                LearnedArray[i] = true;
+                string boolData = String.Join(",", LearnedArray);
+                File.WriteAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt", boolData);
+            }
+        }
     }
 
     //private void OnDrawGizmos()

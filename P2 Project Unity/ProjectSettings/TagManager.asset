@@ -11,6 +11,7 @@ TagManager:
   - Draggable
   - checker
   - PuzzleButton
+  - loader
   layers:
   - Default
   - TransparentFX
