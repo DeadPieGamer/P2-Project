@@ -18,9 +18,5 @@ public class WordCards : ScriptableObject //using ScriptableObject instead of mo
     }
 }
 
-[Serializable]
-public class WordCardList
-{
-    public List<WordCards> cards;
-}
+
 
