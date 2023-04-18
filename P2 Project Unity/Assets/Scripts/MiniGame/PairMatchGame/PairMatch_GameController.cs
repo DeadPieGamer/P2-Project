@@ -35,6 +35,9 @@ public class PairMatch_GameController : MonoBehaviour
     [SerializeField] private AudioClip correctDing;
     [SerializeField] private AudioClip wrongDing;
 
+    [SerializeField] private CardSetLoader loader;
+    private SetTypes gameSet = SetTypes.FruitsAndGreens;
+
     int startIndex = 2;
     List<int> wholeArrayInd;
     List<int> ArrayNum = new List<int>();
@@ -44,11 +47,15 @@ public class PairMatch_GameController : MonoBehaviour
     private void Awake()
     {
         _puzzles = Resources.LoadAll<WordCards>("WordCards_Folder/FruitsAndGreens/");
+       
+
     }
 
     private void Start()
     {
         int Setamount = 6;
+
+        loader = GameObject.FindGameObjectWithTag("loader").GetComponent<CardSetLoader>();
 
         GetButton();
         AddListerners();
@@ -67,7 +74,8 @@ public class PairMatch_GameController : MonoBehaviour
 
         for (int i = startIndex - startIndex; i < startIndex; i++)
         {
-            cardSlot.Add(_puzzles[ArrayNum[i]]);
+            cardSlot.Add(loader.Get_Set(gameSet)[ArrayNum[i]]);
+            Debug.Log(cardSlot[i].danish_Word);
         }
 
         string boolData = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt").ToString();
@@ -185,7 +193,7 @@ public class PairMatch_GameController : MonoBehaviour
             }
 
             //Debug.Log(cardCheck.danish_Word);
-            CheckShoplist(firstGuessPuzzle);
+            CheckShoplist(_gamePuzzles[secondGuessIndex].danish_Word);
             _anwsersSoundSource.PlayOneShot(correctDing);
             CheckIfTheGameIsFinished();
         }
@@ -250,9 +258,8 @@ public class PairMatch_GameController : MonoBehaviour
                 LearnedArray[i] = true;
                 string boolData = String.Join(",", LearnedArray);
                 File.WriteAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt", boolData);
-                string test = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt");
-                Debug.Log(test);
             }
+            
         }
     }
 }
