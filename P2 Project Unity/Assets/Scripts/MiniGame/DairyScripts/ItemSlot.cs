@@ -84,7 +84,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                     Debug.Log(Items.tag);
                     checker.AddPoints(1);
                     soundChecker.PlayOneShot(correctSound);
-                    checkShoplist(shelfItem);
+                    CheckShoplist(shelfItem);
                 }
                 else
                 {
@@ -99,7 +99,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
         }
     }
-    private void checkShoplist(WordCards card)
+    private void CheckShoplist(WordCards card)
     {
         for (int i = startIndex; i < startIndex+2; i++)
         {

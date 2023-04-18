@@ -15,6 +15,7 @@ public class PairMatch_GameController : MonoBehaviour
 
     public WordCards[] _puzzles;
     public List<WordCards> _gamePuzzles = new List<WordCards>();
+    public WordCards cardCheck;
 
     public AudioSource _audio;
     private TextMeshProUGUI _wordText;
@@ -168,7 +169,7 @@ public class PairMatch_GameController : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if (firstGuessPuzzle == secondGuessPuzzle)
         {
-            checkShoplist(_gamePuzzles[secondGuessIndex]);
+            
             yield return new WaitForSeconds(0.2f);
             btns[firstGuessIndex].interactable = false;//can not click on the button after choosen the right pair 
             btns[secondGuessIndex].interactable = false;
@@ -185,6 +186,9 @@ public class PairMatch_GameController : MonoBehaviour
                 textBox.text = "";
             }
 
+            cardCheck = _gamePuzzles[firstGuessIndex];
+            //Debug.Log(cardCheck.danish_Word);
+            CheckShoplist(cardCheck);
             _anwsersSoundSource.PlayOneShot(correctDing);
             CheckIfTheGameIsFinished();
         }
@@ -240,7 +244,7 @@ public class PairMatch_GameController : MonoBehaviour
             list[randomIndex] = temp;
         }
     }
-    private void checkShoplist(WordCards card)
+    private void CheckShoplist(WordCards card)
     {
         for (int i = startIndex; i < startIndex + 2; i++)
         {
@@ -249,6 +253,8 @@ public class PairMatch_GameController : MonoBehaviour
                 LearnedArray[i] = true;
                 string boolData = String.Join(",", LearnedArray);
                 File.WriteAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt", boolData);
+                string test = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt");
+                Debug.Log(test);
             }
         }
     }

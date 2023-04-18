@@ -88,7 +88,7 @@ public class KO_Draggable : MonoBehaviour
                     {
                         hitCorrect = true;
                         correctObject = hitObject;
-                        checkShoplist(myCard);
+                        CheckShoplist(myCard);
                     }
                 }
                 else
@@ -139,7 +139,7 @@ public class KO_Draggable : MonoBehaviour
 
     }
 
-    private void checkShoplist(WordCards card)
+    private void CheckShoplist(WordCards card)
     {
         for (int i = startIndex; i < startIndex+2; i++)
         {
