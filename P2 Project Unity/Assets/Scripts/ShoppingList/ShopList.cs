@@ -26,7 +26,7 @@ public class ShopList : MonoBehaviour
         
         Setamount = 6;//UnityEngine.Random.Range(3, 10);
         TryOut = new WordCards[Setamount];
-        PlayerPrefs.SetInt("currentDay", -1);
+        //PlayerPrefs.SetInt("currentDay", -1);
         
         if (PlayerPrefs.GetInt("currentDay", -1) != DateTime.Now.DayOfYear)
         {

@@ -115,7 +115,6 @@ public class PairMatch_GameController : MonoBehaviour
         {
             btn.onClick.AddListener(() => PickAPuzzle());
             ShufffleImage(_puzzles);
-
         }
     }
     public void PickAPuzzle()
@@ -160,7 +159,6 @@ public class PairMatch_GameController : MonoBehaviour
             //Adding to the score 
             countGuesses++;
             StartCoroutine(CheckIfThePuzzlesMatch());
-
         }
         
     }
@@ -186,9 +184,8 @@ public class PairMatch_GameController : MonoBehaviour
                 textBox.text = "";
             }
 
-            cardCheck = _gamePuzzles[firstGuessIndex];
             //Debug.Log(cardCheck.danish_Word);
-            CheckShoplist(cardCheck);
+            CheckShoplist(firstGuessPuzzle);
             _anwsersSoundSource.PlayOneShot(correctDing);
             CheckIfTheGameIsFinished();
         }
@@ -244,11 +241,11 @@ public class PairMatch_GameController : MonoBehaviour
             list[randomIndex] = temp;
         }
     }
-    private void CheckShoplist(WordCards card)
+    private void CheckShoplist(string card)
     {
         for (int i = startIndex; i < startIndex + 2; i++)
         {
-            if (cardSlot[i - startIndex] == card)
+            if (cardSlot[i - startIndex].danish_Word == card)
             {
                 LearnedArray[i] = true;
                 string boolData = String.Join(",", LearnedArray);
