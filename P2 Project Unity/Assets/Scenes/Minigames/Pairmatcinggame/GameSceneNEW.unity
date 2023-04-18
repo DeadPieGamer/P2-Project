@@ -682,6 +682,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579912114}
   m_CullTransparentMesh: 1
+--- !u!1 &735425554
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 735425556}
+  - component: {fileID: 735425555}
+  m_Layer: 0
+  m_Name: CardLoader
+  m_TagString: loader
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &735425555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735425554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efc950df661a72d4797fce47c5465995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultCard: {fileID: 11400000, guid: ba020d76becc18b40a0b5acd12b01448, type: 2}
+  cards: []
+--- !u!4 &735425556
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735425554}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 194.6102, y: -186.22112, z: -7.620858}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &813957625
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,11 +778,13 @@ MonoBehaviour:
   btns: []
   _puzzles: []
   _gamePuzzles: []
+  cardCheck: {fileID: 0}
   _audio: {fileID: 813957629}
   EndGamePanel: {fileID: 436274998}
   _anwsersSoundSource: {fileID: 813957629}
   correctDing: {fileID: 8300000, guid: 284723dbd666d1b4b823fd37226d961b, type: 3}
   wrongDing: {fileID: 8300000, guid: 3edcceb6564b0a441beb96012df23332, type: 3}
+  loader: {fileID: 0}
 --- !u!82 &813957629
 AudioSource:
   m_ObjectHideFlags: 0
