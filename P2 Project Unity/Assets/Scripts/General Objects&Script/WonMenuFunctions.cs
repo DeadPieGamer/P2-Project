@@ -18,6 +18,6 @@ public class WonMenuFunctions : MonoBehaviour
     /// </summary>
     public void LoadMainScene()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
     }
 }

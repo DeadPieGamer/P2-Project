@@ -38,7 +38,7 @@ public class PairMatch_GameController : MonoBehaviour
     List<int> wholeArrayInd;
     List<int> ArrayNum = new List<int>();
     List<WordCards> cardSlot = new List<WordCards>();
-    private bool[] LearnedArray = new bool[6];
+    private List<bool> LearnedArray = new List<bool>();
 
     private void Awake()
     {
@@ -73,7 +73,7 @@ public class PairMatch_GameController : MonoBehaviour
         string[] convertstep = boolData.Split(',').ToArray();
         for (int i = 0; i < Setamount; i++)
         {
-            LearnedArray[i] = Convert.ToBoolean(convertstep[i]);
+            LearnedArray.Add(Convert.ToBoolean(convertstep[i]));
         }
     }
     void GetButton()

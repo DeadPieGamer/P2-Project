@@ -17,7 +17,7 @@ public class ShopList : MonoBehaviour
     [SerializeField] private GameObject[] avaiableListIndex;
     [SerializeField] private int Setamount;
     private SetTypes[] ST = { SetTypes.Meat,SetTypes.FruitsAndGreens,SetTypes.Dairy};
-    [SerializeField] private bool[] LearnedArray;
+    private List<bool> LearnedArray= new List<bool>();
     private List<int> shopListIndex = new List<int>();
     //[SerializeField] private WordCardList cardList;
 
@@ -34,7 +34,7 @@ public class ShopList : MonoBehaviour
             setListItem(avaiableSet);
             //string json = JsonUtility.ToJson(shopListIndex,true);
             //File.WriteAllText(Application.dataPath + "/Resources/ShopListData/cardDatafile.json" ,json);
-            LearnedArray = new bool[] { false, false, false, false, false, false };
+            LearnedArray = new List<bool> { false, false, false, false, false, false };
             string wordData = String.Join(",",shopListIndex.ToArray());
             File.WriteAllText(Application.dataPath + "/Resources/ShopListData/cardDatafile.txt", wordData);
             string boolData = String.Join(",", LearnedArray);
@@ -52,9 +52,10 @@ public class ShopList : MonoBehaviour
             shopListIndex = wordData.Split(',').ToList().Select(int.Parse).ToList();
             string boolData = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt").ToString();
             string[] convertstep = boolData.Split(',').ToArray();
+            LearnedArray.Clear();
             for (int i = 0; i < Setamount; i++)
             {
-                LearnedArray[i] = Convert.ToBoolean(convertstep[i]);
+                LearnedArray.Add(Convert.ToBoolean(convertstep[i]));
             }
             //string test = String.Join(",", shopListIndex.ToArray());
             Debug.Log(LearnedArray.ToString());

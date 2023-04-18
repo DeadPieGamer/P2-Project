@@ -24,7 +24,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     List<int> wholeArrayInd;
     List<int> ArrayNum = new List<int>();
     List<WordCards> cardSlot = new List<WordCards>();
-    private bool[] LearnedArray = new bool[6];
+    private List<bool> LearnedArray = new List<bool>();
     SetTypes gameDeck = SetTypes.Dairy;
     private void Start()
     {
@@ -50,7 +50,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
         string[] convertstep = boolData.Split(',').ToArray();
         for (int i = 0; i < Setamount; i++)
         {
-            LearnedArray[i] = Convert.ToBoolean(convertstep[i]);
+            LearnedArray.Add(Convert.ToBoolean(convertstep[i]));
         }
     }
     
