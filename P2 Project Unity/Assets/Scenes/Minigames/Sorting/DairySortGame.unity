@@ -163,8 +163,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -38, y: -419}
-  m_SizeDelta: {x: 4.3, y: 4.3}
+  m_AnchoredPosition: {x: 122.356094, y: -417.9}
+  m_SizeDelta: {x: 5.3595, y: 5.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &228667989
 AudioSource:
@@ -395,8 +395,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -186, y: -524}
-  m_SizeDelta: {x: 4.3825, y: 4.3421}
+  m_AnchoredPosition: {x: -199.6616, y: -529.07245}
+  m_SizeDelta: {x: 5.419, y: 5.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &292339294
 MonoBehaviour:
@@ -1105,8 +1105,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 122, y: -525}
-  m_SizeDelta: {x: 110, y: 110}
+  m_AnchoredPosition: {x: 122, y: -528.7}
+  m_SizeDelta: {x: 135, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &328180945
 AudioSource:
@@ -2256,10 +2256,10 @@ RectTransform:
   m_Father: {fileID: 663723950}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -348.73, y: 576.78}
-  m_SizeDelta: {x: 102.5307, y: 94.4341}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 60, y: -60}
+  m_SizeDelta: {x: 85, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &835289402
 MonoBehaviour:
@@ -2531,7 +2531,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -38, y: -529}
-  m_SizeDelta: {x: 110, y: 110}
+  m_SizeDelta: {x: 135, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &943869860
 MonoBehaviour:
@@ -3125,10 +3125,10 @@ RectTransform:
   m_Father: {fileID: 663723950}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 349.51, y: 584}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -60, y: -60}
+  m_SizeDelta: {x: 85, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1132637447
 MonoBehaviour:
@@ -3607,8 +3607,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -185, y: -417}
-  m_SizeDelta: {x: 110, y: 110}
+  m_AnchoredPosition: {x: -199.9, y: -418.7}
+  m_SizeDelta: {x: 135, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &1426528574
 AudioSource:
@@ -3834,10 +3834,10 @@ RectTransform:
   m_Father: {fileID: 663723950}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 349.51, y: -575}
-  m_SizeDelta: {x: 80, y: 80.6828}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -60, y: 60}
+  m_SizeDelta: {x: 85, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1456229732
 MonoBehaviour:
@@ -3885,8 +3885,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 548ec02590acf06429686f6714678c61, type: 2}
         m_TargetAssemblyTypeName: SceneManger, Assembly-CSharp
-        m_MethodName: LoadPreviousScene
-        m_Mode: 1
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4432,8 +4432,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 123, y: -415}
-  m_SizeDelta: {x: 110, y: 110}
+  m_AnchoredPosition: {x: -37.2, y: -420}
+  m_SizeDelta: {x: 135, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1856669702
 MonoBehaviour:
