@@ -192,8 +192,9 @@ public class PairMatch_GameController : MonoBehaviour
                 textBox.text = "";
             }
 
+            cardCheck = _gamePuzzles[secondGuessIndex];
             //Debug.Log(cardCheck.danish_Word);
-            CheckShoplist(_gamePuzzles[secondGuessIndex].danish_Word);
+            CheckShoplist(cardCheck);
             _anwsersSoundSource.PlayOneShot(correctDing);
             CheckIfTheGameIsFinished();
         }
@@ -249,11 +250,11 @@ public class PairMatch_GameController : MonoBehaviour
             list[randomIndex] = temp;
         }
     }
-    private void CheckShoplist(string card)
+    private void CheckShoplist(WordCards card)
     {
         for (int i = startIndex; i < startIndex + 2; i++)
         {
-            if (cardSlot[i - startIndex].danish_Word == card)
+            if (cardSlot[i - startIndex] == card)
             {
                 LearnedArray[i] = true;
                 string boolData = String.Join(",", LearnedArray);
