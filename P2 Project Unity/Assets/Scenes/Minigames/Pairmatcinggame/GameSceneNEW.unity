@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 316417787}
   - component: {fileID: 316417786}
   m_Layer: 5
-  m_Name: Button
+  m_Name: dictionary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -447,7 +447,7 @@ GameObject:
   - component: {fileID: 431439166}
   - component: {fileID: 431439165}
   m_Layer: 5
-  m_Name: BackButton
+  m_Name: exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -696,7 +696,7 @@ GameObject:
   - component: {fileID: 579912117}
   - component: {fileID: 579912116}
   m_Layer: 5
-  m_Name: Button
+  m_Name: settings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -914,6 +914,9 @@ MonoBehaviour:
   _gamePuzzles: []
   cardCheck: {fileID: 0}
   _audio: {fileID: 813957629}
+  exit: {fileID: 431439163}
+  dictionary: {fileID: 316417784}
+  settings: {fileID: 579912114}
   EndGamePanel: {fileID: 436274998}
   _anwsersSoundSource: {fileID: 813957629}
   correctDing: {fileID: 8300000, guid: 284723dbd666d1b4b823fd37226d961b, type: 3}

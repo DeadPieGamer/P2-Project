@@ -5601,6 +5601,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 0
+  exit: {fileID: 1456229730}
+  dictionary: {fileID: 835289400}
+  settings: {fileID: 1132637445}
   wonMenu: {fileID: 610604563}
 --- !u!4 &2076291734
 Transform:

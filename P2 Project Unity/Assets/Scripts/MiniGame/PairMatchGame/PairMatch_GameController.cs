@@ -26,6 +26,10 @@ public class PairMatch_GameController : MonoBehaviour
     private int countCorrectGuesses;
     private int gameGuesses;
 
+    public GameObject exit;
+    public GameObject dictionary;
+    public GameObject settings;
+
     private int firstGuessIndex, secondGuessIndex;
 
     private string firstGuessPuzzle, secondGuessPuzzle;
@@ -229,9 +233,17 @@ public class PairMatch_GameController : MonoBehaviour
             EndGamePanel.SetActive(true);
             Debug.Log("Game Finished");
             Debug.Log("it took you " + countGuesses + " Guess(es) to finish the game");
-
+            DisableButton();
         }
     }
+
+    public void DisableButton()
+    {
+        exit.gameObject.SetActive(false);
+        dictionary.gameObject.SetActive(false);
+        settings.gameObject.SetActive(false);
+    }
+
     void ShuffflePlacement(List<WordCards> list)
     {
         for (int i = 0; i < list.Count; i++)
