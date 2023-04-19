@@ -12,7 +12,7 @@ public class KO_Draggable : MonoBehaviour
     public WordCards myCard;
     private GameObject hitObject;
     private BoxCollider2D coll;
-    private Vector3 PlusSize = new Vector3(0f, 0f,0f);
+    private Vector3 PlusSize = new Vector3(-1.3f, -1.3f,0f);
     private Vector2 startPos;
     [SerializeField] private LayerMask layersToHit;
     private LineRenderer lineRenderer;
