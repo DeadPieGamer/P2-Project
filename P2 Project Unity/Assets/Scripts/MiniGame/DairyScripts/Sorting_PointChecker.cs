@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Sorting_PointChecker : MonoBehaviour
 {
     public int points;
+
     public GameObject exit;
     public GameObject dictionary;
     public GameObject settings;
