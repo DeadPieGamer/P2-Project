@@ -28,7 +28,6 @@ public class PairMatch_GameController : MonoBehaviour
 
     public GameObject exit;
     public GameObject dictionary;
-    public GameObject settings;
 
     private int firstGuessIndex, secondGuessIndex;
 
@@ -241,7 +240,6 @@ public class PairMatch_GameController : MonoBehaviour
     {
         exit.gameObject.SetActive(false);
         dictionary.gameObject.SetActive(false);
-        settings.gameObject.SetActive(false);
     }
 
     void ShuffflePlacement(List<WordCards> list)

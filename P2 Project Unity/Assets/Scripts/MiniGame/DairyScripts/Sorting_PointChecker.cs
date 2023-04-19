@@ -9,7 +9,6 @@ public class Sorting_PointChecker : MonoBehaviour
 
     public GameObject exit;
     public GameObject dictionary;
-    public GameObject settings;
 
     public GameObject wonMenu;
     // Start is called before the first frame update
@@ -34,7 +33,6 @@ public class Sorting_PointChecker : MonoBehaviour
     {
             exit.gameObject.SetActive(false);
             dictionary.gameObject.SetActive(false);
-            settings.gameObject.SetActive(false);
     }
   
 }
