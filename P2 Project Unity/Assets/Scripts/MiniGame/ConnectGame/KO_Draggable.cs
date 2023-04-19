@@ -12,7 +12,7 @@ public class KO_Draggable : MonoBehaviour
     public WordCards myCard;
     private GameObject hitObject;
     private BoxCollider2D coll;
-    private Vector3 PlusSize = new Vector3(-1.3f, -1.3f,0f);
+    private Vector3 PlusSize = new Vector3(-1f, -1f,0f);
     private Vector2 startPos;
     [SerializeField] private LayerMask layersToHit;
     private LineRenderer lineRenderer;
@@ -30,8 +30,16 @@ public class KO_Draggable : MonoBehaviour
     SetTypes gameDeck = SetTypes.Meat;
     //[SerializeField] private bool drawStuff = false;
 
+    private float R = 60f;
+    private float G = 180f;
+    private float B = 20f;
+    private float A = 255f;
+
+    private Color correctColor;
+
     private void Start()
     {
+        correctColor = new Color(R / 255f, G / 255f, B / 255f,A/255f);
         int Setamount = 6;
         loader = GameObject.FindGameObjectWithTag("loader").GetComponent<CardSetLoader>();
         myCard = GetComponent<Connect_Game>().AssignedCard;
@@ -128,6 +136,8 @@ public class KO_Draggable : MonoBehaviour
         this.gameObject.tag = "Untagged";
         this.transform.position = hitObject.transform.position;
         lineRenderer.SetPosition(1, transform.position - transform.parent.position);
+        lineRenderer.startColor = correctColor;
+        lineRenderer.endColor = correctColor;
         BGaudsource.PlayOneShot(correctDing);
         Checker.AddPoints(1);
     }
