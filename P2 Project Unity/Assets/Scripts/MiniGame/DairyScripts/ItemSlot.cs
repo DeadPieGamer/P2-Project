@@ -85,6 +85,8 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                     checker.AddPoints(1);
                     soundChecker.PlayOneShot(correctSound);
                     CheckShoplist(shelfItem);
+                    CheckShoplist(shelfItem);
+                    CheckShoplist(shelfItem);
                 }
                 else
                 {

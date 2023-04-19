@@ -89,6 +89,8 @@ public class KO_Draggable : MonoBehaviour
                         hitCorrect = true;
                         correctObject = hitObject;
                         CheckShoplist(myCard);
+                        CheckShoplist(myCard);
+                        CheckShoplist(myCard);
                     }
                 }
                 else
