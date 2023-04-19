@@ -573,14 +573,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a39f30457610b8c4cbb97e867c08b54e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOutlined: 1
+  isOutlined: 0
   useAdvanced: 0
   outlinedMaterial: {fileID: 0}
   basicMaterial: {fileID: 0}
   outlineActions:
     m_PersistentCalls:
       m_Calls: []
-  showAdvanced: 0
+  showAdvanced: 1
 --- !u!1 &579661740
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,14 +823,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a39f30457610b8c4cbb97e867c08b54e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOutlined: 1
-  useAdvanced: 0
-  outlinedMaterial: {fileID: 0}
+  isOutlined: 0
+  useAdvanced: 1
+  outlinedMaterial: {fileID: 2100000, guid: 478f0b815d67b435096df351c6469191, type: 2}
   basicMaterial: {fileID: 0}
   outlineActions:
     m_PersistentCalls:
       m_Calls: []
-  showAdvanced: 0
+  showAdvanced: 1
 --- !u!1 &699025614
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,14 +989,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a39f30457610b8c4cbb97e867c08b54e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOutlined: 1
-  useAdvanced: 0
-  outlinedMaterial: {fileID: 0}
+  isOutlined: 0
+  useAdvanced: 1
+  outlinedMaterial: {fileID: 2100000, guid: 478f0b815d67b435096df351c6469191, type: 2}
   basicMaterial: {fileID: 0}
   outlineActions:
     m_PersistentCalls:
       m_Calls: []
-  showAdvanced: 0
+  showAdvanced: 1
 --- !u!1 &699107019
 GameObject:
   m_ObjectHideFlags: 0
@@ -1659,9 +1659,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a39f30457610b8c4cbb97e867c08b54e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOutlined: 1
-  useAdvanced: 0
-  outlinedMaterial: {fileID: 0}
+  isOutlined: 0
+  useAdvanced: 1
+  outlinedMaterial: {fileID: 2100000, guid: 478f0b815d67b435096df351c6469191, type: 2}
   basicMaterial: {fileID: 0}
   outlineActions:
     m_PersistentCalls:
