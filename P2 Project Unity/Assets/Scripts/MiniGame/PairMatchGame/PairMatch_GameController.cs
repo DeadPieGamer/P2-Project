@@ -47,6 +47,7 @@ public class PairMatch_GameController : MonoBehaviour
     List<WordCards> cardSlot = new List<WordCards>();
     private List<bool> LearnedArray = new List<bool>();
 
+    int Setamount = 6;
     private void Awake()
     {
         _puzzles = Resources.LoadAll<WordCards>("WordCards_Folder/FruitsAndGreens/");
@@ -83,9 +84,19 @@ public class PairMatch_GameController : MonoBehaviour
 
         string boolData = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt").ToString();
         string[] convertstep = boolData.Split(',').ToArray();
-        for (int i = 0; i < Setamount; i++)
+        if (convertstep.Length == 1)
         {
-            LearnedArray.Add(Convert.ToBoolean(convertstep[i]));
+            LearnedArray = new List<bool> { false, false, false, false, false, false };
+            string newboolData = String.Join(",", LearnedArray);
+            File.WriteAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt", newboolData);
+        }
+        else
+        {
+            LearnedArray.Clear();
+            for (int i = 0; i < Setamount; i++)
+            {
+                LearnedArray.Add(Convert.ToBoolean(convertstep[i]));
+            }
         }
     }
     void GetButton()
@@ -264,15 +275,21 @@ public class PairMatch_GameController : MonoBehaviour
     }
     private void CheckShoplist(WordCards card)
     {
+        string boolData = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt").ToString();
+        string[] convertstep = boolData.Split(',').ToArray();
+        LearnedArray.Clear();
+        for (int i = 0; i < Setamount; i++)
+        {
+            LearnedArray.Add(Convert.ToBoolean(convertstep[i]));
+        }
         for (int i = startIndex; i < startIndex + 2; i++)
         {
-            if (cardSlot[i - startIndex] == card)
+            if (cardSlot[i] == card)
             {
                 LearnedArray[i] = true;
-                string boolData = String.Join(",", LearnedArray);
-                File.WriteAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt", boolData);
+                string newboolData = String.Join(",", LearnedArray);
+                File.WriteAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt", newboolData);
             }
-            
         }
     }
 }

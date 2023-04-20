@@ -36,11 +36,10 @@ public class KO_Draggable : MonoBehaviour
     private float A = 255f;
 
     private Color correctColor;
-
+    int Setamount = 6;
     private void Start()
     {
         correctColor = new Color(R / 255f, G / 255f, B / 255f,A/255f);
-        int Setamount = 6;
         loader = GameObject.FindGameObjectWithTag("loader").GetComponent<CardSetLoader>();
         myCard = GetComponent<Connect_Game>().AssignedCard;
         coll = GetComponent<BoxCollider2D>();
@@ -64,9 +63,19 @@ public class KO_Draggable : MonoBehaviour
 
         string boolData = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt").ToString();
         string[] convertstep = boolData.Split(',').ToArray();
-        for (int i = 0; i < Setamount; i++)
+        if (convertstep.Length == 1)
         {
-            LearnedArray.Add(Convert.ToBoolean(convertstep[i]));
+            LearnedArray = new List<bool> { false, false, false, false, false, false };
+            string newboolData = String.Join(",", LearnedArray);
+            File.WriteAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt", newboolData);
+        }
+        else
+        {
+            LearnedArray.Clear();
+            for (int i = 0; i < Setamount; i++)
+            {
+                LearnedArray.Add(Convert.ToBoolean(convertstep[i]));
+            }
         }
 
     }
@@ -96,8 +105,6 @@ public class KO_Draggable : MonoBehaviour
                     {
                         hitCorrect = true;
                         correctObject = hitObject;
-                        CheckShoplist(myCard);
-                        CheckShoplist(myCard);
                         CheckShoplist(myCard);
                     }
                 }
@@ -153,13 +160,20 @@ public class KO_Draggable : MonoBehaviour
 
     private void CheckShoplist(WordCards card)
     {
+        string boolData = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt").ToString();
+        string[] convertstep = boolData.Split(',').ToArray();
+        LearnedArray.Clear();
+        for (int i = 0; i < Setamount; i++)
+        {
+            LearnedArray.Add(Convert.ToBoolean(convertstep[i]));
+        }
         for (int i = startIndex; i < startIndex+2; i++)
         {
             if(cardSlot[i] == card)
             {
                 LearnedArray[i] = true;
-                string boolData = String.Join(",", LearnedArray);
-                File.WriteAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt", boolData);
+                string newboolData = String.Join(",", LearnedArray);
+                File.WriteAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt", newboolData);
             }
         }
     }

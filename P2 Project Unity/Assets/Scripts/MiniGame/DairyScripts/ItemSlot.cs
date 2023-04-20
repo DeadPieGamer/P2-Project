@@ -26,9 +26,11 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     List<WordCards> cardSlot = new List<WordCards>();
     private List<bool> LearnedArray = new List<bool>();
     SetTypes gameDeck = SetTypes.Dairy;
+
+    int Setamount = 6;
     private void Start()
     {
-        int Setamount = 6;
+        
         loader = GameObject.FindGameObjectWithTag("loader").GetComponent<CardSetLoader>();
         checker = GameObject.FindGameObjectWithTag("checker").GetComponent<Sorting_PointChecker>();
         soundChecker = GameObject.FindGameObjectWithTag("checker").GetComponent<AudioSource>();
@@ -48,9 +50,19 @@ public class ItemSlot : MonoBehaviour, IDropHandler
 
         string boolData = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt").ToString();
         string[] convertstep = boolData.Split(',').ToArray();
-        for (int i = 0; i < Setamount; i++)
+        if (convertstep.Length == 1)
         {
-            LearnedArray.Add(Convert.ToBoolean(convertstep[i]));
+            LearnedArray = new List<bool> { false, false, false, false, false, false };
+            string newboolData = String.Join(",", LearnedArray);
+            File.WriteAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt", newboolData);
+        }
+        else
+        {
+            LearnedArray.Clear();
+            for (int i = 0; i < Setamount; i++)
+            {
+                LearnedArray.Add(Convert.ToBoolean(convertstep[i]));
+            }
         }
     }
     
@@ -103,13 +115,20 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     }
     private void CheckShoplist(WordCards card)
     {
-        for (int i = startIndex; i < startIndex+2; i++)
+        string boolData = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt").ToString();
+        string[] convertstep = boolData.Split(',').ToArray();
+        LearnedArray.Clear();
+        for (int i = 0; i < Setamount; i++)
         {
-            if (cardSlot[i-startIndex] == card)
+            LearnedArray.Add(Convert.ToBoolean(convertstep[i]));
+        }
+        for (int i = startIndex; i < startIndex + 2; i++)
+        {
+            if (cardSlot[i] == card)
             {
                 LearnedArray[i] = true;
-                string boolData = String.Join(",", LearnedArray);
-                File.WriteAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt", boolData);
+                string newboolData = String.Join(",", LearnedArray);
+                File.WriteAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt", newboolData);
             }
         }
     }

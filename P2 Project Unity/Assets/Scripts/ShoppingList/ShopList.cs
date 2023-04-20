@@ -30,32 +30,37 @@ public class ShopList : MonoBehaviour
         
         if (PlayerPrefs.GetInt("currentDay", -1) != DateTime.Now.DayOfYear)
         {
+            
             DefineCards();
             setListItem(avaiableSet);
-            //string json = JsonUtility.ToJson(shopListIndex,true);
-            //File.WriteAllText(Application.dataPath + "/Resources/ShopListData/cardDatafile.json" ,json);
             LearnedArray = new List<bool> { false, false, false, false, false, false };
             string wordData = String.Join(",",shopListIndex.ToArray());
             File.WriteAllText(Application.dataPath + "/Resources/ShopListData/cardDatafile.txt", wordData);
             string boolData = String.Join(",", LearnedArray);
             File.WriteAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt", boolData);
             PlayerPrefs.SetInt("currentDay", DateTime.Now.DayOfYear);
-            //Debug.Log(wordData);
             SetComp();
         }
         else
         {
-            //Debug.Log("SameDate");
-            //string json = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/cardDatafile.json");
-            //shopListIndex = JsonUtility.FromJson<List<int>>(json);
+            
             string wordData = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/cardDatafile.txt").ToString();
             shopListIndex = wordData.Split(',').ToList().Select(int.Parse).ToList();
             string boolData = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt").ToString();
             string[] convertstep = boolData.Split(',').ToArray();
-            LearnedArray.Clear();
-            for (int i = 0; i < Setamount; i++)
+            if(convertstep.Length == 1 )
             {
-                LearnedArray.Add(Convert.ToBoolean(convertstep[i]));
+                LearnedArray = new List<bool> { false, false, false, false, false, false };
+                string newboolData = String.Join(",", LearnedArray);
+                File.WriteAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt", newboolData);
+            }
+            else
+            {
+                LearnedArray.Clear();
+                for (int i = 0; i < Setamount; i++)
+                {
+                    LearnedArray.Add(Convert.ToBoolean(convertstep[i]));
+                }
             }
             //string test = String.Join(",", shopListIndex.ToArray());
             Debug.Log(LearnedArray.ToString());
@@ -152,6 +157,7 @@ public class ShopList : MonoBehaviour
         avaiableSet.Add(usingSet[inputlist[5]]);
     }
 
+   
     //private void Update()
     //{
     //    SetComp();
