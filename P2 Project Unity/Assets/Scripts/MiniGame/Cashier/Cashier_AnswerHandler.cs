@@ -12,19 +12,20 @@ public class Cashier_AnswerHandler : MonoBehaviour
     private WordCards answerCard;
     private SL_ListItem _listitem;
     public TextMeshProUGUI answer;
-    //public AudioSource[] wordaudiosource;
-
-    // Start is called before the first frame update
+    
+    private AudioSource answerAudio;
+    
     public TextMeshProUGUI answerPlace;
     private SetTypes answerST;
     public void answerClick()
     {
-        //Debug.Log(transform.parent.name);
+        
         _listitem = GetComponentInParent<SL_ListItem>();
         answerCard = _listitem.itemCard;
+        answerAudio = GetComponent<AudioSource>();
         answer.text = answerCard.danish_Word;
         answerST = _listitem.setType;
-        //Debug.Log(answerST);
+        answerAudio.PlayOneShot(answerCard.word_Audio);
 
         DefinePlace(answerST);
 
