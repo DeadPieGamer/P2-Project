@@ -9,10 +9,13 @@ public class SL_ListItem : MonoBehaviour
     private TextMeshProUGUI shopText;
     private Image shopPic;
 
+    private Button shopBtn;
+
     public WordCards itemCard;
     public SetTypes setType;
     private void Awake()
     {
+        shopBtn = GetComponentInChildren<Button>();
         shopText = GetComponentInChildren<TextMeshProUGUI>();
         shopPic = GetComponentInChildren<Image>();
     }
@@ -32,7 +35,13 @@ public class SL_ListItem : MonoBehaviour
         if (Learned)
         {
             shopText.fontStyle = FontStyles.Strikethrough;
+            shopBtn.enabled = false;
         }
-        else shopText.fontStyle = FontStyles.Normal;
+        else
+        {
+            shopText.fontStyle = FontStyles.Normal;
+            shopBtn.enabled = true;
+        }
+            
     }
 }
