@@ -6,6 +6,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class ItemSlot : MonoBehaviour, IDropHandler
 {
@@ -19,6 +20,8 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     [SerializeField] AudioClip wrongSound;
 
     CardSetLoader loader;
+
+    bool filledSlot = false;
 
     int startIndex = 4;
     List<int> wholeArrayInd;
@@ -89,14 +92,18 @@ public class ItemSlot : MonoBehaviour, IDropHandler
             {
                 droppedItemId = Items.myItem;
 
-                if (IsCorrect())
+                if (IsCorrect() && !filledSlot)  
                 {
                     Debug.Log("They're the same");
+                    filledSlot= true;
+                    Debug.Log(gameObject.name+Items.gameObject.name);
                     Items.tag = "Undrag";
                     Debug.Log(Items.tag);
                     checker.AddPoints(1);
                     soundChecker.PlayOneShot(correctSound);
                     CheckShoplist(shelfItem);
+                    GetComponent<Image>().enabled= false;
+                    Items.GetComponent<Image>().raycastTarget=false;
                 }
                 else
                 {
