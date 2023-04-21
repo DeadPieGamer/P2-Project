@@ -7,7 +7,9 @@ using UnityEngine;
 
 public class Cashier_AnswerHandler : MonoBehaviour
 {
-
+    [SerializeField] private AudioClip whereAud;
+    [SerializeField] private AudioClip inAud;
+    [SerializeField] private AudioClip placeAud;
 
     private WordCards answerCard;
     private SL_ListItem _listitem;
@@ -22,13 +24,12 @@ public class Cashier_AnswerHandler : MonoBehaviour
         
         _listitem = GetComponentInParent<SL_ListItem>();
         answerCard = _listitem.itemCard;
-        answerAudio = GetComponent<AudioSource>();
+        answerAudio = GameObject.FindGameObjectWithTag("checker").GetComponent<AudioSource>();
         answer.text = answerCard.danish_Word;
         answerST = _listitem.setType;
-        answerAudio.PlayOneShot(answerCard.word_Audio);
 
         DefinePlace(answerST);
-
+        StartCoroutine(playPlaceAnswer_audio());
     }
     private void DefinePlace(SetTypes deck)
     {
@@ -55,4 +56,10 @@ public class Cashier_AnswerHandler : MonoBehaviour
         }
     }
     
+    IEnumerator playPlaceAnswer_audio()
+    {
+        answerAudio.clip = answerCard.word_Audio;
+        answerAudio.Play();
+        yield return new WaitForSeconds(answerAudio.clip.length);
+    }
 }
