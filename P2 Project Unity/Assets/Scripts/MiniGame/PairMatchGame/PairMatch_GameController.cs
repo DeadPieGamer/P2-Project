@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -48,10 +50,11 @@ public class PairMatch_GameController : MonoBehaviour
     private List<bool> LearnedArray = new List<bool>();
 
     int Setamount = 6;
+  
     private void Awake()
     {
         _puzzles = Resources.LoadAll<WordCards>("WordCards_Folder/FruitsAndGreens/");
-       
+     
 
     }
 
@@ -137,6 +140,8 @@ public class PairMatch_GameController : MonoBehaviour
         {
             btn.onClick.AddListener(() => PickAPuzzle());
             ShufffleImage(_puzzles);
+           
+
         }
     }
     public void PickAPuzzle()
@@ -159,7 +164,10 @@ public class PairMatch_GameController : MonoBehaviour
             //Getting the audio attach to the wordcards 
             _audio.clip = _gamePuzzles[firstGuessIndex].word_Audio;
             _audio.Play();
-
+            btns[firstGuessIndex].interactable = false;//can not click on the button after choosen the right pair 
+            var newColorBlock = btns[firstGuessIndex].colors;
+            newColorBlock.disabledColor = Color.white;
+            btns[firstGuessIndex].colors = newColorBlock;
         }
 
         else if (!secondGuess)
@@ -181,6 +189,7 @@ public class PairMatch_GameController : MonoBehaviour
             //Adding to the score 
             countGuesses++;
             StartCoroutine(CheckIfThePuzzlesMatch());
+         
         }
         
     }
@@ -215,7 +224,8 @@ public class PairMatch_GameController : MonoBehaviour
         else
         {
             yield return new WaitForSeconds(0.5f);
-
+            btns[firstGuessIndex].interactable = true;
+            btns[secondGuessIndex].interactable = true;
             btns[firstGuessIndex].image.sprite = _bgImage;
             btns[secondGuessIndex].image.sprite = _bgImage;
             // Because images were reset, we also reset the words
