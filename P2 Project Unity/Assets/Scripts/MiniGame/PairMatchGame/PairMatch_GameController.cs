@@ -209,8 +209,6 @@ public class PairMatch_GameController : MonoBehaviour
             cardCheck = _gamePuzzles[secondGuessIndex];
             //Debug.Log(cardCheck.danish_Word);
             CheckShoplist(cardCheck);
-            CheckShoplist(cardCheck);
-            CheckShoplist(cardCheck);
             _anwsersSoundSource.PlayOneShot(correctDing);
             CheckIfTheGameIsFinished();
         }
