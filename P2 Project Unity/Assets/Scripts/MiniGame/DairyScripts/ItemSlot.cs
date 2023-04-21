@@ -122,7 +122,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
         {
             LearnedArray.Add(Convert.ToBoolean(convertstep[i]));
         }
-        for (int i = startIndex; i < startIndex + 2; i++)
+        for (int i = startIndex-startIndex; i < startIndex-2; i++)
         {
             if (cardSlot[i] == card)
             {

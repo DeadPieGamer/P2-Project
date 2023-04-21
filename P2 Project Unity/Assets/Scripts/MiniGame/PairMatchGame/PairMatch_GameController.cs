@@ -282,7 +282,7 @@ public class PairMatch_GameController : MonoBehaviour
         {
             LearnedArray.Add(Convert.ToBoolean(convertstep[i]));
         }
-        for (int i = startIndex; i < startIndex + 2; i++)
+        for (int i = startIndex-startIndex; i < startIndex; i++)
         {
             if (cardSlot[i] == card)
             {
