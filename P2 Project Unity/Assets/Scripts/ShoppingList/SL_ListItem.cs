@@ -29,7 +29,10 @@ public class SL_ListItem : MonoBehaviour
     }
    public void Striket(bool Learned)
     {
-        if (Learned) shopText.fontStyle = FontStyles.Strikethrough;
+        if (Learned)
+        {
+            shopText.fontStyle = FontStyles.Strikethrough;
+        }
         else shopText.fontStyle = FontStyles.Normal;
     }
 }

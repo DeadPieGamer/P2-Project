@@ -169,7 +169,7 @@ public class KO_Draggable : MonoBehaviour
         }
         for (int i = startIndex; i < startIndex+2; i++)
         {
-            if(cardSlot[i] == card)
+            if(cardSlot[i-startIndex] == card)
             {
                 LearnedArray[i] = true;
                 string newboolData = String.Join(",", LearnedArray);
