@@ -20,7 +20,7 @@ public class OutlineHandler : MonoBehaviour
     void Awake()
     {
         
-        string savedData = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/PlaceDatafile.txt").ToString();
+        string savedData = File.ReadAllText(Application.persistentDataPath + "/Resources/ShopListData/PlaceDatafile.txt").ToString();
         switch (savedData)
         {
             case "Kød":
@@ -57,6 +57,6 @@ public class OutlineHandler : MonoBehaviour
     public void removePlaceFile()
     {
         string savedData = "";
-        File.WriteAllText(Application.dataPath + "/Resources/ShopListData/PlaceDatafile.txt", savedData);
+        File.WriteAllText(Application.persistentDataPath + "/Resources/ShopListData/PlaceDatafile.txt", savedData);
     }
 }
