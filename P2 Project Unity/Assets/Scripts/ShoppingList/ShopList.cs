@@ -21,16 +21,18 @@ public class ShopList : MonoBehaviour
     private List<int> shopListIndex = new List<int>();
     //[SerializeField] private WordCardList cardList;
 
+
+    
     private void Start()
     {
         
         Setamount = 6;//UnityEngine.Random.Range(3, 10);
         TryOut = new WordCards[Setamount];
         //PlayerPrefs.SetInt("currentDay", -1);
-
+        
         if (PlayerPrefs.GetInt("currentDay", -1) != DateTime.Now.DayOfYear)
         {
-
+            PlayerPrefs.SetInt("firstPass", 0);
             DefineCards();
             setListItem(avaiableSet);
             LearnedArray = new List<bool> { false, false, false, false, false, false };

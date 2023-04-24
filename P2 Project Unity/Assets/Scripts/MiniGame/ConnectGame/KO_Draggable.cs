@@ -8,6 +8,8 @@ using UnityEngine.UIElements;
 
 public class KO_Draggable : MonoBehaviour
 {
+    
+
     [SerializeField]private CardSetLoader loader;
     public WordCards myCard;
     private GameObject hitObject;
@@ -39,6 +41,8 @@ public class KO_Draggable : MonoBehaviour
     int Setamount = 6;
     private void Start()
     {
+        
+
         correctColor = new Color(R / 255f, G / 255f, B / 255f,A/255f);
         loader = GameObject.FindGameObjectWithTag("loader").GetComponent<CardSetLoader>();
         myCard = GetComponent<Connect_Game>().AssignedCard;
@@ -176,6 +180,7 @@ public class KO_Draggable : MonoBehaviour
                 File.WriteAllText(Application.persistentDataPath + "/Resources/ShopListData/boolDatafile.txt", newboolData);
             }
         }
+        
     }
 
     //private void OnDrawGizmos()

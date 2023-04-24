@@ -5424,6 +5424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4ccbdbde0c49b44686f2ef6d1b1f225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneManger: {fileID: 11400000, guid: 548ec02590acf06429686f6714678c61, type: 2}
   points: 0
   exit: {fileID: 1456229730}
   dictionary: {fileID: 835289400}

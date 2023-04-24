@@ -7,10 +7,13 @@ using TMPro;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PairMatch_GameController : MonoBehaviour
 {
+    public SceneManger sceneManger;
+
     [SerializeField]
     private Sprite _bgImage;
     public List<Button> btns = new List<Button>();
@@ -50,6 +53,8 @@ public class PairMatch_GameController : MonoBehaviour
     private List<bool> LearnedArray = new List<bool>();
 
     int Setamount = 6;
+
+    public bool firstComplete = true;
   
     private void Awake()
     {
@@ -252,6 +257,12 @@ public class PairMatch_GameController : MonoBehaviour
             Debug.Log("Game Finished");
             Debug.Log("it took you " + countGuesses + " Guess(es) to finish the game");
             DisableButton();
+            string boolData = File.ReadAllText(Application.persistentDataPath + "/Resources/ShopListData/boolDatafile.txt").ToString();
+            if (boolData == "True,True,True,True,True,True" && PlayerPrefs.GetInt("firstPass", 0) != 1)
+            {
+                sceneManger.LoadScene("FinishShopList");
+                PlayerPrefs.SetInt("firstPass", 1);
+            }
         }
     }
 
@@ -299,6 +310,7 @@ public class PairMatch_GameController : MonoBehaviour
                 File.WriteAllText(Application.persistentDataPath + "/Resources/ShopListData/boolDatafile.txt", newboolData);
             }
         }
+        
     }
 }
 //Credit to Awesome Tuts

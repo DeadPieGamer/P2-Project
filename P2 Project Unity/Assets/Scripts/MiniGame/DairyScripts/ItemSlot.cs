@@ -6,10 +6,12 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ItemSlot : MonoBehaviour, IDropHandler
 {
+    
     // code from Code Monkey on youtube, link: https://www.youtube.com/watch?v=BGr-7GZJNXg
     public WordCards shelfItem;
     private WordCards droppedItemId;
@@ -136,5 +138,6 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                 File.WriteAllText(Application.persistentDataPath + "/Resources/ShopListData/boolDatafile.txt", newboolData);
             }
         }
+        
     }
 }
