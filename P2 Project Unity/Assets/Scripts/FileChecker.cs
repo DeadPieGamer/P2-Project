@@ -31,7 +31,7 @@ public class FileChecker : MonoBehaviour
         {
             File.Create(persist + placePath);
         }
-        PlayerPrefs.SetInt("currentDay", DateTime.Now.DayOfYear);
+        
     }
 
 }
