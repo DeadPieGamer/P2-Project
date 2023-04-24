@@ -27,32 +27,42 @@ public class ShopList : MonoBehaviour
         Setamount = 6;//UnityEngine.Random.Range(3, 10);
         TryOut = new WordCards[Setamount];
         //PlayerPrefs.SetInt("currentDay", -1);
-        
+
         if (PlayerPrefs.GetInt("currentDay", -1) != DateTime.Now.DayOfYear)
         {
-            
+
             DefineCards();
             setListItem(avaiableSet);
             LearnedArray = new List<bool> { false, false, false, false, false, false };
-            string wordData = String.Join(",",shopListIndex.ToArray());
-            File.WriteAllText(Application.dataPath + "/Resources/ShopListData/cardDatafile.txt", wordData);
+            string wordData = String.Join(",", shopListIndex.ToArray());
+            File.WriteAllText(Application.persistentDataPath + "/Resources/ShopListData/cardDatafile.txt", wordData);
             string boolData = String.Join(",", LearnedArray);
-            File.WriteAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt", boolData);
+            File.WriteAllText(Application.persistentDataPath + "/Resources/ShopListData/boolDatafile.txt", boolData);
             PlayerPrefs.SetInt("currentDay", DateTime.Now.DayOfYear);
             SetComp();
         }
         else
         {
+
+            string wordData = File.ReadAllText(Application.persistentDataPath + "/Resources/ShopListData/cardDatafile.txt").ToString();
+            if (wordData == "")
+            {
+                DefineCards();
+                setListItem(avaiableSet);
+                string newwordData = String.Join(",", shopListIndex.ToArray());
+                File.WriteAllText(Application.persistentDataPath + "/Resources/ShopListData/cardDatafile.txt", newwordData);
+                PlayerPrefs.SetInt("currentDay", DateTime.Now.DayOfYear);
+                SetComp();
+            }
+            else shopListIndex = wordData.Split(',').ToList().Select(int.Parse).ToList();
             
-            string wordData = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/cardDatafile.txt").ToString();
-            shopListIndex = wordData.Split(',').ToList().Select(int.Parse).ToList();
-            string boolData = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt").ToString();
+            string boolData = File.ReadAllText(Application.persistentDataPath + "/Resources/ShopListData/boolDatafile.txt").ToString();
             string[] convertstep = boolData.Split(',').ToArray();
-            if(convertstep.Length == 1 )
+            if(convertstep.Length <= 1 )
             {
                 LearnedArray = new List<bool> { false, false, false, false, false, false };
                 string newboolData = String.Join(",", LearnedArray);
-                File.WriteAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt", newboolData);
+                File.WriteAllText(Application.persistentDataPath + "/Resources/ShopListData/boolDatafile.txt", newboolData);
             }
             else
             {
@@ -77,17 +87,17 @@ public class ShopList : MonoBehaviour
     private void setListItem(List<WordCards> Input)
     {
         List<WordCards> output = new List<WordCards>();
-        //output = Input.Distinct().ToList();
+        
         output = Input;
         
         Setamount = output.Count;
         for(int i=0;i<Setamount;i++)
         {
             TryOut[i] = output[i];
-            //Debug.Log(TryOut[i]);
+            
         }
         
-        //RemoveNull(TryOut);
+        
     }
     //private void RemoveNull(WordCards[] input)
     //{
@@ -133,7 +143,15 @@ public class ShopList : MonoBehaviour
         for(int i = 0; i < Setamount; i++)
         {
             avaiableListIndex[i].GetComponent<SL_ListItem>().SetListComp(avaiableSet[i]);
-            avaiableListIndex[i].GetComponent<SL_ListItem>().Striket(LearnedArray[i]);
+            if (LearnedArray.Count <= 1)
+            {
+                LearnedArray = new List<bool> { false, false, false, false, false, false };
+                avaiableListIndex[i].GetComponent<SL_ListItem>().Striket(LearnedArray[i]);
+            }
+            else
+            {
+                avaiableListIndex[i].GetComponent<SL_ListItem>().Striket(LearnedArray[i]);
+            }
             avaiableListIndex[i].GetComponent<SL_ListItem>().setDeck(ST[i/2]);
         }
 

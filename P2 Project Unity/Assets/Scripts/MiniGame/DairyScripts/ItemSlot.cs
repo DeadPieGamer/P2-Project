@@ -38,7 +38,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
         checker = GameObject.FindGameObjectWithTag("checker").GetComponent<Sorting_PointChecker>();
         soundChecker = GameObject.FindGameObjectWithTag("checker").GetComponent<AudioSource>();
 
-        string wordData = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/cardDatafile.txt").ToString();
+        string wordData = File.ReadAllText(Application.persistentDataPath + "/Resources/ShopListData/cardDatafile.txt").ToString();
         wholeArrayInd = wordData.Split(',').ToList().Select(int.Parse).ToList();
 
         for (int i = startIndex; i < startIndex+2; i++)
@@ -51,13 +51,13 @@ public class ItemSlot : MonoBehaviour, IDropHandler
             cardSlot.Add(loader.Get_Set(gameDeck)[ArrayNum[i]]);
         }
 
-        string boolData = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt").ToString();
+        string boolData = File.ReadAllText(Application.persistentDataPath + "/Resources/ShopListData/boolDatafile.txt").ToString();
         string[] convertstep = boolData.Split(',').ToArray();
         if (convertstep.Length == 1)
         {
             LearnedArray = new List<bool> { false, false, false, false, false, false };
             string newboolData = String.Join(",", LearnedArray);
-            File.WriteAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt", newboolData);
+            File.WriteAllText(Application.persistentDataPath + "/Resources/ShopListData/boolDatafile.txt", newboolData);
         }
         else
         {
@@ -120,7 +120,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     }
     private void CheckShoplist(WordCards card)
     {
-        string boolData = File.ReadAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt").ToString();
+        string boolData = File.ReadAllText(Application.persistentDataPath + "/Resources/ShopListData/boolDatafile.txt").ToString();
         string[] convertstep = boolData.Split(',').ToArray();
         LearnedArray.Clear();
         for (int i = 0; i < Setamount; i++)
@@ -133,7 +133,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
             {
                 LearnedArray[i] = true;
                 string newboolData = String.Join(",", LearnedArray);
-                File.WriteAllText(Application.dataPath + "/Resources/ShopListData/boolDatafile.txt", newboolData);
+                File.WriteAllText(Application.persistentDataPath + "/Resources/ShopListData/boolDatafile.txt", newboolData);
             }
         }
     }

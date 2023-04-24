@@ -39,19 +39,19 @@ public class Cashier_AnswerHandler : MonoBehaviour
             case SetTypes.Meat:
                 answerPlace.text = "Kød";
                 savedData = "Kød" ;
-                File.WriteAllText(Application.dataPath + "/Resources/ShopListData/PlaceDatafile.txt", savedData);
+                File.WriteAllText(Application.persistentDataPath + "/Resources/ShopListData/PlaceDatafile.txt", savedData);
                 break;
 
             case SetTypes.Dairy:
                 answerPlace.text = "Mejeri";
                 savedData = "Mejeri";
-                File.WriteAllText(Application.dataPath + "/Resources/ShopListData/PlaceDatafile.txt", savedData);
+                File.WriteAllText(Application.persistentDataPath + "/Resources/ShopListData/PlaceDatafile.txt", savedData);
                 break;
 
             case SetTypes.FruitsAndGreens:
                 answerPlace.text = "FrugtogGrøn";
                 savedData = "FrugtogGrøn";
-                File.WriteAllText(Application.dataPath + "/Resources/ShopListData/PlaceDatafile.txt", savedData);
+                File.WriteAllText(Application.persistentDataPath + "/Resources/ShopListData/PlaceDatafile.txt", savedData);
                 break;
         }
     }
