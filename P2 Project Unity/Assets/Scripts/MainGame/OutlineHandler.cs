@@ -27,22 +27,21 @@ public class OutlineHandler : MonoBehaviour
                 outline = meatButton.GetComponent<DummyOutlineHandler>();
                 outline.isOutlined = true;
                 Debug.Log("M");
-                //highLight(boolMEAT);
-                //outline.ChangeOutline(boolMEAT);
+                StartCoroutine(blinkButton(meatButton));
             break;
             case "FrugtogGrøn":
                 outline = veggButton.GetComponent<DummyOutlineHandler>();
                 outline.isOutlined = true;
                 Debug.Log("V");
-                //highLight(boolVEGG);
-                //outline.ChangeOutline(boolVEGG);
+                StartCoroutine(blinkButton(veggButton));
+
                 break;
             case "Mejeri":
                 outline = dairyButton.GetComponent<DummyOutlineHandler>();
                 outline.isOutlined = true;
                 Debug.Log("D");
-                //highLight(boolDAIRY);
-                //outline.ChangeOutline(boolDAIRY);
+                StartCoroutine(blinkButton(dairyButton));
+
                 break;
             default: 
                 
@@ -58,5 +57,13 @@ public class OutlineHandler : MonoBehaviour
     {
         string savedData = "";
         File.WriteAllText(Application.persistentDataPath + "/Resources/ShopListData/PlaceDatafile.txt", savedData);
+    }
+    public IEnumerator blinkButton(Button button)
+    {
+        button.image.color = Color.white;
+        yield return new WaitForSeconds(0.5f);
+        button.image.color = Color.gray;
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine(blinkButton(button));
     }
 }
