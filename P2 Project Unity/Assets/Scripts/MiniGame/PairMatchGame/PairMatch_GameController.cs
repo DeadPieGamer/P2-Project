@@ -55,7 +55,8 @@ public class PairMatch_GameController : MonoBehaviour
     int Setamount = 6;
 
     public bool firstComplete = true;
-  
+
+    [SerializeField] private GameObject strike;
     private void Awake()
     {
         _puzzles = Resources.LoadAll<WordCards>("WordCards_Folder/FruitsAndGreens/");
@@ -308,6 +309,7 @@ public class PairMatch_GameController : MonoBehaviour
                 LearnedArray[i] = true;
                 string newboolData = String.Join(",", LearnedArray);
                 File.WriteAllText(Application.persistentDataPath + "/Resources/ShopListData/boolDatafile.txt", newboolData);
+                strike.SetActive(true);
             }
         }
         

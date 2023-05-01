@@ -33,6 +33,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
     SetTypes gameDeck = SetTypes.Dairy;
 
     int Setamount = 6;
+    [SerializeField] private GameObject strike;
     private void Start()
     {
         
@@ -136,6 +137,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler
                 LearnedArray[i] = true;
                 string newboolData = String.Join(",", LearnedArray);
                 File.WriteAllText(Application.persistentDataPath + "/Resources/ShopListData/boolDatafile.txt", newboolData);
+                strike.SetActive(true);
             }
         }
         

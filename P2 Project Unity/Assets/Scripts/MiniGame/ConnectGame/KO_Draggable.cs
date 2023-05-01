@@ -39,6 +39,8 @@ public class KO_Draggable : MonoBehaviour
 
     private Color correctColor;
     int Setamount = 6;
+
+    [SerializeField] private GameObject strike;
     private void Start()
     {
         
@@ -178,6 +180,7 @@ public class KO_Draggable : MonoBehaviour
                 LearnedArray[i] = true;
                 string newboolData = String.Join(",", LearnedArray);
                 File.WriteAllText(Application.persistentDataPath + "/Resources/ShopListData/boolDatafile.txt", newboolData);
+                strike.SetActive(true);
             }
         }
         
