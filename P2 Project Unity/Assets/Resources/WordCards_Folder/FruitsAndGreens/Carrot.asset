@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5722ad76733d1144894a2ccb177f4e70, type: 3}
   m_Name: Carrot
   m_EditorClassIdentifier: 
-  danish_Word: "Guler\xF8d"
+  danish_Word: Gulerod
   word_Picture: {fileID: 21300000, guid: bedafc35f5399438ea1d6595f1e1a03f, type: 3}
   word_Audioclips:
   - {fileID: 8300000, guid: e6f35edb31019f84d9fa55b67aeb8e13, type: 3}
