@@ -14,6 +14,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     private CanvasGroup canvasGroup; // Grabbing our Canvas Group component
     private AudioSource Audio;
 
+    [SerializeField] private GameObject finger;
+
     private void Awake()
     {
         rectTransform = GetComponent < RectTransform>();
@@ -26,7 +28,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         //Debug.Log("OnBeginDrag");
         canvasGroup.alpha = .6f; // makes the item slightly transparent whilst it is being dragged, by modifying the alpha
         canvasGroup.blocksRaycasts = false; // sets the blocksraycast into false so that the raycast goes through this object and lands on the item slot
-        
+        finger.SetActive(false);
     }
     /*
     public void OnDrag(PointerEventData eventData) // This is what gets called on every frame whilst we are dragging the item and the mouse has moved
