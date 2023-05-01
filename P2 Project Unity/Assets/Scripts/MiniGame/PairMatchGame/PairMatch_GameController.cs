@@ -57,6 +57,8 @@ public class PairMatch_GameController : MonoBehaviour
     public bool firstComplete = true;
 
     [SerializeField] private GameObject strike;
+
+    [SerializeField] private GameObject finger;
     private void Awake()
     {
         _puzzles = Resources.LoadAll<WordCards>("WordCards_Folder/FruitsAndGreens/");
@@ -153,7 +155,7 @@ public class PairMatch_GameController : MonoBehaviour
     public void PickAPuzzle()
     {
         string name = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
-
+        finger.SetActive(false);
         if (!firstGuess)
         {
             firstGuess = true;
