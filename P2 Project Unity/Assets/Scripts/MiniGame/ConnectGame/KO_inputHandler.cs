@@ -12,7 +12,7 @@ public class KO_inputHandler : MonoBehaviour
     private LineRenderer lineRenderer;
 
     [SerializeField] private LayerMask layersToHit;
-    
+    [SerializeField] private GameObject finger;
 
     private void Start()
     {
@@ -38,7 +38,7 @@ public class KO_inputHandler : MonoBehaviour
                 startPos = SelectedObject.transform.parent.position;
                 inputManager.OnContinuedTouch += Dodrag;
                 Play_Audio();
-
+                finger.SetActive(false);
             }
         }
     }
