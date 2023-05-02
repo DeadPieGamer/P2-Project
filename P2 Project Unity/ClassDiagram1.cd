@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Felix.Events.BoolEvent">
+    <Position X="22.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Dummy Scripts\BoolEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Felix.Variables.DummyCardSet">
+    <Position X="6.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Dummy Scripts\DummyCardSet.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SetTypeEnum" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DummyOutlineHandler">
+    <Position X="22.5" Y="7.25" Width="1.5" />
+    <NestedTypes>
+      <Class Name="DummyOutlineHandler.DummyOutlineHandlerEditor" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Dummy Scripts\DummyOutlineHandler.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAQECAIIAAAAAAAAAkQAgAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Dummy Scripts\DummyOutlineHandler.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="outlineActions" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SOMatKeeper">
+    <Position X="24" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Dummy Scripts\SOMatKeeper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneManger">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAABAAAAAAAABACAAAACAAAAAAAAACAAAgAAA=</HashCode>
+      <FileName>Assets\Scripts\General Objects&amp;Script\SceneManger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WonMenuFunctions">
+    <Position X="22.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\General Objects&amp;Script\WonMenuFunctions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InputManager">
+    <Position X="20" Y="14" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="InputManager.StartTouchEvent" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Input\InputManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="InputManager.ContinuousTouchEvent" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Input\InputManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAQBCAAAACAACAEAAAAAAAAgAAAAAAAIACAAAAAACEA=</HashCode>
+      <FileName>Assets\Scripts\Input\InputManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OutlineHandler">
+    <Position X="25.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAgAAAAAAABAAAAECAAgAAAAAAAQAAAAAYAAAAAEEA=</HashCode>
+      <FileName>Assets\Scripts\MainGame\OutlineHandler.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="outline" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Cashier_AnswerHandler">
+    <Position X="11.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAIAAAEgCAAAAAAoAIAABAAAABACAAAAAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\MiniGame\Cashier\Cashier_AnswerHandler.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_listitem" />
+      <Field Name="answerCard" />
+      <Field Name="answerST" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SL_ListItem">
+    <Position X="19.75" Y="5.75" Width="1.5" />
+    <AssociationLine Name="setType" Type="SetTypes" ManuallyRouted="true">
+      <Path>
+        <Point X="20.5" Y="5.75" />
+        <Point X="20.5" Y="4" />
+        <Point X="15.583" Y="4" Type="JumpStart" />
+        <Point X="15.417" Y="4" Type="JumpEnd" />
+        <Point X="10.5" Y="4" />
+        <Point X="10.5" Y="5" />
+        <Point X="9.583" Y="5" Type="JumpStart" />
+        <Point X="9.417" Y="5" Type="JumpEnd" />
+        <Point X="8.125" Y="5" />
+        <Point X="8.125" Y="7.215" />
+        <Point X="7.75" Y="7.215" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAgBJAAAAAAIABAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\ShoppingList\SL_ListItem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="itemCard" />
+      <Field Name="setType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WordCards">
+    <Position X="11.75" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAII=</HashCode>
+      <FileName>Assets\Scripts\Word Card\WordCards.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cashier_WordLoader">
+    <Position X="0.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAACAAAAAAAAAACAAAAAABAAAAAAAAAQAAOAA=</HashCode>
+      <FileName>Assets\Scripts\MiniGame\Cashier\Cashier_WordLoader.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="CardSetLoader" />
+      <Field Name="usingSet" />
+      <Field Name="ST" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CardSetLoader">
+    <Position X="3.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAACAAAAAgAAAAEAAEAAAAAAQCAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Word Card\CardSetLoader.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="cards" />
+      <Field Name="defaultCard" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Connect_Cards">
+    <Position X="8.75" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAACAAAAAAAIAgAAAAABABAAAAAAAAAAAAGEA=</HashCode>
+      <FileName>Assets\Scripts\MiniGame\ConnectGame\Connect_Cards.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="usingSet" />
+      <Field Name="CardSetLoader" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Connect_Game">
+    <Position X="14.75" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAEAAAAQAAAAAAAUAAAAAAgAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\MiniGame\ConnectGame\Connect_Game.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="AssignedCard" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="KO_Draggable">
+    <Position X="14.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAQACAAAAiBgIIgAAAIABAgASAAAoDAKQEIARo=</HashCode>
+      <FileName>Assets\Scripts\MiniGame\ConnectGame\KO_Draggable.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="Checker" />
+      <Field Name="gameDeck" />
+      <Field Name="loader" />
+      <Field Name="myCard" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="KO_PointChecker">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAACAACAQAAAAAAAABAAEAAAAAgAAAAIAACAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MiniGame\ConnectGame\KO_PointChecker.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="sceneManger" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="KO_inputHandler">
+    <Position X="23" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAACAAAEAAAAAAAACIEQAAAAAgAAAAABAAAAI=</HashCode>
+      <FileName>Assets\Scripts\MiniGame\ConnectGame\KO_inputHandler.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="inputManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DragDrop" BaseTypeListCollapsed="true">
+    <Position X="22.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAEAAAAAAAIAAAAAAFAEACAAAAAACAAQAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\MiniGame\DairyScripts\DragDrop.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Items">
+    <Position X="17.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACI=</HashCode>
+      <FileName>Assets\Scripts\MiniGame\DairyScripts\Items.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="myItem" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ItemSlot">
+    <Position X="8.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQACACACiBCIAAAAAAAAAgACEAAgKQgACAARA=</HashCode>
+      <FileName>Assets\Scripts\MiniGame\DairyScripts\ItemSlot.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="checker" />
+      <Field Name="droppedItemId" />
+      <Field Name="gameDeck" />
+      <Field Name="loader" />
+      <Field Name="shelfItem" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Sorting_PointChecker">
+    <Position X="8.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAACAACAQAAAAAAAAAAAEAAAAAgAAAAIAACAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MiniGame\DairyScripts\Sorting_PointChecker.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="sceneManger" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Sorting_Cards">
+    <Position X="11.75" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAIAAAAACABABAAAAAAAAAAAAGEI=</HashCode>
+      <FileName>Assets\Scripts\MiniGame\DairyScripts\Sorting_Cards.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="CardSetLoader" />
+      <Field Name="usingSet" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Sorting_Falling">
+    <Position X="24" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAiAAAAAAAAAAAAAAAAARAAAAAAAAAAACAAI=</HashCode>
+      <FileName>Assets\Scripts\MiniGame\DairyScripts\Sorting_Falling.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sorting_Game">
+    <Position X="17.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEACAAAEAAAAAAAAAEAAEAAAAAAgAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\MiniGame\DairyScripts\Sorting_Game.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="AssignedCard" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AddButtons">
+    <Position X="20.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAACAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\MiniGame\PairMatchGame\AddButtons.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PairMatch_GameController">
+    <Position X="5.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAJgkAAAACAAwAiBEYgghECEQAIgEqAEAgLAgKIASVA=</HashCode>
+      <FileName>Assets\Scripts\MiniGame\PairMatchGame\PairMatch_GameController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_puzzles" />
+      <Field Name="cardCheck" />
+      <Field Name="gameSet" />
+      <Field Name="loader" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ExitGame">
+    <Position X="24" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Settings Menu\ExitGame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoundOnOff">
+    <Position X="17" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAhAACAAAAAAAAARAAAAAAAAAAAAAACAIAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\Settings Menu\SoundOnOff.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShopList">
+    <Position X="11.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQIAECAAAAgAAIAACAAAAAABAAAAAAAAQQAAOQA=</HashCode>
+      <FileName>Assets\Scripts\ShoppingList\ShopList.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="CardSetLoader" />
+      <Field Name="TryOut" />
+      <Field Name="usingSet" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SL_audioplay">
+    <Position X="14.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIACAAAABIAAAAAAAAAAAAAQAAAAAAAAAAAQA=</HashCode>
+      <FileName>Assets\Scripts\ShoppingList\SL_audioplay.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_listitem" />
+      <Field Name="SLcard" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CardDisplay">
+    <Position X="8.75" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAIAEAQCAAAAABABAAAAAAgEAAAAAAAAAACAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Word Card\CardDisplay.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="card" />
+      <Field Name="loader" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="FileChecker">
+    <Position X="18.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAgAAAQAAAAAAAAAAAAAAAAgAAAgA=</HashCode>
+      <FileName>Assets\Scripts\FileChecker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="SetTypes">
+    <Position X="6.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAEAAAAAAQAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\General Objects&amp;Script\SetTypes.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
