@@ -12,7 +12,6 @@ public class ShopList : MonoBehaviour
 {
     public CardSetLoader CardSetLoader;
     public WordCards[] usingSet;
-    public WordCards[] TryOut;
     public List<WordCards> avaiableSet = new List<WordCards>();
     [SerializeField] private GameObject[] avaiableListIndex;
     [SerializeField] private int Setamount;
@@ -27,14 +26,12 @@ public class ShopList : MonoBehaviour
     {
         
         Setamount = 6;//UnityEngine.Random.Range(3, 10);
-        TryOut = new WordCards[Setamount];
         //PlayerPrefs.SetInt("currentDay", -1);
         
         if (PlayerPrefs.GetInt("currentDay", -1) != DateTime.Now.DayOfYear)
         {
             PlayerPrefs.SetInt("firstPass", 0);
             DefineCards();
-            setListItem(avaiableSet);
             LearnedArray = new List<bool> { false, false, false, false, false, false };
             string wordData = String.Join(",", shopListIndex.ToArray());
             File.WriteAllText(Application.persistentDataPath + "/Resources/ShopListData/cardDatafile.txt", wordData);
@@ -50,7 +47,6 @@ public class ShopList : MonoBehaviour
             if (wordData == "")
             {
                 DefineCards();
-                setListItem(avaiableSet);
                 string newwordData = String.Join(",", shopListIndex.ToArray());
                 File.WriteAllText(Application.persistentDataPath + "/Resources/ShopListData/cardDatafile.txt", newwordData);
                 PlayerPrefs.SetInt("currentDay", DateTime.Now.DayOfYear);
@@ -86,21 +82,7 @@ public class ShopList : MonoBehaviour
         
         
     }
-    private void setListItem(List<WordCards> Input)
-    {
-        List<WordCards> output = new List<WordCards>();
-        
-        output = Input;
-        
-        Setamount = output.Count;
-        for(int i=0;i<Setamount;i++)
-        {
-            TryOut[i] = output[i];
-            
-        }
-        
-        
-    }
+
     //private void RemoveNull(WordCards[] input)
     //{
         
