@@ -16,21 +16,9 @@ public class CardDisplay : MonoBehaviour
     //public CardSetLoader loader;
     public WordCards card;
 
-    // Start is called before the first frame update
-    private void Awake()
-    {
-        
-        
-    }
     void Start()
     {
         Get_NewCard();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     /// <summary>

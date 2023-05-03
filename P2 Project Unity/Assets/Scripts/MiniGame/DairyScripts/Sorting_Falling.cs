@@ -16,11 +16,6 @@ public class Sorting_Falling : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        
-    }
 
     public void MoveImage(Vector2 offset)
     {

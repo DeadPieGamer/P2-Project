@@ -11,26 +11,15 @@ public class CardSetLoader : MonoBehaviour
     public WordCards[] cards = new WordCards[0];
 
     public Dictionary<SetTypes, WordCards[]> CardSet_Dict = new Dictionary<SetTypes, WordCards[]>();
+
     private void Awake()
     {
         foreach(SetTypes folder in Enum.GetValues(typeof(SetTypes)))
         {
             CardSet_Dict.Add(folder, Resources.LoadAll("WordCards_Folder/" + folder.ToString(), typeof(WordCards)).Cast<WordCards>().ToArray());
-            
         }
-
-        //Select_CardSet(SetTypes.Test);
-    }
-
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
+        //Select_CardSet(SetTypes.Test);
     }
     public WordCards Select_RandomCards()
     {
@@ -58,13 +47,11 @@ public class CardSetLoader : MonoBehaviour
        cards = CardSet_Dict[randomSet];
         
     }
-    
     public void Select_CardSet(SetTypes Deck)
     {
         cards = CardSet_Dict[Deck];
 
     }
-
     public void Select_CardSet(int Deck)
     {
         cards = CardSet_Dict[(SetTypes)Deck];
@@ -79,4 +66,5 @@ public class CardSetLoader : MonoBehaviour
     {
         return CardSet_Dict[Deck];
     }
+    
 }
